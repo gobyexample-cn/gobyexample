@@ -1,6 +1,7 @@
 ## Go by Example 中文翻译
 
-[原版ReadMe](README-original.md)
+[原版 ReadMe](https://github.com/mmcgrana/gobyexample#go-by-example)
+
 [马上开始学习吧](http://everyx.github.io/gobyexample/)
 
 ### License
