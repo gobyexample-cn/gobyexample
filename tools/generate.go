@@ -15,7 +15,7 @@ import (
 )
 
 var cacheDir = "/tmp/gobyexample-cache"
-var siteDir = "./public"
+var siteDir = "./"
 var pygmentizeBin = "./vendor/pygments/pygmentize"
 
 func check(err error) {
