@@ -7,7 +7,6 @@ import "time"
 
 func main() {
 
-    // Here's a basic `switch`.
     // 一个基本的 `switch`。
     i := 2
     fmt.Print("write ", i, " as ")
