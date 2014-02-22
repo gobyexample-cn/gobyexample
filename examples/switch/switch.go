@@ -1,5 +1,4 @@
-// _Switch statements_ express conditionals across many
-// branches.
+// _switch_ ，方便的条件分支语句。
 
 package main
 
@@ -9,6 +8,7 @@ import "time"
 func main() {
 
     // Here's a basic `switch`.
+    // 一个基本的 `switch`。
     i := 2
     fmt.Print("write ", i, " as ")
     switch i {
@@ -20,9 +20,9 @@ func main() {
         fmt.Println("three")
     }
 
-    // You can use commas to separate multiple expressions
-    // in the same `case` statement. We use the optional
-    // `default` case in this example as well.
+    // 在一个 `case` 语句中，你可以使用逗号来分隔多个表
+    // 达式。在这个例子中，我们很好的使用了可选的 
+    // `default` 分支。
     switch time.Now().Weekday() {
     case time.Saturday, time.Sunday:
         fmt.Println("it's the weekend")
@@ -30,9 +30,8 @@ func main() {
         fmt.Println("it's a weekday")
     }
 
-    // `switch` without an expression is an alternate way
-    // to express if/else logic. Here we also show how the
-    // `case` expressions can be non-constants.
+    // 不带表达式的 `switch` 是实现 if/else 逻辑的另一种
+    // 方式。这里展示了 `case` 表达式是如何使用非常量的。
     t := time.Now()
     switch {
     case t.Hour() < 12:

@@ -13,8 +13,8 @@
 |Variables |✔|
 |Constants |✔|
 |For |✔|
-|If/Else ||
-|Switch ||
+|If/Else |✔|
+|Switch |✔|
 |Arrays ||
 |Slices ||
 |Maps ||
