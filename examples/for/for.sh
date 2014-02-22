@@ -7,6 +7,5 @@ $ go run for.go
 9
 loop
 
-# We'll see some other `for` forms later when we look at
-# `range` statements, channels, and other data
-# structures.
+# 在教程后面，当我们学到 `rang` 语句，channels，以及其他
+# 数据结构时，将会看到一些 `for` 的其它使用形式，

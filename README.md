@@ -8,11 +8,11 @@
 
 |内容|完成|
 |:-----------------------------|:--|
-|Hello World | ✔|
-|Values | ✔| 
-|Variables | ✔|
-|Constants | ✔|
-|For ||
+|Hello World |✔|
+|Values |✔| 
+|Variables |✔|
+|Constants |✔|
+|For |✔|
 |If/Else ||
 |Switch ||
 |Arrays ||
