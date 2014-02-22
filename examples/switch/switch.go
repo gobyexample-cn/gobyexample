@@ -21,7 +21,7 @@ func main() {
     }
 
     // 在一个 `case` 语句中，你可以使用逗号来分隔多个表
-    // 达式。在这个例子中，我们很好的使用了可选的 
+    // 达式。在这个例子中，我们很好的使用了可选的
     // `default` 分支。
     switch time.Now().Weekday() {
     case time.Saturday, time.Sunday:
