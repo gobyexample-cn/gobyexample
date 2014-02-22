@@ -7,6 +7,7 @@ import (
     "path/filepath"
     "regexp"
     "strings"
+    "utf8"
 )
 
 func check(err error) {
