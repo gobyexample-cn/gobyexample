@@ -4,6 +4,40 @@
 
 [马上开始学习吧](http://everyx.github.io/gobyexample/)
 
+### 为了 gh-pages 而做的一些修改
+
+```diff
+diff --git a/tools/generate.go b/tools/generate.go
+index cbc39d8..30d7291 100644
+--- a/tools/generate.go
++++ b/tools/generate.go
+@@ -15,7 +15,7 @@ import (
+ )
+ 
+ var cacheDir = "/tmp/gobyexample-cache"
+-var siteDir = "./"
++var siteDir = "./public"
+ var pygmentizeBin = "./vendor/pygments/pygmentize"
+ 
+ func check(err error) {
+@@ -270,14 +270,13 @@ func renderExamples(examples []*Example) {
+     _, err := exampleTmpl.Parse(mustReadFile("templates/example.tmpl"))
+     check(err)
+     for _, example := range examples {
+-        exampleF, err := os.Create(siteDir + "/" + example.Id + ".html")
++        exampleF, err := os.Create(siteDir + "/" + example.Id)
+         check(err)
+         exampleTmpl.Execute(exampleF, example)
+     }
+ }
+ 
+ func main() {
+-    ensureDir(siteDir)
+     copyFile("templates/site.css", siteDir+"/site.css")
+     copyFile("templates/favicon.ico", siteDir+"/favicon.ico")
+     copyFile("templates/404.html", siteDir+"/404.html")
+```
+
 ### 翻译进度
 
 |内容|完成|
