@@ -8,31 +8,31 @@
 
 ```diff
 diff --git a/tools/generate.go b/tools/generate.go
-index cbc39d8..30d7291 100644
+index 30d7291..cbc39d8 100644
 --- a/tools/generate.go
 +++ b/tools/generate.go
 @@ -15,7 +15,7 @@ import (
  )
  
  var cacheDir = "/tmp/gobyexample-cache"
--var siteDir = "./"
-+var siteDir = "./public"
+-var siteDir = "./public"
++var siteDir = "./"
  var pygmentizeBin = "./vendor/pygments/pygmentize"
  
  func check(err error) {
-@@ -270,14 +270,13 @@ func renderExamples(examples []*Example) {
+@@ -270,13 +270,14 @@ func renderExamples(examples []*Example) {
      _, err := exampleTmpl.Parse(mustReadFile("templates/example.tmpl"))
      check(err)
      for _, example := range examples {
--        exampleF, err := os.Create(siteDir + "/" + example.Id + ".html")
-+        exampleF, err := os.Create(siteDir + "/" + example.Id)
+-        exampleF, err := os.Create(siteDir + "/" + example.Id)
++        exampleF, err := os.Create(siteDir + "/" + example.Id + ".html")
          check(err)
          exampleTmpl.Execute(exampleF, example)
      }
  }
  
  func main() {
--    ensureDir(siteDir)
++    ensureDir(siteDir)
      copyFile("templates/site.css", siteDir+"/site.css")
      copyFile("templates/favicon.ico", siteDir+"/favicon.ico")
      copyFile("templates/404.html", siteDir+"/404.html")
