@@ -49,7 +49,7 @@ index 30d7291..cbc39d8 100644
 |For |✔|
 |If/Else |✔|
 |Switch |✔|
-|Arrays ||
+|Arrays |✔|
 |Slices ||
 |Maps ||
 |Range ||
