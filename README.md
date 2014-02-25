@@ -50,7 +50,7 @@ index 30d7291..cbc39d8 100644
 |If/Else |✔|
 |Switch |✔|
 |Arrays |✔|
-|Slices ||
+|Slices |✔|
 |Maps ||
 |Range ||
 |Functions ||
