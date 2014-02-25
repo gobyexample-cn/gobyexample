@@ -26,7 +26,7 @@ func main() {
 
     // 作为基本操作的补充，slice 支持比数组更多的操作。
     // 其中一个是内建的 `append`，它返回一个包含了一个
-    // 或者多个新值的 slice。注意我们接受返回由 append 
+    // 或者多个新值的 slice。注意我们接受返回由 append
     // 返回的新的 slice 值。
     s = append(s, "d")
     s = append(s, "e", "f")
@@ -39,7 +39,7 @@ func main() {
     fmt.Println("cpy:", c)
 
     // Slice 支持通过 `slice[low:high]` 语法进行“切片”操
-    // 作。例如，这里得到一个包含元素 `s[2]`, `s[3]`, 
+    // 作。例如，这里得到一个包含元素 `s[2]`, `s[3]`,
     // `s[4]` 的 slice。
     l := s[2:5]
     fmt.Println("sl1:", l)
