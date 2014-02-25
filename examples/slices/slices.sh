@@ -16,7 +16,5 @@ dcl: [g h i]
 # 看看这个由 Go 团队撰写的一篇[很棒的博文](http://blog.golang.org/2011/01/go-slices-usage-and-internals.html)，
 # 获得更多关于 Go 中 slice 的设计和实现细节。
 
-# Now that we've seen arrays and slices we'll look at
-# Go's other key builtin data structure: maps.
 # 现在，我们已经看过了数组和 slice，接下来我们将看看 
 # Go 中的另一个关键的内建数据类型：map。
