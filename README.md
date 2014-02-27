@@ -52,7 +52,7 @@ index 30d7291..cbc39d8 100644
 |Arrays |✔|
 |Slices |✔|
 |Maps |✔|
-|Range ||
+|Range |✔|
 |Functions ||
 |Multiple Return Values||
 |Variadic Functions||
