@@ -53,7 +53,7 @@ index 30d7291..cbc39d8 100644
 |Slices |✔|
 |Maps |✔|
 |Range |✔|
-|Functions ||
+|Functions |✔|
 |Multiple Return Values||
 |Variadic Functions||
 |Closures||
