@@ -7,7 +7,7 @@ import "fmt"
 
 func main() {
 
-    // 要创建一个空 map，需要使用内建的 `make`: 
+    // 要创建一个空 map，需要使用内建的 `make`:
     // `make(map[key-type]val-type)`.
     m := make(map[string]int)
 
