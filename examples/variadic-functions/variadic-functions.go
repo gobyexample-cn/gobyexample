@@ -22,7 +22,7 @@ func main() {
     sum(1, 2, 3)
 
 	// 如果你的 slice 已经有了多个值，想把它们作为变参
-	// 使用，你要这样调用 `func(slice...`。
+	// 使用，你要这样调用 `func(slice...)`。
     nums := []int{1, 2, 3, 4}
     sum(nums...)
 }
