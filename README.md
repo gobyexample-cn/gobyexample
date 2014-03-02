@@ -55,7 +55,8 @@ index 30d7291..cbc39d8 100644
 |Range |✔|
 |Functions |✔|
 |Multiple Return Values|✔|
-|Variadic Functions||
+|Multiple Return Values|✔|
+|Variadic Functions|✔|
 |Closures||
 |Recursion||
 |Pointers||
