@@ -57,7 +57,7 @@ index 30d7291..cbc39d8 100644
 |Multiple Return Values|✔|
 |Multiple Return Values|✔|
 |Variadic Functions|✔|
-|Closures||
+|Closures|✔|
 |Recursion||
 |Pointers||
 |Structs||
