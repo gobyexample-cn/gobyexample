@@ -1,7 +1,7 @@
-Hello World
-Values
-Variables
-Constants
+Hello World->你好，世界
+Values->值
+Variables->变量
+Constants->常量
 For
 If/Else
 Switch
