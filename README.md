@@ -8,19 +8,38 @@
 
 ```diff
 diff --git a/tools/generate.go b/tools/generate.go
-index 30d7291..cbc39d8 100644
+index 30d7291..e1caa03 100644
 --- a/tools/generate.go
 +++ b/tools/generate.go
 @@ -15,7 +15,7 @@ import (
  )
- 
+
  var cacheDir = "/tmp/gobyexample-cache"
 -var siteDir = "./public"
 +var siteDir = "./"
  var pygmentizeBin = "./vendor/pygments/pygmentize"
- 
+
  func check(err error) {
-@@ -270,13 +270,14 @@ func renderExamples(examples []*Example) {
+@@ -221,7 +221,17 @@ func parseExamples() []*Example {
+     examples := make([]*Example, 0)
+     for _, exampleName := range exampleNames {
+         if (exampleName != "") && !strings.HasPrefix(exampleName, "#") {
+-            example := Example{Name: exampleName}
++            exampleNameZh := exampleName
++            if strings.Index(exampleName, "->") != -1 {
++                names := strings.Split(exampleName, "->")
++                exampleName = names[0]
++                if strings.Trim(names[1], " ") != "" {
++                    exampleNameZh = names[1]
++                } else {
++                    exampleNameZh = names[0]
++                }
++            }
++            example := Example{Name: exampleNameZh}
+             exampleId := strings.ToLower(exampleName)
+             exampleId = strings.Replace(exampleId, " ", "-", -1)
+             exampleId = strings.Replace(exampleId, "/", "-", -1)
+@@ -270,13 +280,14 @@ func renderExamples(examples []*Example) {
      _, err := exampleTmpl.Parse(mustReadFile("templates/example.tmpl"))
      check(err)
      for _, example := range examples {
@@ -30,7 +49,7 @@ index 30d7291..cbc39d8 100644
          exampleTmpl.Execute(exampleF, example)
      }
  }
- 
+
  func main() {
 +    ensureDir(siteDir)
      copyFile("templates/site.css", siteDir+"/site.css")
