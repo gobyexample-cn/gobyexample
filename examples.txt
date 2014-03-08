@@ -2,18 +2,18 @@ Hello World->你好，世界
 Values->值
 Variables->变量
 Constants->常量
-For
-If/Else
-Switch
-Arrays
-Slices
-Maps
-Range
-Functions
-Multiple Return Values
-Variadic Functions
-Closures
-Recursion
+For->For循环
+If/Else->if/else 分支
+Switch->分支结构
+Arrays->数组
+Slices->切片
+Maps->关联数组
+Range->Range 遍历
+Functions->函数
+Multiple Return Values->多返回值
+Variadic Functions->变参函数
+Closures->闭包
+Recursion->递归
 Pointers
 Structs
 Methods
