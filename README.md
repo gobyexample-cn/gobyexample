@@ -79,7 +79,7 @@ index 30d7291..e1caa03 100644
 |Closures|✔|
 |Recursion|✔|
 |Pointers|✔|
-|Structs||
+|Structs|✔|
 |Methods||
 |Interfaces||
 |Errors||

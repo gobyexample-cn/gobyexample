@@ -15,7 +15,7 @@ Variadic Functions->变参函数
 Closures->闭包
 Recursion->递归
 Pointers->指针
-Structs
+Structs->结构体
 Methods
 Interfaces
 Errors
