@@ -78,7 +78,7 @@ index 30d7291..e1caa03 100644
 |Variadic Functions|✔|
 |Closures|✔|
 |Recursion|✔|
-|Pointers||
+|Pointers|✔|
 |Structs||
 |Methods||
 |Interfaces||

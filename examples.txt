@@ -14,7 +14,7 @@ Multiple Return Values->多返回值
 Variadic Functions->变参函数
 Closures->闭包
 Recursion->递归
-Pointers
+Pointers->指针
 Structs
 Methods
 Interfaces
