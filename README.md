@@ -80,7 +80,7 @@ index 30d7291..e1caa03 100644
 |Recursion|✔|
 |Pointers|✔|
 |Structs|✔|
-|Methods||
+|Methods|✔|
 |Interfaces||
 |Errors||
 |Goroutines||

@@ -16,7 +16,7 @@ Closures->闭包
 Recursion->递归
 Pointers->指针
 Structs->结构体
-Methods
+Methods->方法
 Interfaces
 Errors
 Goroutines

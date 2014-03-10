@@ -4,5 +4,5 @@ perim: 30
 area:  50
 perim: 30
 
-# Next we'll look at Go's mechanism for grouping and
-# naming related sets of methods: interfaces.
+# 接下来我们将 Go 语言中组织和命名相关的方法集合的机
+# 制：接口。
