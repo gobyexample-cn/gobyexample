@@ -7,7 +7,7 @@ import "fmt"
 
 // 我们将通过两个函数：`zeroval` 和 `zeroptr` 来比较指针和
 // 值类型的不同。`zeroval` 有一个 `int` 型参数，所以使用值
-// 传递。`zeroval` 将从调用它的那个函数中得到一个 `ival` 
+// 传递。`zeroval` 将从调用它的那个函数中得到一个 `ival`
 // 形参的拷贝。
 func zeroval(ival int) {
     ival = 0
@@ -28,11 +28,11 @@ func main() {
     zeroval(i)
     fmt.Println("zeroval:", i)
 
-	// 通过 `&i` 语法来取得 `i` 的内存地址，例如一个变量
-	// `i` 的指针。
+    // 通过 `&i` 语法来取得 `i` 的内存地址，例如一个变量
+    // `i` 的指针。
     zeroptr(&i)
     fmt.Println("zeroptr:", i)
 
-	// 指针也是可以被打印的。
+    // 指针也是可以被打印的。
     fmt.Println("pointer:", &i)
 }

@@ -50,8 +50,8 @@ func main() {
     s := square{width: 3, height: 4}
     c := circle{radius: 5}
 
-	// 结构体类型 `circle` 和 `square` 都实现了 `geometry` 
-	// 接口，所以我们可以使用它们的实例作为 `measure` 的参数。
+    // 结构体类型 `circle` 和 `square` 都实现了 `geometry`
+    // 接口，所以我们可以使用它们的实例作为 `measure` 的参数。
     measure(s)
     measure(c)
 }
