@@ -81,7 +81,7 @@ index 30d7291..e1caa03 100644
 |Pointers|✔|
 |Structs|✔|
 |Methods|✔|
-|Interfaces||
+|Interfaces|✔|
 |Errors||
 |Goroutines||
 |Channels||

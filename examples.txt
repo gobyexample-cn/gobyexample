@@ -17,7 +17,7 @@ Recursion->递归
 Pointers->指针
 Structs->结构体
 Methods->方法
-Interfaces
+Interfaces->接口
 Errors
 Goroutines
 Channels

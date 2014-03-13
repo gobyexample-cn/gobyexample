@@ -1,19 +1,18 @@
-// _Interfaces_ are named collections of method
-// signatures.
+// _接口_ 是方法特征的命名集合。
 
 package main
 
 import "fmt"
 import "math"
 
-// Here's a basic interface for geometric shapes.
+// 这里是一个几何体的基本接口。
 type geometry interface {
     area() float64
     perim() float64
 }
 
-// For our example we'll implement this interface on
-// `square` and `circle` types.
+// 在我们的例子中，我们将让 `square` 和 `circle` 实现
+// 这个接口
 type square struct {
     width, height float64
 }
@@ -21,9 +20,8 @@ type circle struct {
     radius float64
 }
 
-// To implement an interface in Go, we just need to
-// implement all the methods in the interface. Here we
-// implement `geometry` on `square`s.
+// 要在 Go 中实现一个接口，我们只需要实现接口中的所有
+// 方法。这里我们让 `square` 实现了 `geometry` 接口。
 func (s square) area() float64 {
     return s.width * s.height
 }
@@ -31,7 +29,7 @@ func (s square) perim() float64 {
     return 2*s.width + 2*s.height
 }
 
-// The implementation for `circle`s.
+// `circle` 的实现。
 func (c circle) area() float64 {
     return math.Pi * c.radius * c.radius
 }
@@ -39,10 +37,9 @@ func (c circle) perim() float64 {
     return 2 * math.Pi * c.radius
 }
 
-// If a variable has an interface type, then we can call
-// methods that are in the named interface. Here's a
-// generic `measure` function taking advantage of this
-// to work on any `geometry`.
+// 如果一个变量的是接口类型，那么我们可以调用这个被命名的
+// 接口中的方法。这里有一个一通用的 `measure` 函数，利用这个
+// 特性，它可以用在任何 `geometry` 上。
 func measure(g geometry) {
     fmt.Println(g)
     fmt.Println(g.area())
@@ -53,10 +50,8 @@ func main() {
     s := square{width: 3, height: 4}
     c := circle{radius: 5}
 
-    // The `circle` and `square` struct types both
-    // implement the `geometry` interface so we can use
-    // instances of
-    // these structs as arguments to `measure.
+	// 结构体类型 `circle` 和 `square` 都实现了 `geometry` 
+	// 接口，所以我们可以使用它们的实例作为 `measure` 的参数。
     measure(s)
     measure(c)
 }
