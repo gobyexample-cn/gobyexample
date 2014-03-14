@@ -83,7 +83,7 @@ index 30d7291..e1caa03 100644
 |Methods|✔|
 |Interfaces|✔|
 |Errors|✔|
-|Goroutines||
+|Goroutines|✔|
 |Channels||
 |Channel Buffering||
 |Channel Synchronization||
