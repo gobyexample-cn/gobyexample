@@ -18,7 +18,7 @@ Pointers->指针
 Structs->结构体
 Methods->方法
 Interfaces->接口
-Errors
+Errors->错误处理
 Goroutines
 Channels
 Channel Buffering
