@@ -84,7 +84,7 @@ index 30d7291..e1caa03 100644
 |Interfaces|✔|
 |Errors|✔|
 |Goroutines|✔|
-|Channels||
+|Channels|✔|
 |Channel Buffering||
 |Channel Synchronization||
 |Channel Directions||

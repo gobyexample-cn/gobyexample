@@ -20,7 +20,7 @@ Methods->方法
 Interfaces->接口
 Errors->错误处理
 Goroutines->协程
-Channels
+Channels->通道
 Channel Buffering
 Channel Synchronization
 Channel Directions
