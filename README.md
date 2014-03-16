@@ -85,9 +85,9 @@ index 30d7291..e1caa03 100644
 |Errors|✔|
 |Goroutines|✔|
 |Channels|✔|
-|Channel Buffering||
-|Channel Synchronization||
-|Channel Directions||
+|Channel Buffering|✔|
+|Channel Synchronization|✔|
+|Channel Directions|✔|
 |Select||
 |Timeouts||
 |Non-Blocking Channel Operations||
