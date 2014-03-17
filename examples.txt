@@ -24,7 +24,7 @@ Channels->通道
 Channel Buffering->通道缓冲
 Channel Synchronization->通道同步
 Channel Directions->通道方向
-Select
+Select->通道选择器
 Timeouts
 Non-Blocking Channel Operations
 Closing Channels

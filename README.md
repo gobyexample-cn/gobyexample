@@ -88,7 +88,7 @@ index 30d7291..e1caa03 100644
 |Channel Buffering|✔|
 |Channel Synchronization|✔|
 |Channel Directions|✔|
-|Select||
+|Select|✔|
 |Timeouts||
 |Non-Blocking Channel Operations||
 |Closing Channels||
