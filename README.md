@@ -92,7 +92,7 @@ index 30d7291..e1caa03 100644
 |Timeouts|✔|
 |Non-Blocking Channel Operations|✔|
 |Closing Channels|✔|
-|Range over Channels||
+|Range over Channels|✔|
 |Timers||
 |Tickers||
 |Worker Pools||
