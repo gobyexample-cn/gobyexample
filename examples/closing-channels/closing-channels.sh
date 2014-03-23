@@ -8,5 +8,4 @@ received job 3
 sent all jobs
 received all jobs
 
-# The idea of closed channels leads naturally to our next
-# example: `range` over channels.
+# 通过关闭通道，让我们下面学习的例子：通道遍历就水到渠成了。
