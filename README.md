@@ -90,7 +90,7 @@ index 30d7291..e1caa03 100644
 |Channel Directions|✔|
 |Select|✔|
 |Timeouts|✔|
-|Non-Blocking Channel Operations||
+|Non-Blocking Channel Operations|✔|
 |Closing Channels||
 |Range over Channels||
 |Timers||

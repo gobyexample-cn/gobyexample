@@ -26,7 +26,7 @@ Channel Synchronization->通道同步
 Channel Directions->通道方向
 Select->通道选择器
 Timeouts->超时处理
-Non-Blocking Channel Operations
+Non-Blocking Channel Operations->非阻塞通道操作
 Closing Channels
 Range over Channels
 Timers
