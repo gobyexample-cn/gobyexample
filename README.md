@@ -93,7 +93,7 @@ index 30d7291..e1caa03 100644
 |Non-Blocking Channel Operations|✔|
 |Closing Channels|✔|
 |Range over Channels|✔|
-|Timers||
+|Timers|✔|
 |Tickers||
 |Worker Pools||
 |Rate Limiting||

@@ -1,6 +1,5 @@
-// The first timer will expire ~2s after we start the
-// program, but the second should be stopped before it has
-// a chance to expire.
+// 第一个定时器将在程序开始后 ~2s 失效，但是第二个在它
+// 没失效之前就停止了。
 $ go run timers.go
 Timer 1 expired
 Timer 2 stopped
