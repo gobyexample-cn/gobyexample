@@ -94,7 +94,7 @@ index 30d7291..e1caa03 100644
 |Closing Channels|✔|
 |Range over Channels|✔|
 |Timers|✔|
-|Tickers||
+|Tickers|✔|
 |Worker Pools||
 |Rate Limiting||
 |Atomic Counters||

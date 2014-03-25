@@ -29,8 +29,8 @@ Timeouts->超时处理
 Non-Blocking Channel Operations->非阻塞通道操作
 Closing Channels->通道的关闭
 Range over Channels->通道遍历
-Timers->时间
-Tickers
+Timers->定时器
+Tickers->打点器
 Worker Pools
 Rate Limiting
 Atomic Counters
