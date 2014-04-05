@@ -31,7 +31,7 @@ Closing Channels->通道的关闭
 Range over Channels->通道遍历
 Timers->定时器
 Tickers->打点器
-Worker Pools
+Worker Pools->工作池
 Rate Limiting
 Atomic Counters
 Mutexes
