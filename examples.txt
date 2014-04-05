@@ -32,7 +32,7 @@ Range over Channels->通道遍历
 Timers->定时器
 Tickers->打点器
 Worker Pools->工作池
-Rate Limiting
+Rate Limiting->速率限制
 Atomic Counters
 Mutexes
 Stateful Goroutines

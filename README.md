@@ -96,7 +96,7 @@ index 30d7291..e1caa03 100644
 |Timers|✔|
 |Tickers|✔|
 |Worker Pools|✔|
-|Rate Limiting||
+|Rate Limiting|✔|
 |Atomic Counters||
 |Mutexes||
 |Stateful Goroutines||
