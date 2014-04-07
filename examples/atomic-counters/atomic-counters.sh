@@ -1,7 +1,5 @@
-# Running the program shows that we executed about
-# 40,000 operations.
+# 执行这个程序，显示我们执行了大约 40,000 次操作
 $ go run atomic-counters.go
 ops: 40200
 
-# Next we'll look at mutexes, another tool for managing
-# state.
+# 下面，我们将看一下互斥锁——管理状态的另一个工具

@@ -97,7 +97,7 @@ index 30d7291..e1caa03 100644
 |Tickers|✔|
 |Worker Pools|✔|
 |Rate Limiting|✔|
-|Atomic Counters||
+|Atomic Counters|✔|
 |Mutexes||
 |Stateful Goroutines||
 |Sorting||

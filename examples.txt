@@ -33,7 +33,7 @@ Timers->定时器
 Tickers->打点器
 Worker Pools->工作池
 Rate Limiting->速率限制
-Atomic Counters
+Atomic Counters->原子计数器
 Mutexes
 Stateful Goroutines
 Sorting
