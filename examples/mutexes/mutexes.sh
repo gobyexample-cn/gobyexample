@@ -1,9 +1,8 @@
-# Running the program shows that we executed about
-# 3,500,000 operations against our `mutex`-synchronized
-# `state`.
+# 运行这个程序，显示我们对已进行了同步的 `state` 执行了
+# 3,500,000 次操作。
 $ go run mutexes.go
 ops: 3598302
 state: map[1:38 4:98 2:23 3:85 0:44]
 
-# Next we'll look at implementing this same state
-# management task using only goroutines and channels.
+# 接下来我们将看一下只使用 Go 协程和通道是如何实现
+# 相同的状态控制任务的。

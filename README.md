@@ -98,7 +98,7 @@ index 30d7291..e1caa03 100644
 |Worker Pools|✔|
 |Rate Limiting|✔|
 |Atomic Counters|✔|
-|Mutexes||
+|Mutexes|✔|
 |Stateful Goroutines||
 |Sorting||
 |Sorting by Functions||
