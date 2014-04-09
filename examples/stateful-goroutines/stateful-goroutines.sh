@@ -1,14 +1,9 @@
-# Running our program shows that the goroutine-based
-# state management example achieves about 800,000
-# operations per second.
+# 运行这个程序显示这个基于 Go 协程的转台管理的例子达到
+# 了每秒大约 800,000 次操作。
 $ go run stateful-goroutines.go
 ops: 807434
 
-# For this particular case the goroutine-based approach
-# was a bit more involved than the mutex-based one. It
-# might be useful in certain cases though, for example
-# where you have other channels involved or when managing
-# multiple such mutexes would be error-prone. You should
-# use whichever approach feels most natural, especially
-# with respect to understanding the correctness of your
-# program.
+# 在这个特殊的例子中，基于 Go 协程的比基于互斥锁的稍复杂。
+# 这在某些例子中会游泳，例如，在你有其他通道包含或者当你
+# 管理多个这样的互斥锁的时候是容易出错的。你应该使用最自然
+# 的方法，特别是关于你程序的正确性的时候。

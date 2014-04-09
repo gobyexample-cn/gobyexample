@@ -99,7 +99,7 @@ index 30d7291..e1caa03 100644
 |Rate Limiting|✔|
 |Atomic Counters|✔|
 |Mutexes|✔|
-|Stateful Goroutines||
+|Stateful Goroutines|✔|
 |Sorting||
 |Sorting by Functions||
 |Panic||
