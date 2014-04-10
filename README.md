@@ -100,7 +100,7 @@ index 30d7291..e1caa03 100644
 |Atomic Counters|✔|
 |Mutexes|✔|
 |Stateful Goroutines|✔|
-|Sorting||
+|Sorting|✔|
 |Sorting by Functions||
 |Panic||
 |Defer||

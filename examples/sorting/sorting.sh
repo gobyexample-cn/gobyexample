@@ -1,5 +1,5 @@
-# Running our program prints the sorted string and int
-# slices and `true` as the result of our `AreSorted` test.
+# 运行程序，打印排序好的字符串和整形序列以及我们 `AreSorted`
+# 测试的结构 `true`。
 $ go run sorting.go
 Strings: [a b c]
 Ints:    [2 4 7]
