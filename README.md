@@ -103,7 +103,7 @@ index 30d7291..e1caa03 100644
 |Sorting|✔|
 |Sorting by Functions|✔|
 |Panic|✔|
-|Defer||
+|Defer|✔|
 |Collection Functions||
 |String Functions||
 |String Formatting||

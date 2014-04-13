@@ -1,6 +1,5 @@
-# Running the program confirms that the file is closed
-# after being written.
-$ go run defer.go
+# 执行程序，确认这个文件在写入后是已关闭的。
+go run defer.go
 creating
 writing
 closing
