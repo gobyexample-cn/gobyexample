@@ -37,7 +37,7 @@ Atomic Counters->原子计数器
 Mutexes->互斥锁
 Stateful Goroutines->Go 状态协程
 Sorting->排序
-Sorting by Functions
+Sorting by Functions->使用函数自定义排序
 Panic
 Defer
 Collection Functions

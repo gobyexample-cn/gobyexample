@@ -101,7 +101,7 @@ index 30d7291..e1caa03 100644
 |Mutexes|✔|
 |Stateful Goroutines|✔|
 |Sorting|✔|
-|Sorting by Functions||
+|Sorting by Functions|✔|
 |Panic||
 |Defer||
 |Collection Functions||

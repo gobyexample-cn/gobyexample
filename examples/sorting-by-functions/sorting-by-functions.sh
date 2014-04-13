@@ -1,10 +1,8 @@
-# Running our program shows a list sorted by string
-# length, as desired.
+# 运行这个程序，和预期的一样，显示了一个按照字符串
+# 长度排序的列表。
 $ go run sorting-by-functions.go 
 [kiwi peach banana]
 
-# By following this same pattern of creating a custom
-# type, implementing the three `Interface` methods on that
-# type, and then calling sort.Sort on a collection of that
-# custom type, we can sort Go slices by arbitrary
-# functions.
+# 类似的，参照这个创建一个自定义类型的方法，实现这个类型的
+# 这三个接口方法，然后在一个这个自定义类型的集合上调用 
+# `sort.Sort` 方法，我们就可以使用任意的函数来排序 Go 切片了。
