@@ -1,6 +1,5 @@
-# Running this program will cause it to panic, print
-# an error message and goroutine traces, and exit with
-# a non-zero status.
+# 运行程序将会引起 panic，输出一个错误消息和 Go 运行时
+# 栈信息，并且返回一个非零的状态码。
 $ go run panic.go
 panic: a problem
 
@@ -10,6 +9,5 @@ main.main()
 ...
 exit status 2
 
-# Note that unlike some languages which use exceptions
-# for handling of many errors, in Go it is idiomatic
-# to use error-indicating return values wherever possible.
+# 注意，不像有些语言中处理多个错误那样，在 Go 中习惯使用错
+# 误码返回任意可能的值。

@@ -102,7 +102,7 @@ index 30d7291..e1caa03 100644
 |Stateful Goroutines|✔|
 |Sorting|✔|
 |Sorting by Functions|✔|
-|Panic||
+|Panic|✔|
 |Defer||
 |Collection Functions||
 |String Functions||
