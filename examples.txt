@@ -40,29 +40,29 @@ Sorting->排序
 Sorting by Functions->使用函数自定义排序
 Panic
 Defer
-Collection Functions
-String Functions
-String Formatting
-Regular Expressions
+Collection Functions->组合函数
+String Functions->字符串函数
+String Formatting->字符串格式化
+Regular Expressions->正则表达式
 JSON
-Time
-Epoch
-Time Formatting / Parsing
-Random Numbers
-Number Parsing
-URL Parsing
-SHA1 Hashes
-Base64 Encoding
-Reading Files
-Writing Files
-Line Filters
-Command-Line Arguments
-Command-Line Flags
-Environment Variables
-Spawning Processes
-Exec'ing Processes
-Signals
-Exit
+Time->时间
+Epoch->时间戳
+Time Formatting / Parsing->时间的格式化和解析
+Random Numbers->随机数
+Number Parsing->数字解析
+URL Parsing->URL解析
+SHA1 Hashes->SHA1散列
+Base64 Encoding->Base64编码
+Reading Files->读文件
+Writing Files->写文件
+Line Filters->行过滤器
+Command-Line Arguments->命令行参数
+Command-Line Flags->命令行
+Environment Variables->环境变量
+Spawning Processes->进行处罚
+Exec'ing Processes->进行执行
+Signals->信号
+Exit->退出
 # HTTP Client
 # HTTPS Client
 # Redis
