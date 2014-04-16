@@ -104,8 +104,8 @@ index 30d7291..e1caa03 100644
 |Sorting by Functions|✔|
 |Panic|✔|
 |Defer|✔|
-|Collection Functions||
-|String Functions||
+|Collection Functions|✔|
+|String Functions|✔|
 |String Formatting||
 |Regular Expressions||
 |JSON||
