@@ -29,7 +29,8 @@ func main() {
     p("ToUpper:   ", s.ToUpper("test"))
     p()
 
-    // 你可以在 [`strings`](http://golang.org/pkg/strings/) 包文档中找到更多的函数
+    // 你可以在 [`strings`](http://golang.org/pkg/strings/)
+    // 包文档中找到更多的函数
 
     // 虽然不是 `strings` 的一部分，但是仍然值得一提的是获
     //取字符串长度和通过索引获取一个字符的机制。
