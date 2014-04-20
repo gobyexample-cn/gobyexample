@@ -106,7 +106,7 @@ index 30d7291..e1caa03 100644
 |Defer|✔|
 |Collection Functions|✔|
 |String Functions|✔|
-|String Formatting||
+|String Formatting|✔|
 |Regular Expressions||
 |JSON||
 |Time||
