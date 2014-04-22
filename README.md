@@ -108,7 +108,7 @@ index 30d7291..e1caa03 100644
 |String Functions|✔|
 |String Formatting|✔|
 |Regular Expressions|✔|
-|JSON||
+|JSON|✔|
 |Time||
 |Epoch||
 |Time Formatting / Parsing||
