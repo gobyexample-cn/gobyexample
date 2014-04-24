@@ -109,7 +109,7 @@ index 30d7291..e1caa03 100644
 |String Formatting|✔|
 |Regular Expressions|✔|
 |JSON|✔|
-|Time||
+|Time|✔|
 |Epoch||
 |Time Formatting / Parsing||
 |Random Numbers||
