@@ -110,7 +110,7 @@ index 30d7291..e1caa03 100644
 |Regular Expressions|✔|
 |JSON|✔|
 |Time|✔|
-|Epoch||
+|Epoch|✔|
 |Time Formatting / Parsing||
 |Random Numbers||
 |Number Parsing||
