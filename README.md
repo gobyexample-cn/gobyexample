@@ -113,7 +113,7 @@ index 30d7291..e1caa03 100644
 |Epoch|✔|
 |Time Formatting / Parsing|✔|
 |Random Numbers|✔|
-|Number Parsing||
+|Number Parsing|✔|
 |URL Parsing||
 |SHA1 Hashes||
 |Base64 Encoding||
