@@ -114,7 +114,7 @@ index 30d7291..e1caa03 100644
 |Time Formatting / Parsing|✔|
 |Random Numbers|✔|
 |Number Parsing|✔|
-|URL Parsing||
+|URL Parsing|✔|
 |SHA1 Hashes||
 |Base64 Encoding||
 |Reading Files||
