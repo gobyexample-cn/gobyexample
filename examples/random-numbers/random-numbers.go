@@ -13,7 +13,7 @@ func main() {
     fmt.Println()
 
     // `rand.Float64` 返回一个64位浮点数 `f`，
-    /// `0.0 <= f <= 1.0`。
+    // `0.0 <= f <= 1.0`。
     fmt.Println(rand.Float64())
 
     // 这个技巧可以用来生成其他范围的随机浮点数，例如
