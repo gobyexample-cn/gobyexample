@@ -1,14 +1,12 @@
-# Running the program computes the hash and prints it in
-# a human-readable hex format.
+# 运行程序计算散列值并以可读 16 进制格式输出。
 $ go run sha1-hashes.go
 sha1 this string
 cf23df2207d99a74fbe169e3eba035e633b65d94
 
 
-# You can compute other hashes using a similar pattern to
-# the one shown above. For example, to compute MD5 hashes
-# import `crypto/md5` and use `md5.New()`.
+# 你可以使用和上面相似的方式来计算其他形式的散列值。例
+# 如，计算 MD5 散列，引入 `crypto/md5` 并使用 `md5.New()`
+# 方法。
 
-# Note that if you need cryptographically secure hashes,
-# you should carefully research
-# [hash strength](http://en.wikipedia.org/wiki/Cryptographic_hash_function)!
+# 注意，如果你需要密码学上的安全散列，你需要小心的研究一下
+# [哈希强度](http://en.wikipedia.org/wiki/Cryptographic_hash_function)。
