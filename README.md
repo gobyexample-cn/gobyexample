@@ -118,7 +118,7 @@ index 30d7291..e1caa03 100644
 |SHA1 Hashes|✔|
 |Base64 Encoding|✔|
 |Reading Files|✔|
-|Writing Files||
+|Writing Files|✔|
 |Line Filters||
 |Command-Line Arguments||
 |Command-Line Flags||
