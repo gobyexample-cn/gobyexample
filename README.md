@@ -117,7 +117,7 @@ index 30d7291..e1caa03 100644
 |URL Parsing|✔|
 |SHA1 Hashes|✔|
 |Base64 Encoding|✔|
-|Reading Files||
+|Reading Files|✔|
 |Writing Files||
 |Line Filters||
 |Command-Line Arguments||
