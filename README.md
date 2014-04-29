@@ -119,7 +119,7 @@ index 30d7291..e1caa03 100644
 |Base64 Encoding|✔|
 |Reading Files|✔|
 |Writing Files|✔|
-|Line Filters||
+|Line Filters|✔|
 |Command-Line Arguments||
 |Command-Line Flags||
 |Environment Variables||
