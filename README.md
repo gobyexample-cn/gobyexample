@@ -121,7 +121,7 @@ index 30d7291..e1caa03 100644
 |Writing Files|✔|
 |Line Filters|✔|
 |Command-Line Arguments|✔|
-|Command-Line Flags||
+|Command-Line Flags|✔|
 |Environment Variables||
 |Spawning Processes||
 |Exec'ing Processes||

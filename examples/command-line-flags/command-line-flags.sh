@@ -1,19 +1,15 @@
-# To experiment with the command-line flags program it's
-# best to first compile it and then run the resulting
-# binary directly.
+# 测试这个程序前，最好将这个程序编译成二进制文件，然后再运
+# 行这个程序。
 $ go build command-line-flags.go
 
-# Try out the built program by first giving it values for
-# all flags.
-$ ./command-line-flags -word=opt -numb=7 -fork -svar=flag
 word: opt
 numb: 7
 fork: true
 svar: flag
 tail: []
 
-# Note that if you omit flags they automatically take
-# their default values.
+# 注意到，如果你省略一个标志，那么这个标志的值自动的设
+# 定为他的默认值。
 $ ./command-line-flags -word=opt
 word: opt
 numb: 42
@@ -21,16 +17,14 @@ fork: false
 svar: bar
 tail: []
 
-# Trailing positional arguments can be provided after
-# any flags.
+# 位置参数可以出现在任何标志后面。
 $ ./command-line-flags -word=opt a1 a2 a3
 word: opt
 ...
 tail: [a1 a2 a3]
 
-# Note that the `flag` package requires all flags to
-# appear before positional arguments (otherwise the flags
-# will be interpreted as positional arguments).
+# 注意，`flag` 包需要所有的标志出现位置参数之前（
+# 否则，这个标志将会被解析为位置参数）。
 $ ./command-line-flags -word=opt a1 a2 a3 -numb=7
 word: opt
 numb: 42
@@ -38,8 +32,8 @@ fork: false
 svar: bar
 trailing: [a1 a2 a3 -numb=7]
 
-# Use `-h` or `--help` flags to get automatically
-# generated help text for the command-line program.
+# 使用 `-h` 或者 `--help` 标志来得到自动生成的这个命
+# 令行程序的帮助文本。
 $ ./command-line-flags -h
 Usage of ./command-line-flags:
   -fork=false: a bool
@@ -47,13 +41,11 @@ Usage of ./command-line-flags:
   -svar="bar": a string var
   -word="foo": a string
 
-# If you provide a flag that wasn't specified to the
-# `flag` package, the program will print an error message
-# an show the help text again.
+# 如果你提供一个没有使用 `flag` 包指定的标志，程序会输出一
+# 个错误信息，并再次显示帮助文本。
 $ ./command-line-flags -wat
 flag provided but not defined: -wat
 Usage of ./command-line-flags:
 ...
 
-# Next we'll look at environment variables, another common
-# way to parameterize programs.
+# 后面，我们将会看到环境变量，其他基本的参数化程序的方的式。
