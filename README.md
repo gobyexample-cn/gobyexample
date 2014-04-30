@@ -120,7 +120,7 @@ index 30d7291..e1caa03 100644
 |Reading Files|✔|
 |Writing Files|✔|
 |Line Filters|✔|
-|Command-Line Arguments||
+|Command-Line Arguments|✔|
 |Command-Line Flags||
 |Environment Variables||
 |Spawning Processes||
