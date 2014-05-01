@@ -59,8 +59,8 @@ Line Filters->行过滤器
 Command-Line Arguments->命令行参数
 Command-Line Flags->命令行标志
 Environment Variables->环境变量
-Spawning Processes->进行处罚
-Exec'ing Processes->进行执行
+Spawning Processes->生成进程
+Exec'ing Processes->执行进程
 Signals->信号
 Exit->退出
 # HTTP Client

@@ -1,5 +1,4 @@
-# The spawned programs return output that is the same
-# as if we had run them directly from the command-line.
+# 生成的程序返回和我们直接通过命令行运行这些程序的输出是相同的。
 $ go run spawning-processes.go 
 > date
 Wed Oct 10 09:53:11 PDT 2012
