@@ -1,4 +1,4 @@
-# When we run our program it is replaced by `ls`.
+# 当我们运行程序师，它会替换为 `ls`。
 $ go run execing-processes.go
 total 16
 drwxr-xr-x  4 mark 136B Oct 3 16:29 .
@@ -9,3 +9,6 @@ drwxr-xr-x 91 mark 3.0K Oct 3 12:50 ..
 # function. Usually this isn't an issue though, since
 # starting goroutines, spawning processes, and exec'ing
 # processes covers most use cases for `fork`.
+# 注意 Go 并不提供一个经典的 Unix `fork` 函数。通常这不
+# 是个问题，因为运行 Go 协程，生成进程和执行进程覆盖了
+# fork 的大多数使用用场景。
