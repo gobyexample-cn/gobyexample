@@ -122,7 +122,7 @@ index 30d7291..e1caa03 100644
 |Line Filters|✔|
 |Command-Line Arguments|✔|
 |Command-Line Flags|✔|
-|Environment Variables||
+|Environment Variables|✔|
 |Spawning Processes||
 |Exec'ing Processes||
 |Signals||

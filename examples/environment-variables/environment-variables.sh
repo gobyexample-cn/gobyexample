@@ -1,19 +1,17 @@
-# Running the program shows that we pick up the value
-# value for `FOO` that we set in the program, but that
-# `BAR` is empty.
+# 运行这个程序，显示我们在程序中设置的 `FOO` 的值，然而
+# 没有设置的 `BAR` 是空的。
 $ go run environment-variables.go
 FOO: 1
 BAR: 
 
-# The list of keys in the environment will depend on your
-# particular machine.
+# 键的列表是由你的电脑情况而定的。
 TERM_PROGRAM
 PATH
 SHELL
 ...
 
-# If we set `BAR` in the environment first, the running
-# program picks that value up.
+# 如果我们在运行前设置了 `BAR` 的值，那么运行程序将会获
+# 取到这个值。
 $ BAR=2 go run environment-variables.go
 FOO: 1
 BAR: 2
