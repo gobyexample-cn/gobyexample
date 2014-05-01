@@ -1,8 +1,8 @@
 ## Go by Example 中文翻译
 
-[原版 ReadMe](https://github.com/mmcgrana/gobyexample#go-by-example)
+本翻译除了为使用 github page 来架修改了部分外，完全遵从原作的模式。现已经完成了所有文件的初步翻译，比较粗糙，其中纰漏也很多，欢迎 fork 并提交 pull request。
 
-[马上开始学习吧](http://everyx.github.io/gobyexample/)
+还等什么，[马上开始学习吧](http://everyx.github.io/gobyexample/)
 
 ### 为了 gh-pages 而做的一些修改
 
@@ -57,77 +57,6 @@ index 30d7291..e1caa03 100644
      copyFile("templates/404.html", siteDir+"/404.html")
 ```
 
-### 翻译进度
-
-|内容|完成|
-|:-----------------------------|:--|
-|Hello World |✔|
-|Values |✔| 
-|Variables |✔|
-|Constants |✔|
-|For |✔|
-|If/Else |✔|
-|Switch |✔|
-|Arrays |✔|
-|Slices |✔|
-|Maps |✔|
-|Range |✔|
-|Functions |✔|
-|Multiple Return Values|✔|
-|Multiple Return Values|✔|
-|Variadic Functions|✔|
-|Closures|✔|
-|Recursion|✔|
-|Pointers|✔|
-|Structs|✔|
-|Methods|✔|
-|Interfaces|✔|
-|Errors|✔|
-|Goroutines|✔|
-|Channels|✔|
-|Channel Buffering|✔|
-|Channel Synchronization|✔|
-|Channel Directions|✔|
-|Select|✔|
-|Timeouts|✔|
-|Non-Blocking Channel Operations|✔|
-|Closing Channels|✔|
-|Range over Channels|✔|
-|Timers|✔|
-|Tickers|✔|
-|Worker Pools|✔|
-|Rate Limiting|✔|
-|Atomic Counters|✔|
-|Mutexes|✔|
-|Stateful Goroutines|✔|
-|Sorting|✔|
-|Sorting by Functions|✔|
-|Panic|✔|
-|Defer|✔|
-|Collection Functions|✔|
-|String Functions|✔|
-|String Formatting|✔|
-|Regular Expressions|✔|
-|JSON|✔|
-|Time|✔|
-|Epoch|✔|
-|Time Formatting / Parsing|✔|
-|Random Numbers|✔|
-|Number Parsing|✔|
-|URL Parsing|✔|
-|SHA1 Hashes|✔|
-|Base64 Encoding|✔|
-|Reading Files|✔|
-|Writing Files|✔|
-|Line Filters|✔|
-|Command-Line Arguments|✔|
-|Command-Line Flags|✔|
-|Environment Variables|✔|
-|Spawning Processes|✔|
-|Exec'ing Processes|✔|
-|Signals|✔|
-|Exit|✔|
-
 ### License
 
 This work is copyright Mark McGranaghan and licensed under a
@@ -135,3 +64,7 @@ This work is copyright Mark McGranaghan and licensed under a
 
 The Go Gopher is copyright the Go Authors and licensed under a
 [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
+
+### 原版 ReadMe
+
+[ReadMe] (https://github.com/mmcgrana/gobyexample#go-by-example) 
