@@ -126,7 +126,7 @@ index 30d7291..e1caa03 100644
 |Spawning Processes|✔|
 |Exec'ing Processes|✔|
 |Signals|✔|
-|Exit||
+|Exit|✔|
 
 ### License
 
