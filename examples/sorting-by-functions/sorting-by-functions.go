@@ -17,7 +17,7 @@ type ByLength []string
 // `Sort` 方法了，`Len` 和 `Swap` 通常在各个类型中都差
 // 不多，`Less` 将控制实际的自定义排序逻辑。在我们的例
 // 子中，我们想按字符串长度增加的顺序来排序，所以这里
-// 使用了 `len(s[i])` 和 len(s[j])`。
+// 使用了 `len(s[i])` 和 `len(s[j])`。
 func (s ByLength) Len() int {
     return len(s)
 }
