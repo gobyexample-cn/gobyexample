@@ -1,8 +1,16 @@
 ## Go by Example 中文翻译
 
-本翻译除了为使用 github page 来架修改了部分外，完全遵从原作的模式。现已经完成了所有文件的初步翻译，比较粗糙，其中纰漏也很多，欢迎 fork 并提交 pull request。
+本翻译是 [mmcgrana](https://github.com/mmcgrana) 的 [Go by Example](https://github.com/mmcgrana/gobyexample)中文翻译，除为 github page 做出的部分修改外，完全遵从原作的模式。现已经完成了所有文件的初步翻译，比较粗糙，其中纰漏也很多，欢迎 fork 并提交 pull request。
 
 还等什么，[马上开始学习吧](http://everyx.github.io/gobyexample/)
+
+### 说明
+
+`master` 为翻译分支，每次 `commit` 前需要使用 `tools/gofmt; tools/measure` 命令规范化代码。
+
+`gh-pages` 合并 `master` 分支的修改，并使用 `tools/build` 命令生成网页。
+
+`en` 分支同步上游文件。
 
 ### 为了 gh-pages 而做的一些修改
 
