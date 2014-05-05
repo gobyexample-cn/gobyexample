@@ -1,4 +1,4 @@
-// _[速率限制(英)](http://en.wikipedia.org/wiki/Rate_limiting)_ 是
+// [_速率限制(英)_](http://en.wikipedia.org/wiki/Rate_limiting) 是
 // 一个重要的控制服务资源利用和质量的途径。Go 通过 Go 协程、通
 // 道和[打点器](tickers.html)优美的支持了速率限制。
 
@@ -38,7 +38,7 @@ func main() {
         burstyLimiter <- time.Now()
     }
 
-    // 每 200ms 我们将添加一个新的值到 `burstyLimiter`中，
+    // 每 200 ms 我们将添加一个新的值到 `burstyLimiter`中，
     // 直到达到 3 个的限制。
     go func() {
         for t := range time.Tick(time.Millisecond * 200) {

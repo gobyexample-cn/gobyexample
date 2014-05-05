@@ -70,14 +70,14 @@ func main() {
     }
 
     // 让这 10 个 Go 协程对 `state` 和 `mutex` 的操作
-    // 运行 1s。
+    // 运行 1 s。
     time.Sleep(time.Second)
 
     // 获取并输出最终的操作计数。
     opsFinal := atomic.LoadInt64(&ops)
     fmt.Println("ops:", opsFinal)
 
-    // 对 `state` 使用一个最终的锁，显示它是如何结束的。
+    // 对 `state` 使用一个最终的锁，显示它是如何结束的。
     mutex.Lock()
     fmt.Println("state:", state)
     mutex.Unlock()
