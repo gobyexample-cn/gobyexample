@@ -29,7 +29,7 @@ func main() {
     s := person{name: "Sean", age: 50}
     fmt.Println(s.name)
 
-    // 也可以对结构体指针使用电 - 指针会被自动解引用。
+    // 也可以对结构体指针使用`.` - 指针会被自动解引用。
     sp := &s
     fmt.Println(sp.age)
 
