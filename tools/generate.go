@@ -175,7 +175,7 @@ func parseSegs(sourcePath string) ([]*Seg, string) {
                 newSeg := Seg{Docs: trimmed, Code: ""}
                 segs = append(segs, &newSeg)
             } else {
-                segs[len(segs)-1].Docs = segs[len(segs)-1].Docs + "\n" + trimmed
+                segs[len(segs)-1].Docs = segs[len(segs)-1].Docs + trimmed
             }
             debug("DOCS: " + line)
             lastSeen = "docs"
