@@ -7,20 +7,20 @@ import "fmt"
 
 // `(int, int)` 在这个函数中标志着这个函数返回 2 个 `int`。
 func vals() (int, int) {
-    return 3, 7
+	return 3, 7
 }
 
 func main() {
 
-    // 这里我们通过_多赋值_ 操作来使用这两个不同的返回值。
-    a, b := vals()
-    fmt.Println(a)
-    fmt.Println(b)
+	// 这里我们通过_多赋值_ 操作来使用这两个不同的返回值。
+	a, b := vals()
+	fmt.Println(a)
+	fmt.Println(b)
 
-    // 如果你仅仅想返回值的一部分的话，你可以使用空白定
-    // 义符 `_`。
-    _, c := vals()
-    fmt.Println(c)
+	// 如果你仅仅想返回值的一部分的话，你可以使用空白定
+	// 义符 `_`。
+	_, c := vals()
+	fmt.Println(c)
 }
 
 // todo: named return parameters
