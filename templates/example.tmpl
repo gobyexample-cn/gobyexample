@@ -3,7 +3,7 @@
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
     <title>Go by Example 中文:{{.Name}}</title>
-    <link rel=stylesheet href="site.css">
+    <link rel=stylesheet href="../site.css">
   </head>
   <body>
     <div class="example" id="{{.Id}}">
@@ -16,7 +16,7 @@
             {{.DocsRendered}}
           </td>
           <td class="code{{if .CodeEmpty}} empty{{end}}{{if .CodeLeading}} leading{{end}}">
-	        {{if .CodeRun}}<a href="http://play.golang.org/p/{{$.UrlHash}}"><img title="Run code" src="play.png" class="run" /></a>{{end}}
+	        {{if .CodeRun}}<a href="http://play.golang.org/p/{{$.UrlHash}}"><img title="Run code" src="../play.png" class="run" /></a>{{end}}
             {{.CodeRendered}}
           </td>
         </tr>
