@@ -6,64 +6,7 @@
 
 ### 说明
 
-`master` 为翻译分支，每次 `commit` 前需要使用 `tools/gofmt; tools/measure` 命令规范化代码。
-
-`gh-pages` 合并 `master` 分支的修改，并使用 `tools/build` 命令生成网页。
-
-`en` 分支同步上游文件。
-
-### 为了 gh-pages 而做的一些修改
-
-```diff
-diff --git a/tools/generate.go b/tools/generate.go
-index 30d7291..e1caa03 100644
---- a/tools/generate.go
-+++ b/tools/generate.go
-@@ -15,7 +15,7 @@ import (
- )
-
- var cacheDir = "/tmp/gobyexample-cache"
--var siteDir = "./public"
-+var siteDir = "./"
- var pygmentizeBin = "./vendor/pygments/pygmentize"
-
- func check(err error) {
-@@ -221,7 +221,17 @@ func parseExamples() []*Example {
-     examples := make([]*Example, 0)
-     for _, exampleName := range exampleNames {
-         if (exampleName != "") && !strings.HasPrefix(exampleName, "#") {
--            example := Example{Name: exampleName}
-+            exampleNameZh := exampleName
-+            if strings.Index(exampleName, "->") != -1 {
-+                names := strings.Split(exampleName, "->")
-+                exampleName = names[0]
-+                if strings.Trim(names[1], " ") != "" {
-+                    exampleNameZh = names[1]
-+                } else {
-+                    exampleNameZh = names[0]
-+                }
-+            }
-+            example := Example{Name: exampleNameZh}
-             exampleId := strings.ToLower(exampleName)
-             exampleId = strings.Replace(exampleId, " ", "-", -1)
-             exampleId = strings.Replace(exampleId, "/", "-", -1)
-@@ -270,13 +280,14 @@ func renderExamples(examples []*Example) {
-     _, err := exampleTmpl.Parse(mustReadFile("templates/example.tmpl"))
-     check(err)
-     for _, example := range examples {
--        exampleF, err := os.Create(siteDir + "/" + example.Id)
-+        exampleF, err := os.Create(siteDir + "/" + example.Id + ".html")
-         check(err)
-         exampleTmpl.Execute(exampleF, example)
-     }
- }
-
- func main() {
-+    ensureDir(siteDir)
-     copyFile("templates/site.css", siteDir+"/site.css")
-     copyFile("templates/favicon.ico", siteDir+"/favicon.ico")
-     copyFile("templates/404.html", siteDir+"/404.html")
-```
+修改后使用 `tools/build` 命令重新生成网页。
 
 ### License
 
@@ -75,4 +18,4 @@ The Go Gopher is copyright the Go Authors and licensed under a
 
 ### 原版 ReadMe
 
-[ReadMe] (https://github.com/mmcgrana/gobyexample#go-by-example) 
+[ReadMe] (https://github.com/mmcgrana/gobyexample#go-by-example)
