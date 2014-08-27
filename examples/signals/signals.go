@@ -14,7 +14,7 @@ import "syscall"
 func main() {
 
 	// Go 通过向一个通道发送 `os.Signal` 值来进行信号通知。我们
-	// 将创建一个通道来接收这些通知（同事还创建一个用于在程序可
+	// 将创建一个通道来接收这些通知（同时还创建一个用于在程序可
 	// 以结束时进行通知的通道）。
 	sigs := make(chan os.Signal, 1)
 	done := make(chan bool, 1)
