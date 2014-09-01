@@ -23,7 +23,7 @@
         
         <tr>
           <td class="docs">
-            <p><em>通道</em> 是链接多个 Go 协程的管道。你可以从一个 Go 协程将值发送到通道，然后从别的 Go 协程中接收。</p>
+            <p><em>通道</em> 是连接多个 Go 协程的管道。你可以从一个 Go 协程将值发送到通道，然后在别的 Go 协程中接收。</p>
 
           </td>
           <td class="code empty leading">
@@ -37,7 +37,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/XYhvyBwulN"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/W5iuvDCTNw"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -70,7 +70,7 @@
         
         <tr>
           <td class="docs">
-            <p>使用 <code>make(chan val-type)</code> 创建一个新的通道。通道类型由他们传递的值决定。</p>
+            <p>使用 <code>make(chan val-type)</code> 创建一个新的通道。通道类型就是他们需要传递值的类型。</p>
 
           </td>
           <td class="code leading">
@@ -83,7 +83,7 @@
         
         <tr>
           <td class="docs">
-            <p>使用 <code>channel &lt;-</code> 语法<em>发送</em> 一个新的值到通道中。这里我们在一个新的 Go 协程中发送 <code>&quot;ping&quot;</code> 到上面创建的<code>messages</code> 通道中。</p>
+            <p>使用 <code>channel &lt;-</code> 语法 <em>发送</em> 一个新的值到通道中。这里我们在一个新的 Go 协程中发送 <code>&quot;ping&quot;</code> 到上面创建的<code>messages</code> 通道中。</p>
 
           </td>
           <td class="code leading">
@@ -96,7 +96,7 @@
         
         <tr>
           <td class="docs">
-            <p>使用 <code>&lt;-channel</code> 语法从通道中 <em>接收</em> 一个值。这里我们将接收我们在上面发送的 <code>&quot;ping&quot;</code> 消息并打印出来。</p>
+            <p>使用 <code>&lt;-channel</code> 语法从通道中 <em>接收</em> 一个值。这里将接收我们在上面发送的 <code>&quot;ping&quot;</code> 消息并打印出来。</p>
 
           </td>
           <td class="code">
@@ -115,12 +115,12 @@
         
         <tr>
           <td class="docs">
-            <p>我们运行程序时，通过通道消息 <code>&quot;ping&quot;</code> 成功的从一个 Go 协程传到另一个中。</p>
+            <p>我们运行程序时，通过通道，消息 <code>&quot;ping&quot;</code> 成功的从一个 Go 协程传到另一个中。</p>
 
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre><span class="gp">$</span> go run channels.go 
+            <div class="highlight"><pre><span class="gp">$</span> go run channels.go
 <span class="go">ping</span>
 </pre></div>
 
@@ -129,7 +129,7 @@
         
         <tr>
           <td class="docs">
-            <p>默认发送和接收操作时阻塞的，直到发送方和接收方都准备好了。这个特性允许我们，不使用任何其它的同步操作来，在程序结尾等待消息 <code>&quot;ping&quot;</code></p>
+            <p>默认发送和接收操作是阻塞的，直到发送方和接收方都准备完毕。这个特性允许我们，不使用任何其它的同步操作，来在程序结尾等待消息 <code>&quot;ping&quot;</code>。</p>
 
           </td>
           <td class="code empty">

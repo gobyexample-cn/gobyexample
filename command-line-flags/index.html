@@ -37,7 +37,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/7mdO77e80K"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/XUgLtz3UTH"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -72,7 +72,7 @@
         
         <tr>
           <td class="docs">
-            <p>基本的标记声明仅对字符串，整数和布尔值选项提供支持。这里我们声明一个默认值为 <code>&quot;foo&quot;</code> 的字符串标志 <code>word</code>并带有一个短描述。这里的 <code>flag.String</code> 函数返回一个字符串指针（不是一个字符串值），在下面我们会看到是如何使用这个指针的。</p>
+            <p>基本的标记声明仅支持字符串、整数和布尔值选项。这里我们声明一个默认值为 <code>&quot;foo&quot;</code> 的字符串标志 <code>word</code>并带有一个简短的描述。这里的 <code>flag.String</code> 函数返回一个字符串指针（不是一个字符串值），在下面我们会看到是如何使用这个指针的。</p>
 
           </td>
           <td class="code leading">
@@ -85,7 +85,7 @@
         
         <tr>
           <td class="docs">
-            <p>使用和 <code>word</code> 标志相同的方法声明 <code>numb</code> 和 <code>fork</code> 标志。</p>
+            <p>使用和声明 <code>word</code> 标志相同的方法来声明 <code>numb</code> 和 <code>fork</code> 标志。</p>
 
           </td>
           <td class="code leading">
@@ -99,7 +99,7 @@
         
         <tr>
           <td class="docs">
-            <p>使用程序中已经声明的参数来声明一个标志也是可以的。注意在标志声明函数中需要使用参数的指针。</p>
+            <p>用程序中已有的参数来声明一个标志也是可以的。注意在标志声明函数中需要使用该参数的指针。</p>
 
           </td>
           <td class="code leading">
@@ -126,7 +126,7 @@
         
         <tr>
           <td class="docs">
-            <p>这里我们将仅输出解析的选项以及后面的位置参数。注意，我们需要使用类似 <code>*wordPtr</code> 这样来对指针解引用，从而得到选项的实际值。</p>
+            <p>这里我们将仅输出解析的选项以及后面的位置参数。注意，我们需要使用类似 <code>*wordPtr</code> 这样的语法来对指针解引用，从而得到选项的实际值。</p>
 
           </td>
           <td class="code">
@@ -263,7 +263,7 @@
         
         <tr>
           <td class="docs">
-            <p>后面，我们将会看到环境变量，其他基本的参数化程序的方的式。</p>
+            <p>后面，我们将会看一下环境变量，另一个用于参数化程序的基本方式。</p>
 
           </td>
           <td class="code empty">

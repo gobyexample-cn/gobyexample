@@ -23,7 +23,7 @@
         
         <tr>
           <td class="docs">
-            <p>我们可以使用通道来同步 Go 协程之间执行。这里是一个使用阻塞的接受方式来等待一个 Go 协程的运行结束。</p>
+            <p>我们可以使用通道来同步 Go 协程间的执行状态。这里是一个使用阻塞的接受方式来等待一个 Go 协程的运行结束。</p>
 
           </td>
           <td class="code empty leading">
@@ -37,7 +37,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/BjOXIs3XgT"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/yNRUUdsPsS"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -59,7 +59,7 @@
         
         <tr>
           <td class="docs">
-            <p>这是我们将要在一个 Go 协程中运行的函数。<code>done</code> 通道将被用于通知其他 Go 协程这个函数已经工作完毕。</p>
+            <p>这是一个我们将要在 Go 协程中运行的函数。<code>done</code> 通道将被用于通知其他 Go 协程这个函数已经工作完毕。</p>
 
           </td>
           <td class="code leading">
@@ -101,7 +101,7 @@
         
         <tr>
           <td class="docs">
-            <p>运行一个 worker Go协程，并把用来通知的协程传递过去。</p>
+            <p>运行一个 worker Go协程，并给予用于通知的通道。</p>
 
           </td>
           <td class="code leading">
@@ -137,8 +137,8 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre><span class="gp">$</span> go run channel-synchronization.go      
-<span class="go">working...done                  </span>
+            <div class="highlight"><pre><span class="gp">$</span> go run channel-synchronization.go
+<span class="go">working...done</span>
 </pre></div>
 
           </td>
@@ -146,7 +146,7 @@
         
         <tr>
           <td class="docs">
-            <p>如果你把 <code>&lt;- done</code> 这行代码从程序中移除，程序甚至会在 <code>worker</code> 还没开始运行时就结束。</p>
+            <p>如果你把 <code>&lt;- done</code> 这行代码从程序中移除，程序甚至会在 <code>worker</code>还没开始运行时就结束了。</p>
 
           </td>
           <td class="code empty">

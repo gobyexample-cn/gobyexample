@@ -23,7 +23,7 @@
         
         <tr>
           <td class="docs">
-            <p><em>关闭</em> 一个通道意味着不能再向这个通道发送值了。这个可以用来给这个通道的接收方传达工作已将完成。</p>
+            <p><em>关闭</em> 一个通道意味着不能再向这个通道发送值了。这个特性可以用来给这个通道的接收方传达工作已将完成的信息。</p>
 
           </td>
           <td class="code empty leading">
@@ -37,7 +37,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/OyMLgkXTyh"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/sHS5Fgm6BI"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -58,7 +58,7 @@
         
         <tr>
           <td class="docs">
-            <p>在这个例子中，我们将使用一个 <code>jobs</code> 通道来传递 <code>main()</code> Go协程中的任务执行结束信息到一个工作 Go 协程中。当我们没有多余的任务给 worker 时，我们将 <code>close</code> 这个 <code>jobs</code> 通道。</p>
+            <p>在这个例子中，我们将使用一个 <code>jobs</code> 通道来传递 <code>main()</code> 中 Go协程任务执行的结束信息到一个工作 Go 协程中。当我们没有多余的任务给这个工作 Go 协程时，我们将 <code>close</code> 这个 <code>jobs</code> 通道。</p>
 
           </td>
           <td class="code leading">
@@ -73,7 +73,7 @@
         
         <tr>
           <td class="docs">
-            <p>这是工作 Go 协程。使用 <code>j, more := &lt;- jobs</code> 从 <code>jobs</code>反复的进行接收。在接收的这的这个特殊的二值形式的值中，如果 <code>jobs</code> 已经关闭了，并且通道中所有的值都已经被接收到了，那么 <code>more</code> 的值将设置为 <code>false</code>。当我们做完所有的任务时，将使用这个在 <code>done</code> 中去进行通知。</p>
+            <p>这是工作 Go 协程。使用 <code>j, more := &lt;- jobs</code> 循环的从<code>jobs</code> 接收数据。在接收的这个特殊的二值形式的值中，如果 <code>jobs</code> 已经关闭了，并且通道中所有的值都已经接收完毕，那么 <code>more</code> 的值将是 <code>false</code>。当我们完成所有的任务时，将使用这个特性通过 <code>done</code> 通道去进行通知。</p>
 
           </td>
           <td class="code leading">
@@ -115,7 +115,7 @@
         
         <tr>
           <td class="docs">
-            <p>我们使用前面学到的<a href="channel-synchronization.html">通道同步</a>方法等待任务结束。</p>
+            <p>我们使用前面学到的<a href="../channel-synchronization">通道同步</a>方法等待任务结束。</p>
 
           </td>
           <td class="code">
@@ -137,7 +137,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre><span class="gp">$</span> go run closing-channels.go 
+            <div class="highlight"><pre><span class="gp">$</span> go run closing-channels.go
 <span class="go">sent job 1</span>
 <span class="go">received job 1</span>
 <span class="go">sent job 2</span>
@@ -153,7 +153,7 @@
         
         <tr>
           <td class="docs">
-            <p>通过关闭通道，让我们下面学习的例子：通道遍历就水到渠成了。</p>
+            <p>通过关闭通道的学习，也让下面学习通道遍历水到渠成。</p>
 
           </td>
           <td class="code empty">

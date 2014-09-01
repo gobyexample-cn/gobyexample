@@ -23,7 +23,7 @@
         
         <tr>
           <td class="docs">
-            <p>Go 中最主要的状态管理方式是通过通道间的沟通完成的，我们在<a href="worker-pools.html">工作池</a>例子中碰到过，但是还是有一些其他的方法来管理状态。这里我们将看到如何使用 <code>sync/atomic</code>包在多个 Go 协程中进行<em>原子计数</em> 。</p>
+            <p>Go 中最主要的状态管理方式是通过通道间的沟通来完成的，我们在<a href="worker-pools.html">工作池</a>的例子中碰到过，但是还是有一些其他的方法来管理状态的。这里我们将看看如何使用 <code>sync/atomic</code>包在多个 Go 协程中进行 <em>原子计数</em> 。</p>
 
           </td>
           <td class="code empty leading">
@@ -37,7 +37,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/NNwNJutGEE"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/8CuVhSXTKn"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -73,7 +73,7 @@
         
         <tr>
           <td class="docs">
-            <p>我们将使用要给无符号整形来表示（永远是正整数）计数器。</p>
+            <p>我们将使用一个无符号整形数来表示（永远是正整数）这个计数器。</p>
 
           </td>
           <td class="code leading">
@@ -143,7 +143,7 @@
         
         <tr>
           <td class="docs">
-            <p>为了在计数器还在被其它 Go 协程更新时，安全的使用它，我们通过 <code>LoadUint64</code> 将当前值得拷贝提取到 <code>opsFinal</code>中。和上面一样，我们需要给这个函数取值的内存地址 <code>&amp;ops</code></p>
+            <p>为了在计数器还在被其它 Go 协程更新时，安全的使用它，我们通过 <code>LoadUint64</code> 将当前值得拷贝提取到 <code>opsFinal</code>中。和上面一样，我们需要给这个函数所取值的内存地址 <code>&amp;ops</code></p>
 
           </td>
           <td class="code">
