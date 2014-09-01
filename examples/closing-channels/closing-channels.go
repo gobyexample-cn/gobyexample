@@ -39,7 +39,7 @@ func main() {
 	close(jobs)
 	fmt.Println("sent all jobs")
 
-	// 我们使用前面学到的[通道同步](../channel-synchronization)
+	// 我们使用前面学到的[通道同步](../channel-synchronization/)
 	// 方法等待任务结束。
 	<-done
 }

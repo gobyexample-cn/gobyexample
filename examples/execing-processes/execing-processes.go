@@ -1,4 +1,4 @@
-// 在前面的例子中，我们了解了[生成外部进程](spawning-processes.html)
+// 在前面的例子中，我们了解了[生成外部进程](../spawning-processes/)
 // 的知识，当我们需要访问外部进程时时需要这样做，但是有时候，我们只想
 // 用其他的（也许是非 Go 程序）来完全替代当前的 Go 进程。这时候，我们
 // 可以使用经典的 <a href="http://en.wikipedia.org/wiki/Exec_(operating_system)"><code>exec</code></a>
