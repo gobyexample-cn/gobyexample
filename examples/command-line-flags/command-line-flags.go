@@ -11,19 +11,19 @@ import "fmt"
 
 func main() {
 
-	// 基本的标记声明仅对字符串，整数和布尔值选项提供支持。
+	// 基本的标记声明仅支持字符串、整数和布尔值选项。
 	// 这里我们声明一个默认值为 `"foo"` 的字符串标志 `word`
-	// 并带有一个短描述。这里的 `flag.String` 函数返回一个字
+	// 并带有一个简短的描述。这里的 `flag.String` 函数返回一个字
 	// 符串指针（不是一个字符串值），在下面我们会看到是如何
 	// 使用这个指针的。
 	wordPtr := flag.String("word", "foo", "a string")
 
-	// 使用和 `word` 标志相同的方法声明 `numb` 和 `fork` 标志。
+	// 使用和声明 `word` 标志相同的方法来声明 `numb` 和 `fork` 标志。
 	numbPtr := flag.Int("numb", 42, "an int")
 	boolPtr := flag.Bool("fork", false, "a bool")
 
-	// 使用程序中已经声明的参数来声明一个标志也是可以的。注
-	// 意在标志声明函数中需要使用参数的指针。
+	// 用程序中已有的参数来声明一个标志也是可以的。注
+	// 意在标志声明函数中需要使用该参数的指针。
 	var svar string
 	flag.StringVar(&svar, "svar", "bar", "a string var")
 
@@ -32,7 +32,7 @@ func main() {
 	flag.Parse()
 
 	// 这里我们将仅输出解析的选项以及后面的位置参数。注意，
-	// 我们需要使用类似 `*wordPtr` 这样来对指针解引用，从而
+	// 我们需要使用类似 `*wordPtr` 这样的语法来对指针解引用，从而
 	// 得到选项的实际值。
 	fmt.Println("word:", *wordPtr)
 	fmt.Println("numb:", *numbPtr)

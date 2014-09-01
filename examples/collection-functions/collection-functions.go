@@ -3,8 +3,8 @@
 // 集合上。
 
 // 在某些语言中，会习惯使用[泛型](http://zh.wikipedia.org/wiki/%E6%B3%9B%E5%9E%8B)。
-// Go 不支持泛型，在 Go 中，如果你的程序或者数据类型需要
-// 时，通常是通过组合的方式提供操作函数。
+// Go 不支持泛型，在 Go 中，当你的程序或者数据类型需要
+// 时，通常是通过组合的方式来提供操作函数。
 
 // 这是一些 `strings` 切片的组合函数示例。你可以使用这些例
 // 子来构建自己的函数。注意有时候，直接使用内联组合操作代
@@ -52,7 +52,7 @@ func All(vs []string, f func(string) bool) bool {
 	return true
 }
 
-// 返回一个包含所有在切片中满足条件 `f` 的字符串的新切片。
+// 返回一个包含所有切片中满足条件 `f` 的字符串的新切片。
 func Filter(vs []string, f func(string) bool) []string {
 	vsf := make([]string, 0)
 	for _, v := range vs {
@@ -93,7 +93,7 @@ func main() {
 		return strings.Contains(v, "e")
 	}))
 
-	// 上面的例子都是用的匿名函数，但是你也可以使用正确类型
+	// 上面的例子都是用的匿名函数，但是你也可以使用类型正确
 	// 的命名函数
 	fmt.Println(Map(strs, strings.ToUpper))
 

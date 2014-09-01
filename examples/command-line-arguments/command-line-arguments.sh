@@ -2,8 +2,8 @@
 # 二进制文件
 $ go build command-line-arguments.go
 $ ./command-line-arguments a b c d
-[./command-line-arguments a b c d]       
+[./command-line-arguments a b c d]
 [a b c d]
 c
 
-# 下面我们要看看使用标记的高级命令行处理方法。
+# 下面我们要看看更高级的使用标记的命令行处理方法。

@@ -48,4 +48,4 @@ flag provided but not defined: -wat
 Usage of ./command-line-flags:
 ...
 
-# 后面，我们将会看到环境变量，其他基本的参数化程序的方的式。
+# 后面，我们将会看一下环境变量，另一个用于参数化程序的基本方式。
