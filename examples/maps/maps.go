@@ -11,7 +11,7 @@ func main() {
 	// `make(map[key-type]val-type)`.
 	m := make(map[string]int)
 
-	// 使用典型的 `make[key] = val` 语法来设置键值队。
+	// 使用典型的 `make[key] = val` 语法来设置键值对。
 	m["k1"] = 7
 	m["k2"] = 13
 
@@ -32,7 +32,7 @@ func main() {
 	fmt.Println("map:", m)
 
 	// 当从一个 map 中取值时，可选的第二返回值指示这个键
-	// 是在这个 mao 中。着可以用来消除键不存在和键有零值，
+	// 是在这个 map 中。这可以用来消除键不存在和键有零值，
 	// 像 `0` 或者 `""` 而产生的歧义。
 	_, prs := m["k2"]
 	fmt.Println("prs:", prs)
