@@ -38,7 +38,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/6fhMDQmN6C"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/D2gzx9VB2u"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -79,7 +79,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="kd">var</span> <span class="nx">ops</span> <span class="kt">uint64</span> <span class="p">=</span> <span class="mi">0</span>
+            <div class="highlight"><pre>    <span class="kd">var</span> <span class="nx">ops</span> <span class="kt">uint64</span> <span class="p">=</span> <span class="mi">0</span>
 </pre></div>
 
           </td>
@@ -92,9 +92,9 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">50</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-		<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-			<span class="k">for</span> <span class="p">{</span>
+            <div class="highlight"><pre>    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">50</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">{</span>
 </pre></div>
 
           </td>
@@ -107,7 +107,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>				<span class="nx">atomic</span><span class="p">.</span><span class="nx">AddUint64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <div class="highlight"><pre>                <span class="nx">atomic</span><span class="p">.</span><span class="nx">AddUint64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -120,10 +120,10 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>				<span class="nx">runtime</span><span class="p">.</span><span class="nx">Gosched</span><span class="p">()</span>
-			<span class="p">}</span>
-		<span class="p">}()</span>
-	<span class="p">}</span>
+            <div class="highlight"><pre>                <span class="nx">runtime</span><span class="p">.</span><span class="nx">Gosched</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="p">}()</span>
+    <span class="p">}</span>
 </pre></div>
 
           </td>
@@ -136,7 +136,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -149,8 +149,8 @@
           </td>
           <td class="code">
 	        
-            <div class="highlight"><pre>	<span class="nx">opsFinal</span> <span class="o">:=</span> <span class="nx">atomic</span><span class="p">.</span><span class="nx">LoadUint64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;ops:&quot;</span><span class="p">,</span> <span class="nx">opsFinal</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">opsFinal</span> <span class="o">:=</span> <span class="nx">atomic</span><span class="p">.</span><span class="nx">LoadUint64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;ops:&quot;</span><span class="p">,</span> <span class="nx">opsFinal</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 

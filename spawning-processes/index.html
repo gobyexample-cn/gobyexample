@@ -38,7 +38,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/NXAPU_gSKn"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/rL4c3ZBgZ5"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -78,7 +78,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">dateCmd</span> <span class="o">:=</span> <span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;date&quot;</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">dateCmd</span> <span class="o">:=</span> <span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;date&quot;</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -91,12 +91,12 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">dateOut</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">dateCmd</span><span class="p">.</span><span class="nx">Output</span><span class="p">()</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;&gt; date&quot;</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">dateOut</span><span class="p">))</span>
+            <div class="highlight"><pre>    <span class="nx">dateOut</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">dateCmd</span><span class="p">.</span><span class="nx">Output</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;&gt; date&quot;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">dateOut</span><span class="p">))</span>
 </pre></div>
 
           </td>
@@ -109,7 +109,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">grepCmd</span> <span class="o">:=</span> <span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;grep&quot;</span><span class="p">,</span> <span class="s">&quot;hello&quot;</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">grepCmd</span> <span class="o">:=</span> <span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;grep&quot;</span><span class="p">,</span> <span class="s">&quot;hello&quot;</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -122,13 +122,13 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">grepIn</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">grepCmd</span><span class="p">.</span><span class="nx">StdinPipe</span><span class="p">()</span>
-	<span class="nx">grepOut</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">grepCmd</span><span class="p">.</span><span class="nx">StdoutPipe</span><span class="p">()</span>
-	<span class="nx">grepCmd</span><span class="p">.</span><span class="nx">Start</span><span class="p">()</span>
-	<span class="nx">grepIn</span><span class="p">.</span><span class="nx">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;hello grep\ngoodbye grep&quot;</span><span class="p">))</span>
-	<span class="nx">grepIn</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
-	<span class="nx">grepBytes</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadAll</span><span class="p">(</span><span class="nx">grepOut</span><span class="p">)</span>
-	<span class="nx">grepCmd</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
+            <div class="highlight"><pre>    <span class="nx">grepIn</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">grepCmd</span><span class="p">.</span><span class="nx">StdinPipe</span><span class="p">()</span>
+    <span class="nx">grepOut</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">grepCmd</span><span class="p">.</span><span class="nx">StdoutPipe</span><span class="p">()</span>
+    <span class="nx">grepCmd</span><span class="p">.</span><span class="nx">Start</span><span class="p">()</span>
+    <span class="nx">grepIn</span><span class="p">.</span><span class="nx">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;hello grep\ngoodbye grep&quot;</span><span class="p">))</span>
+    <span class="nx">grepIn</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+    <span class="nx">grepBytes</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadAll</span><span class="p">(</span><span class="nx">grepOut</span><span class="p">)</span>
+    <span class="nx">grepCmd</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
 </pre></div>
 
           </td>
@@ -141,8 +141,8 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;&gt; grep hello&quot;</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">grepBytes</span><span class="p">))</span>
+            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;&gt; grep hello&quot;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">grepBytes</span><span class="p">))</span>
 </pre></div>
 
           </td>
@@ -155,13 +155,13 @@
           </td>
           <td class="code">
 	        
-            <div class="highlight"><pre>	<span class="nx">lsCmd</span> <span class="o">:=</span> <span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;bash&quot;</span><span class="p">,</span> <span class="s">&quot;-c&quot;</span><span class="p">,</span> <span class="s">&quot;ls -a -l -h&quot;</span><span class="p">)</span>
-	<span class="nx">lsOut</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">lsCmd</span><span class="p">.</span><span class="nx">Output</span><span class="p">()</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;&gt; ls -a -l -h&quot;</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">lsOut</span><span class="p">))</span>
+            <div class="highlight"><pre>    <span class="nx">lsCmd</span> <span class="o">:=</span> <span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;bash&quot;</span><span class="p">,</span> <span class="s">&quot;-c&quot;</span><span class="p">,</span> <span class="s">&quot;ls -a -l -h&quot;</span><span class="p">)</span>
+    <span class="nx">lsOut</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">lsCmd</span><span class="p">.</span><span class="nx">Output</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;&gt; ls -a -l -h&quot;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">lsOut</span><span class="p">))</span>
 <span class="p">}</span>
 </pre></div>
 

@@ -38,7 +38,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/8yUE5A-tDP"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/olY714SJG0"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -65,7 +65,7 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">ping</span><span class="p">(</span><span class="nx">pings</span> <span class="kd">chan</span><span class="o">&lt;-</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">msg</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">pings</span> <span class="o">&lt;-</span> <span class="nx">msg</span>
+    <span class="nx">pings</span> <span class="o">&lt;-</span> <span class="nx">msg</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -80,8 +80,8 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">pong</span><span class="p">(</span><span class="nx">pings</span> <span class="o">&lt;-</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">pongs</span> <span class="kd">chan</span><span class="o">&lt;-</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">msg</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">pings</span>
-	<span class="nx">pongs</span> <span class="o">&lt;-</span> <span class="nx">msg</span>
+    <span class="nx">msg</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">pings</span>
+    <span class="nx">pongs</span> <span class="o">&lt;-</span> <span class="nx">msg</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -95,11 +95,11 @@
           <td class="code">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">pings</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-	<span class="nx">pongs</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-	<span class="nx">ping</span><span class="p">(</span><span class="nx">pings</span><span class="p">,</span> <span class="s">&quot;passed message&quot;</span><span class="p">)</span>
-	<span class="nx">pong</span><span class="p">(</span><span class="nx">pings</span><span class="p">,</span> <span class="nx">pongs</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">pongs</span><span class="p">)</span>
+    <span class="nx">pings</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nx">pongs</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nx">ping</span><span class="p">(</span><span class="nx">pings</span><span class="p">,</span> <span class="s">&quot;passed message&quot;</span><span class="p">)</span>
+    <span class="nx">pong</span><span class="p">(</span><span class="nx">pings</span><span class="p">,</span> <span class="nx">pongs</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">pongs</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 

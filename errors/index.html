@@ -38,7 +38,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/tisAE9QAWm"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/I0pUZtNa_x"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -66,7 +66,7 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">f1</span><span class="p">(</span><span class="nx">arg</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nx">arg</span> <span class="o">==</span> <span class="mi">42</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">arg</span> <span class="o">==</span> <span class="mi">42</span> <span class="p">{</span>
 </pre></div>
 
           </td>
@@ -79,7 +79,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>		<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;can&#39;t work with 42&quot;</span><span class="p">)</span>
+            <div class="highlight"><pre>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;can&#39;t work with 42&quot;</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -91,7 +91,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="p">}</span>
+            <div class="highlight"><pre>    <span class="p">}</span>
 </pre></div>
 
           </td>
@@ -104,7 +104,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="k">return</span> <span class="nx">arg</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">nil</span>
+            <div class="highlight"><pre>    <span class="k">return</span> <span class="nx">arg</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">nil</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -119,8 +119,8 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">type</span> <span class="nx">argError</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">arg</span>  <span class="kt">int</span>
-	<span class="nx">prob</span> <span class="kt">string</span>
+    <span class="nx">arg</span>  <span class="kt">int</span>
+    <span class="nx">prob</span> <span class="kt">string</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -134,7 +134,7 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">argError</span><span class="p">)</span> <span class="nx">Error</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprintf</span><span class="p">(</span><span class="s">&quot;%d - %s&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">arg</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">prob</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprintf</span><span class="p">(</span><span class="s">&quot;%d - %s&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">arg</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">prob</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -148,7 +148,7 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">f2</span><span class="p">(</span><span class="nx">arg</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nx">arg</span> <span class="o">==</span> <span class="mi">42</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">arg</span> <span class="o">==</span> <span class="mi">42</span> <span class="p">{</span>
 </pre></div>
 
           </td>
@@ -161,9 +161,9 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>		<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">argError</span><span class="p">{</span><span class="nx">arg</span><span class="p">,</span> <span class="s">&quot;can&#39;t work with it&quot;</span><span class="p">}</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="nx">arg</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">nil</span>
+            <div class="highlight"><pre>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">argError</span><span class="p">{</span><span class="nx">arg</span><span class="p">,</span> <span class="s">&quot;can&#39;t work with it&quot;</span><span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">arg</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">nil</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -189,20 +189,20 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">i</span> <span class="o">:=</span> <span class="k">range</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">42</span><span class="p">}</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="nx">r</span><span class="p">,</span> <span class="nx">e</span> <span class="o">:=</span> <span class="nx">f1</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="nx">e</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;f1 failed:&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
-		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-			<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;f1 worked:&quot;</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">i</span> <span class="o">:=</span> <span class="k">range</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">42</span><span class="p">}</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="nx">r</span><span class="p">,</span> <span class="nx">e</span> <span class="o">:=</span> <span class="nx">f2</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="nx">e</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;f2 failed:&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
-		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-			<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;f2 worked:&quot;</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
+            <div class="highlight"><pre>    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">i</span> <span class="o">:=</span> <span class="k">range</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">42</span><span class="p">}</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">r</span><span class="p">,</span> <span class="nx">e</span> <span class="o">:=</span> <span class="nx">f1</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="nx">e</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;f1 failed:&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;f1 worked:&quot;</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">i</span> <span class="o">:=</span> <span class="k">range</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">42</span><span class="p">}</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">r</span><span class="p">,</span> <span class="nx">e</span> <span class="o">:=</span> <span class="nx">f2</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="nx">e</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;f2 failed:&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;f2 worked:&quot;</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 </pre></div>
 
           </td>
@@ -215,11 +215,11 @@
           </td>
           <td class="code">
 	        
-            <div class="highlight"><pre>	<span class="nx">_</span><span class="p">,</span> <span class="nx">e</span> <span class="o">:=</span> <span class="nx">f2</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">ae</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">e</span><span class="p">.(</span><span class="o">*</span><span class="nx">argError</span><span class="p">);</span> <span class="nx">ok</span> <span class="p">{</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">ae</span><span class="p">.</span><span class="nx">arg</span><span class="p">)</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">ae</span><span class="p">.</span><span class="nx">prob</span><span class="p">)</span>
-	<span class="p">}</span>
+            <div class="highlight"><pre>    <span class="nx">_</span><span class="p">,</span> <span class="nx">e</span> <span class="o">:=</span> <span class="nx">f2</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">ae</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">e</span><span class="p">.(</span><span class="o">*</span><span class="nx">argError</span><span class="p">);</span> <span class="nx">ok</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">ae</span><span class="p">.</span><span class="nx">arg</span><span class="p">)</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">ae</span><span class="p">.</span><span class="nx">prob</span><span class="p">)</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 

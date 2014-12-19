@@ -38,7 +38,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/rW_7NhTGrR"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/heqmPasyGc"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -78,9 +78,9 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">f</span> <span class="o">:=</span> <span class="nx">createFile</span><span class="p">(</span><span class="s">&quot;/tmp/defer.txt&quot;</span><span class="p">)</span>
-	<span class="k">defer</span> <span class="nx">closeFile</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
-	<span class="nx">writeFile</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">f</span> <span class="o">:=</span> <span class="nx">createFile</span><span class="p">(</span><span class="s">&quot;/tmp/defer.txt&quot;</span><span class="p">)</span>
+    <span class="k">defer</span> <span class="nx">closeFile</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+    <span class="nx">writeFile</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -94,12 +94,12 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">createFile</span><span class="p">(</span><span class="nx">p</span> <span class="kt">string</span><span class="p">)</span> <span class="o">*</span><span class="nx">os</span><span class="p">.</span><span class="nx">File</span> <span class="p">{</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;creating&quot;</span><span class="p">)</span>
-	<span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Create</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="nx">f</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;creating&quot;</span><span class="p">)</span>
+    <span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Create</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">f</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -113,8 +113,8 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">writeFile</span><span class="p">(</span><span class="nx">f</span> <span class="o">*</span><span class="nx">os</span><span class="p">.</span><span class="nx">File</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;writing&quot;</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Fprintln</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="s">&quot;data&quot;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;writing&quot;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Fprintln</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="s">&quot;data&quot;</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -139,8 +139,8 @@
           <td class="code">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">closeFile</span><span class="p">(</span><span class="nx">f</span> <span class="o">*</span><span class="nx">os</span><span class="p">.</span><span class="nx">File</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;closing&quot;</span><span class="p">)</span>
-	<span class="nx">f</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;closing&quot;</span><span class="p">)</span>
+    <span class="nx">f</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 <span class="p">}</span>
 </pre></div>
 

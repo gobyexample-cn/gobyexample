@@ -60,7 +60,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/NlMrOPVfaI"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/l8fzCOkXVG"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -88,12 +88,12 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">Index</span><span class="p">(</span><span class="nx">vs</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">t</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-	<span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">vs</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="nx">v</span> <span class="o">==</span> <span class="nx">t</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="nx">i</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">vs</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">v</span> <span class="o">==</span> <span class="nx">t</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">i</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -108,7 +108,7 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">Include</span><span class="p">(</span><span class="nx">vs</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">t</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">Index</span><span class="p">(</span><span class="nx">vs</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="nx">Index</span><span class="p">(</span><span class="nx">vs</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -123,12 +123,12 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">Any</span><span class="p">(</span><span class="nx">vs</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">f</span> <span class="kd">func</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">vs</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="nx">f</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="kc">true</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="kc">false</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">vs</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">f</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -143,12 +143,12 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">All</span><span class="p">(</span><span class="nx">vs</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">f</span> <span class="kd">func</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">vs</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="p">!</span><span class="nx">f</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="kc">false</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="kc">true</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">vs</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">!</span><span class="nx">f</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -163,13 +163,13 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">Filter</span><span class="p">(</span><span class="nx">vs</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">f</span> <span class="kd">func</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span><span class="p">)</span> <span class="p">[]</span><span class="kt">string</span> <span class="p">{</span>
-	<span class="nx">vsf</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">vs</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="nx">f</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-			<span class="nx">vsf</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">vsf</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="nx">vsf</span>
+    <span class="nx">vsf</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">vs</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">f</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">vsf</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">vsf</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">vsf</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -184,11 +184,11 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">Map</span><span class="p">(</span><span class="nx">vs</span> <span class="p">[]</span><span class="kt">string</span><span class="p">,</span> <span class="nx">f</span> <span class="kd">func</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span> <span class="kt">string</span><span class="p">)</span> <span class="p">[]</span><span class="kt">string</span> <span class="p">{</span>
-	<span class="nx">vsm</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">vs</span><span class="p">))</span>
-	<span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">vs</span> <span class="p">{</span>
-		<span class="nx">vsm</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">f</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="nx">vsm</span>
+    <span class="nx">vsm</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">vs</span><span class="p">))</span>
+    <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">vs</span> <span class="p">{</span>
+        <span class="nx">vsm</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">f</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">vsm</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -214,7 +214,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="kd">var</span> <span class="nx">strs</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;peach&quot;</span><span class="p">,</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;pear&quot;</span><span class="p">,</span> <span class="s">&quot;plum&quot;</span><span class="p">}</span>
+            <div class="highlight"><pre>    <span class="kd">var</span> <span class="nx">strs</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;peach&quot;</span><span class="p">,</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;pear&quot;</span><span class="p">,</span> <span class="s">&quot;plum&quot;</span><span class="p">}</span>
 </pre></div>
 
           </td>
@@ -226,7 +226,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Index</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="s">&quot;pear&quot;</span><span class="p">))</span>
+            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Index</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="s">&quot;pear&quot;</span><span class="p">))</span>
 </pre></div>
 
           </td>
@@ -238,7 +238,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Include</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="s">&quot;grape&quot;</span><span class="p">))</span>
+            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Include</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="s">&quot;grape&quot;</span><span class="p">))</span>
 </pre></div>
 
           </td>
@@ -250,9 +250,9 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Any</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">v</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">HasPrefix</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="s">&quot;p&quot;</span><span class="p">)</span>
-	<span class="p">}))</span>
+            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Any</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">v</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">HasPrefix</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="s">&quot;p&quot;</span><span class="p">)</span>
+    <span class="p">}))</span>
 </pre></div>
 
           </td>
@@ -264,9 +264,9 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">All</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">v</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">HasPrefix</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="s">&quot;p&quot;</span><span class="p">)</span>
-	<span class="p">}))</span>
+            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">All</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">v</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">HasPrefix</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="s">&quot;p&quot;</span><span class="p">)</span>
+    <span class="p">}))</span>
 </pre></div>
 
           </td>
@@ -278,9 +278,9 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Filter</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">v</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Contains</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">)</span>
-	<span class="p">}))</span>
+            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Filter</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">v</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Contains</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">)</span>
+    <span class="p">}))</span>
 </pre></div>
 
           </td>
@@ -293,7 +293,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Map</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">ToUpper</span><span class="p">))</span>
+            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">Map</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">ToUpper</span><span class="p">))</span>
 </pre></div>
 
           </td>

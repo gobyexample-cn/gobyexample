@@ -24,7 +24,7 @@
         
         <tr>
           <td class="docs">
-            <p>在前面的例子中，我们用互斥锁进行了明确的锁定来让共享的state 跨多个 Go 协程同步访问。另一个选择是使用内置的 Go协程和通道的的同步特性来达到同样的效果。这个基于通道的方法和 Go 通过通信以及   每个 Go 协程间通过通讯来共享内存，确保每块数据有单独的 Go 协程所有的思路是一致的。</p>
+            <p>在前面的例子中，我们用互斥锁进行了明确的锁定来让共享的state 跨多个 Go 协程同步访问。另一个选择是使用内置的 Go协程和通道的的同步特性来达到同样的效果。这个基于通道的方法和 Go 通过通信以及    每个 Go 协程间通过通讯来共享内存，确保每块数据有单独的 Go 协程所有的思路是一致的。</p>
 
           </td>
           <td class="code empty leading">
@@ -38,7 +38,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/27-Vw_K-w-"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/k1154jQoXS"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -52,10 +52,10 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&quot;fmt&quot;</span>
-	<span class="s">&quot;math/rand&quot;</span>
-	<span class="s">&quot;sync/atomic&quot;</span>
-	<span class="s">&quot;time&quot;</span>
+    <span class="s">&quot;fmt&quot;</span>
+    <span class="s">&quot;math/rand&quot;</span>
+    <span class="s">&quot;sync/atomic&quot;</span>
+    <span class="s">&quot;time&quot;</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -70,13 +70,13 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">type</span> <span class="nx">readOp</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">key</span>  <span class="kt">int</span>
-	<span class="nx">resp</span> <span class="kd">chan</span> <span class="kt">int</span>
+    <span class="nx">key</span>  <span class="kt">int</span>
+    <span class="nx">resp</span> <span class="kd">chan</span> <span class="kt">int</span>
 <span class="p">}</span>
 <span class="kd">type</span> <span class="nx">writeOp</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">key</span>  <span class="kt">int</span>
-	<span class="nx">val</span>  <span class="kt">int</span>
-	<span class="nx">resp</span> <span class="kd">chan</span> <span class="kt">bool</span>
+    <span class="nx">key</span>  <span class="kt">int</span>
+    <span class="nx">val</span>  <span class="kt">int</span>
+    <span class="nx">resp</span> <span class="kd">chan</span> <span class="kt">bool</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -102,7 +102,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="kd">var</span> <span class="nx">ops</span> <span class="kt">int64</span>
+            <div class="highlight"><pre>    <span class="kd">var</span> <span class="nx">ops</span> <span class="kt">int64</span>
 </pre></div>
 
           </td>
@@ -115,8 +115,8 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">reads</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="o">*</span><span class="nx">readOp</span><span class="p">)</span>
-	<span class="nx">writes</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="o">*</span><span class="nx">writeOp</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">reads</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="o">*</span><span class="nx">readOp</span><span class="p">)</span>
+    <span class="nx">writes</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="o">*</span><span class="nx">writeOp</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -129,18 +129,18 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-		<span class="kd">var</span> <span class="nx">state</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
-		<span class="k">for</span> <span class="p">{</span>
-			<span class="k">select</span> <span class="p">{</span>
-			<span class="k">case</span> <span class="nx">read</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">reads</span><span class="p">:</span>
-				<span class="nx">read</span><span class="p">.</span><span class="nx">resp</span> <span class="o">&lt;-</span> <span class="nx">state</span><span class="p">[</span><span class="nx">read</span><span class="p">.</span><span class="nx">key</span><span class="p">]</span>
-			<span class="k">case</span> <span class="nx">write</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">writes</span><span class="p">:</span>
-				<span class="nx">state</span><span class="p">[</span><span class="nx">write</span><span class="p">.</span><span class="nx">key</span><span class="p">]</span> <span class="p">=</span> <span class="nx">write</span><span class="p">.</span><span class="nx">val</span>
-				<span class="nx">write</span><span class="p">.</span><span class="nx">resp</span> <span class="o">&lt;-</span> <span class="kc">true</span>
-			<span class="p">}</span>
-		<span class="p">}</span>
-	<span class="p">}()</span>
+            <div class="highlight"><pre>    <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">state</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">{</span>
+            <span class="k">select</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="nx">read</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">reads</span><span class="p">:</span>
+                <span class="nx">read</span><span class="p">.</span><span class="nx">resp</span> <span class="o">&lt;-</span> <span class="nx">state</span><span class="p">[</span><span class="nx">read</span><span class="p">.</span><span class="nx">key</span><span class="p">]</span>
+            <span class="k">case</span> <span class="nx">write</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">writes</span><span class="p">:</span>
+                <span class="nx">state</span><span class="p">[</span><span class="nx">write</span><span class="p">.</span><span class="nx">key</span><span class="p">]</span> <span class="p">=</span> <span class="nx">write</span><span class="p">.</span><span class="nx">val</span>
+                <span class="nx">write</span><span class="p">.</span><span class="nx">resp</span> <span class="o">&lt;-</span> <span class="kc">true</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}()</span>
 </pre></div>
 
           </td>
@@ -153,18 +153,18 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="k">for</span> <span class="nx">r</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">r</span> <span class="p">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">r</span><span class="o">++</span> <span class="p">{</span>
-		<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-			<span class="k">for</span> <span class="p">{</span>
-				<span class="nx">read</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">readOp</span><span class="p">{</span>
-					<span class="nx">key</span><span class="p">:</span>  <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-					<span class="nx">resp</span><span class="p">:</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">)}</span>
-				<span class="nx">reads</span> <span class="o">&lt;-</span> <span class="nx">read</span>
-				<span class="o">&lt;-</span><span class="nx">read</span><span class="p">.</span><span class="nx">resp</span>
-				<span class="nx">atomic</span><span class="p">.</span><span class="nx">AddInt64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-			<span class="p">}</span>
-		<span class="p">}()</span>
-	<span class="p">}</span>
+            <div class="highlight"><pre>    <span class="k">for</span> <span class="nx">r</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">r</span> <span class="p">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">r</span><span class="o">++</span> <span class="p">{</span>
+        <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">{</span>
+                <span class="nx">read</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">readOp</span><span class="p">{</span>
+                    <span class="nx">key</span><span class="p">:</span>  <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+                    <span class="nx">resp</span><span class="p">:</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">)}</span>
+                <span class="nx">reads</span> <span class="o">&lt;-</span> <span class="nx">read</span>
+                <span class="o">&lt;-</span><span class="nx">read</span><span class="p">.</span><span class="nx">resp</span>
+                <span class="nx">atomic</span><span class="p">.</span><span class="nx">AddInt64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}()</span>
+    <span class="p">}</span>
 </pre></div>
 
           </td>
@@ -177,19 +177,19 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="k">for</span> <span class="nx">w</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">w</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">w</span><span class="o">++</span> <span class="p">{</span>
-		<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-			<span class="k">for</span> <span class="p">{</span>
-				<span class="nx">write</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">writeOp</span><span class="p">{</span>
-					<span class="nx">key</span><span class="p">:</span>  <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-					<span class="nx">val</span><span class="p">:</span>  <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
-					<span class="nx">resp</span><span class="p">:</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">bool</span><span class="p">)}</span>
-				<span class="nx">writes</span> <span class="o">&lt;-</span> <span class="nx">write</span>
-				<span class="o">&lt;-</span><span class="nx">write</span><span class="p">.</span><span class="nx">resp</span>
-				<span class="nx">atomic</span><span class="p">.</span><span class="nx">AddInt64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-			<span class="p">}</span>
-		<span class="p">}()</span>
-	<span class="p">}</span>
+            <div class="highlight"><pre>    <span class="k">for</span> <span class="nx">w</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">w</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">w</span><span class="o">++</span> <span class="p">{</span>
+        <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">{</span>
+                <span class="nx">write</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">writeOp</span><span class="p">{</span>
+                    <span class="nx">key</span><span class="p">:</span>  <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+                    <span class="nx">val</span><span class="p">:</span>  <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+                    <span class="nx">resp</span><span class="p">:</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">bool</span><span class="p">)}</span>
+                <span class="nx">writes</span> <span class="o">&lt;-</span> <span class="nx">write</span>
+                <span class="o">&lt;-</span><span class="nx">write</span><span class="p">.</span><span class="nx">resp</span>
+                <span class="nx">atomic</span><span class="p">.</span><span class="nx">AddInt64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}()</span>
+    <span class="p">}</span>
 </pre></div>
 
           </td>
@@ -202,7 +202,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -215,8 +215,8 @@
           </td>
           <td class="code">
 	        
-            <div class="highlight"><pre>	<span class="nx">opsFinal</span> <span class="o">:=</span> <span class="nx">atomic</span><span class="p">.</span><span class="nx">LoadInt64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;ops:&quot;</span><span class="p">,</span> <span class="nx">opsFinal</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">opsFinal</span> <span class="o">:=</span> <span class="nx">atomic</span><span class="p">.</span><span class="nx">LoadInt64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;ops:&quot;</span><span class="p">,</span> <span class="nx">opsFinal</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 

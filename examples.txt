@@ -63,23 +63,3 @@ Spawning Processes->生成进程
 Exec'ing Processes->执行进程
 Signals->信号
 Exit->退出
-# HTTP Client
-# HTTPS Client
-# Redis
-# Postgres
-# Hello Web
-# Responses
-# Request Routing
-# Request Logging
-# Static Content
-# Basic Authentication
-# Canonical Hosts
-# Middleware
-# Graceful Shutdown
-# HTTPS Servers
-# Testing
-# CPU Profiling
-# Memory Profiling
-# Factoring Packages
-# Shipping Libraries
-# Shipping Commands

@@ -38,7 +38,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/8aKuQ6Ui9o"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/O4YMRdF5bF"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -64,9 +64,9 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">f</span><span class="p">(</span><span class="nx">from</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">from</span><span class="p">,</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
-	<span class="p">}</span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">from</span><span class="p">,</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -92,7 +92,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">f</span><span class="p">(</span><span class="s">&quot;direct&quot;</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">f</span><span class="p">(</span><span class="s">&quot;direct&quot;</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -105,7 +105,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="k">go</span> <span class="nx">f</span><span class="p">(</span><span class="s">&quot;goroutine&quot;</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="k">go</span> <span class="nx">f</span><span class="p">(</span><span class="s">&quot;goroutine&quot;</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -118,9 +118,9 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="k">go</span> <span class="kd">func</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
-	<span class="p">}(</span><span class="s">&quot;going&quot;</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="k">go</span> <span class="kd">func</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+    <span class="p">}(</span><span class="s">&quot;going&quot;</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -133,9 +133,9 @@
           </td>
           <td class="code">
 	        
-            <div class="highlight"><pre>	<span class="kd">var</span> <span class="nx">input</span> <span class="kt">string</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Scanln</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">input</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;done&quot;</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="kd">var</span> <span class="nx">input</span> <span class="kt">string</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Scanln</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">input</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;done&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 

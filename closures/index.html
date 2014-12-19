@@ -38,7 +38,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/Hm0g4W9LjB"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/-tNwUpcrGY"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -65,11 +65,11 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">intSeq</span><span class="p">()</span> <span class="kd">func</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
-	<span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span>
-	<span class="k">return</span> <span class="kd">func</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
-		<span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span>
-		<span class="k">return</span> <span class="nx">i</span>
-	<span class="p">}</span>
+    <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="kd">func</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+        <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="nx">i</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -95,7 +95,7 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">nextInt</span> <span class="o">:=</span> <span class="nx">intSeq</span><span class="p">()</span>
+            <div class="highlight"><pre>    <span class="nx">nextInt</span> <span class="o">:=</span> <span class="nx">intSeq</span><span class="p">()</span>
 </pre></div>
 
           </td>
@@ -108,9 +108,9 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">nextInt</span><span class="p">())</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">nextInt</span><span class="p">())</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">nextInt</span><span class="p">())</span>
+            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">nextInt</span><span class="p">())</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">nextInt</span><span class="p">())</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">nextInt</span><span class="p">())</span>
 </pre></div>
 
           </td>
@@ -123,8 +123,8 @@
           </td>
           <td class="code">
 	        
-            <div class="highlight"><pre>	<span class="nx">newInts</span> <span class="o">:=</span> <span class="nx">intSeq</span><span class="p">()</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">newInts</span><span class="p">())</span>
+            <div class="highlight"><pre>    <span class="nx">newInts</span> <span class="o">:=</span> <span class="nx">intSeq</span><span class="p">()</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">newInts</span><span class="p">())</span>
 <span class="p">}</span>
 </pre></div>
 

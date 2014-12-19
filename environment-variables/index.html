@@ -38,7 +38,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/PonLg0k1EI"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/Yqw4GlUB3n"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -78,9 +78,9 @@
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre>	<span class="nx">os</span><span class="p">.</span><span class="nx">Setenv</span><span class="p">(</span><span class="s">&quot;FOO&quot;</span><span class="p">,</span> <span class="s">&quot;1&quot;</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;FOO:&quot;</span><span class="p">,</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;FOO&quot;</span><span class="p">))</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;BAR:&quot;</span><span class="p">,</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;BAR&quot;</span><span class="p">))</span>
+            <div class="highlight"><pre>    <span class="nx">os</span><span class="p">.</span><span class="nx">Setenv</span><span class="p">(</span><span class="s">&quot;FOO&quot;</span><span class="p">,</span> <span class="s">&quot;1&quot;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;FOO:&quot;</span><span class="p">,</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;FOO&quot;</span><span class="p">))</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;BAR:&quot;</span><span class="p">,</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;BAR&quot;</span><span class="p">))</span>
 </pre></div>
 
           </td>
@@ -93,11 +93,11 @@
           </td>
           <td class="code">
 	        
-            <div class="highlight"><pre>	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">()</span>
-	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">e</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Environ</span><span class="p">()</span> <span class="p">{</span>
-		<span class="nx">pair</span> <span class="o">:=</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Split</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="s">&quot;=&quot;</span><span class="p">)</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-	<span class="p">}</span>
+            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">()</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">e</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Environ</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">pair</span> <span class="o">:=</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Split</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="s">&quot;=&quot;</span><span class="p">)</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
