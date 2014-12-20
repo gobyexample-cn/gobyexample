@@ -13,7 +13,7 @@ func (r *rect) area() int {
     return r.width * r.height
 }
 
-// 可以为值类型或者指针类型的接收器定义方法。着力是一个
+// 可以为值类型或者指针类型的接收器定义方法。这里是一个
 // 值类型接收器的例子。
 func (r rect) perim() int {
     return 2*r.width + 2*r.height
