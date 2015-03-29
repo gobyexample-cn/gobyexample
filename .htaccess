@@ -1,1 +1,0 @@
-AddDefaultCharset UTF-8
