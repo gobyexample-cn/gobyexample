@@ -14,8 +14,7 @@ func main() {
     fmt.Println(match)
 
     // 上面我们是直接使用字符串，但是对于一些其他的正则任
-    // 务，你需要使用 `Compile` 一个优化的 `Regexp` 结构
-    // 体。
+    // 务，你需要 `Compile` 一个优化的 `Regexp` 结构体。
     r, _ := regexp.Compile("p([a-z]+)ch")
 
     // 这个结构体有很多方法。这里是类似我们前面看到的一个
@@ -53,7 +52,7 @@ func main() {
     fmt.Println(r.Match([]byte("peach")))
 
     // 创建正则表示式常量时，可以使用 `Compile` 的变体
-    // `MustCompile` 。因为 `Compile` 返回两个值，不能用语常量。
+    // `MustCompile` 。因为 `Compile` 返回两个值，不能用于常量。
     r = regexp.MustCompile("p([a-z]+)ch")
     fmt.Println(r)
 
