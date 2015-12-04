@@ -23,7 +23,7 @@ func f1(arg int) (int, error) {
 	return arg + 3, nil
 }
 
-// 通过实现 `Error` 方法来自定义 `error` 类型是可以得。
+// 通过实现 `Error` 方法来自定义 `error` 类型是可以的。
 // 这里使用自定义错误类型来表示上面的参数错误。
 type argError struct {
 	arg  int
