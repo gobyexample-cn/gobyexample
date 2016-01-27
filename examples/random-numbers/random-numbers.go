@@ -2,6 +2,7 @@
 
 package main
 
+import "time"
 import "fmt"
 import "math/rand"
 
@@ -22,8 +23,11 @@ func main() {
     fmt.Print((rand.Float64() * 5) + 5)
     fmt.Println()
 
-    // 要让伪随机数生成器有确定性，可以给它一个明确的种子。
-    s1 := rand.NewSource(42)
+    // 默认情况下，给定的种子是确定的，每次都会产生相同的随机数数字序列。要产生变化的
+    // 序列，需要给定一个变化的种子。
+    // 需要注意的是，如果你出于加密目的，需要使用随机数的话，请使用 `crypto/rand` 包，
+    // 此方法不够安全。
+    s1 := rand.NewSource(time.Now().UnixNano())
     r1 := rand.New(s1)
 
     // 调用上面返回的 `rand.Source` 的函数和调用 `rand` 包中函数
