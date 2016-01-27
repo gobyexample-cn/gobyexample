@@ -21,9 +21,9 @@ func main() {
     }()
 
     // 打点器可以和定时器一样被停止。一旦一个打点停止了，
-    // 将不能再从它的通道中接收到值。我们将在运行后 1500ms
+    // 将不能再从它的通道中接收到值。我们将在运行后 1600ms
     // 停止这个打点器。
-    time.Sleep(time.Millisecond * 1500)
+    time.Sleep(time.Millisecond * 1600)
     ticker.Stop()
     fmt.Println("Ticker stopped")
 }
