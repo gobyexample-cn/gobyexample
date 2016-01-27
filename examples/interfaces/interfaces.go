@@ -11,9 +11,9 @@ type geometry interface {
     perim() float64
 }
 
-// 在我们的例子中，我们将让 `square` 和 `circle` 实现
+// 在我们的例子中，我们将让 `rect` 和 `circle` 实现
 // 这个接口
-type square struct {
+type rect struct {
     width, height float64
 }
 type circle struct {
@@ -21,12 +21,12 @@ type circle struct {
 }
 
 // 要在 Go 中实现一个接口，我们只需要实现接口中的所有
-// 方法。这里我们让 `square` 实现了 `geometry` 接口。
-func (s square) area() float64 {
-    return s.width * s.height
+// 方法。这里我们让 `rect` 实现了 `geometry` 接口。
+func (r rect) area() float64 {
+    return r.width * r.height
 }
-func (s square) perim() float64 {
-    return 2*s.width + 2*s.height
+func (r rect) perim() float64 {
+    return 2*r.width + 2*r.height
 }
 
 // `circle` 的实现。
@@ -47,11 +47,11 @@ func measure(g geometry) {
 }
 
 func main() {
-    s := square{width: 3, height: 4}
+    r := rect{width: 3, height: 4}
     c := circle{radius: 5}
 
-    // 结构体类型 `circle` 和 `square` 都实现了 `geometry`
+    // 结构体类型 `circle` 和 `rect` 都实现了 `geometry`
     // 接口，所以我们可以使用它们的实例作为 `measure` 的参数。
-    measure(s)
+    measure(r)
     measure(c)
 }
