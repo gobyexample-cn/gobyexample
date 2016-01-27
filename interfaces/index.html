@@ -38,7 +38,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/0RlQtu938W"><img title="Run code" src="../play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/tjIPyfCGfs"><img title="Run code" src="../play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -76,12 +76,12 @@
         
         <tr>
           <td class="docs">
-            <p>在我们的例子中，我们将让 <code>square</code> 和 <code>circle</code> 实现这个接口</p>
+            <p>在我们的例子中，我们将让 <code>rect</code> 和 <code>circle</code> 实现这个接口</p>
 
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre><span class="kd">type</span> <span class="nx">square</span> <span class="kd">struct</span> <span class="p">{</span>
+            <div class="highlight"><pre><span class="kd">type</span> <span class="nx">rect</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span> <span class="kt">float64</span>
 <span class="p">}</span>
 <span class="kd">type</span> <span class="nx">circle</span> <span class="kd">struct</span> <span class="p">{</span>
@@ -94,16 +94,16 @@
         
         <tr>
           <td class="docs">
-            <p>要在 Go 中实现一个接口，我们只需要实现接口中的所有方法。这里我们让 <code>square</code> 实现了 <code>geometry</code> 接口。</p>
+            <p>要在 Go 中实现一个接口，我们只需要实现接口中的所有方法。这里我们让 <code>rect</code> 实现了 <code>geometry</code> 接口。</p>
 
           </td>
           <td class="code leading">
 	        
-            <div class="highlight"><pre><span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="nx">square</span><span class="p">)</span> <span class="nx">area</span><span class="p">()</span> <span class="kt">float64</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">s</span><span class="p">.</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">s</span><span class="p">.</span><span class="nx">height</span>
+            <div class="highlight"><pre><span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">rect</span><span class="p">)</span> <span class="nx">area</span><span class="p">()</span> <span class="kt">float64</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">r</span><span class="p">.</span><span class="nx">height</span>
 <span class="p">}</span>
-<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="nx">square</span><span class="p">)</span> <span class="nx">perim</span><span class="p">()</span> <span class="kt">float64</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="nx">s</span><span class="p">.</span><span class="nx">width</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="nx">s</span><span class="p">.</span><span class="nx">height</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">rect</span><span class="p">)</span> <span class="nx">perim</span><span class="p">()</span> <span class="kt">float64</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="nx">r</span><span class="p">.</span><span class="nx">width</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="nx">r</span><span class="p">.</span><span class="nx">height</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -152,7 +152,7 @@
           <td class="code leading">
 	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">s</span> <span class="o">:=</span> <span class="nx">square</span><span class="p">{</span><span class="nx">width</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">height</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+    <span class="nx">r</span> <span class="o">:=</span> <span class="nx">rect</span><span class="p">{</span><span class="nx">width</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">height</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
     <span class="nx">c</span> <span class="o">:=</span> <span class="nx">circle</span><span class="p">{</span><span class="nx">radius</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 </pre></div>
 
@@ -161,12 +161,12 @@
         
         <tr>
           <td class="docs">
-            <p>结构体类型 <code>circle</code> 和 <code>square</code> 都实现了 <code>geometry</code>接口，所以我们可以使用它们的实例作为 <code>measure</code> 的参数。</p>
+            <p>结构体类型 <code>circle</code> 和 <code>rect</code> 都实现了 <code>geometry</code>接口，所以我们可以使用它们的实例作为 <code>measure</code> 的参数。</p>
 
           </td>
           <td class="code">
 	        
-            <div class="highlight"><pre>    <span class="nx">measure</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">measure</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span>
     <span class="nx">measure</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
