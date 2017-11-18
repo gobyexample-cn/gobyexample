@@ -20,6 +20,7 @@ This work is copyright Mark McGranaghan and licensed under a
 The Go Gopher is copyright the Go Authors and licensed under a
 [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
 
-### 原版 ReadMe
+### 原版传送门
 
-[ReadMe] (https://github.com/mmcgrana/gobyexample#go-by-example)
+- [英文版](https://gobyexample.com)
+- [mmcgrana/gobyexample](https://github.com/mmcgrana/gobyexample)

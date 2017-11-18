@@ -3,7 +3,6 @@ package main
 import (
     "crypto/sha1"
     "fmt"
-    "github.com/russross/blackfriday"
     "io/ioutil"
     "net/http"
     "os"
@@ -12,10 +11,12 @@ import (
     "regexp"
     "strings"
     "text/template"
+
+    "github.com/russross/blackfriday"
 )
 
 var cacheDir = "/tmp/gobyexample-cache"
-var siteDir = "./"
+var siteDir = "./public"
 var pygmentizeBin = "./vendor/pygments/pygmentize"
 
 func check(err error) {
@@ -77,13 +78,15 @@ func cachedPygmentize(lex string, src string) string {
         return string(cacheBytes)
     }
     renderBytes := pipe(pygmentizeBin, arg, src)
-    writeErr := ioutil.WriteFile(cachePath, renderBytes, 0600)
+    // Newer versions of Pygments add silly empty spans.
+    renderCleanString := strings.Replace(string(renderBytes), "<span></span>", "", -1)
+    writeErr := ioutil.WriteFile(cachePath, []byte(renderCleanString), 0600)
     check(writeErr)
-    return string(renderBytes)
+    return renderCleanString
 }
 
 func markdown(src string) string {
-    return string(blackfriday.MarkdownBasic([]byte(src)))
+    return string(blackfriday.MarkdownCommon([]byte(src)))
 }
 
 func readLines(path string) []string {
@@ -114,7 +117,6 @@ func debug(msg string) {
 }
 
 var docsPat = regexp.MustCompile("^\\s*(\\/\\/|#)\\s")
-var todoPat = regexp.MustCompile("\\/\\/ todo: ")
 var dashPat = regexp.MustCompile("\\-+")
 
 type Seg struct {
@@ -137,7 +139,7 @@ func parseHashFile(sourcePath string) (string, string) {
 
 func resetUrlHashFile(codehash, code, sourcePath string) string {
     payload := strings.NewReader(code)
-    resp, err := http.Post("http://play.golang.org/share", "text/plain", payload)
+    resp, err := http.Post("https://play.golang.org/share", "text/plain", payload)
     if err != nil {
         panic(err)
     }
@@ -159,9 +161,6 @@ func parseSegs(sourcePath string) ([]*Seg, string) {
             lastSeen = ""
             continue
         }
-        if todoPat.MatchString(line) {
-            continue
-        }
         matchDocs := docsPat.MatchString(line)
         matchCode := !matchDocs
         newDocs := (lastSeen == "") || ((lastSeen != "docs") && (segs[len(segs)-1].Docs != ""))
@@ -175,7 +174,7 @@ func parseSegs(sourcePath string) ([]*Seg, string) {
                 newSeg := Seg{Docs: trimmed, Code: ""}
                 segs = append(segs, &newSeg)
             } else {
-                segs[len(segs)-1].Docs = segs[len(segs)-1].Docs + trimmed
+                segs[len(segs)-1].Docs = segs[len(segs)-1].Docs + "\n" + trimmed
             }
             debug("DOCS: " + line)
             lastSeen = "docs"
@@ -280,9 +279,9 @@ func renderExamples(examples []*Example) {
     _, err := exampleTmpl.Parse(mustReadFile("templates/example.tmpl"))
     check(err)
     for _, example := range examples {
-        err := os.MkdirAll(siteDir+example.Id, os.ModePerm)
+        err := os.MkdirAll(siteDir+"/"+example.Id, os.ModePerm)
         check(err)
-        exampleF, err := os.Create(siteDir + example.Id + "/index.html")
+        exampleF, err := os.Create(siteDir + "/" + example.Id + "/index.html")
         check(err)
         exampleTmpl.Execute(exampleF, example)
     }
