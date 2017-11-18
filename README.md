@@ -1,8 +1,8 @@
-## Go by Example 中文翻译
+## Go by Example 中文版
 
 本翻译是 [mmcgrana](https://github.com/mmcgrana) 的 [Go by Example](https://github.com/mmcgrana/gobyexample)中文翻译，除为 github page 做出的部分修改外，完全遵从原作的模式。现已经完成了所有文件的初步翻译，比较粗糙，其中纰漏也很多，欢迎 fork 并提交 pull request。
 
-还等什么，[马上开始学习吧](http://gobyexample.everyx.in/)
+还等什么，[马上开始学习吧](https://gobyexample.xgwang.me)
 
 ### 说明
 
