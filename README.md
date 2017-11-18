@@ -17,10 +17,14 @@
 This work is copyright Mark McGranaghan and licensed under a
 [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
 
-The Go Gopher is copyright the Go Authors and licensed under a
+The Go Gopher is copyright [Renée French](http://reneefrench.blogspot.com/) and licensed under a
 [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
 
 ### 原版传送门
 
 - [英文版](https://gobyexample.com)
 - [mmcgrana/gobyexample](https://github.com/mmcgrana/gobyexample)
+
+### 致谢
+
+本翻译项目原作者[everyx](https://github.com/everyx)，以及所有[贡献者](https://github.com/xg-wang/gobyexample/graphs/contributors)。
