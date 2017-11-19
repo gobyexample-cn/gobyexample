@@ -1,6 +1,6 @@
 ## Go by Example 中文版
 
-本项目是 [mmcgrana](https://github.com/mmcgrana) 的 [Go by Example](https://github.com/mmcgrana/gobyexample)中文翻译。现已由[everyx](https://github.com/everyx)完成了所有文件的初步翻译，比较粗糙，其中纰漏也很多，目前正在准备第二版的翻译，欢迎 fork 并提交 pull request。
+本项目是 [mmcgrana](https://github.com/mmcgrana) 的 [Go by Example](https://github.com/mmcgrana/gobyexample)中文翻译。现已由[everyx](https://github.com/everyx)完成了所有文件的初步翻译，目前正在准备重新翻译，欢迎 fork 并提交 pull request。
 
 ### 贡献说明
 
