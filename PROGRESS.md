@@ -1,0 +1,68 @@
+# Translation Progress
+由于初步翻译不够完善，重新翻译进展如下，欢迎 Pull Request 一同贡献。
+
+- [x] Hello World->你好，世界
+- [x] Values->值
+- [x] Variables->变量
+- [x] Constants->常量
+- [ ] For->For循环
+- [ ] If/Else->if/else 分支
+- [ ] Switch->分支结构
+- [ ] Arrays->数组
+- [ ] Slices->切片
+- [ ] Maps->关联数组
+- [ ] Range->Range 遍历
+- [ ] Functions->函数
+- [ ] Multiple Return Values->多返回值
+- [ ] Variadic Functions->变参函数
+- [ ] Closures->闭包
+- [ ] Recursion->递归
+- [ ] Pointers->指针
+- [ ] Structs->结构体
+- [ ] Methods->方法
+- [ ] Interfaces->接口
+- [ ] Errors->错误处理
+- [ ] Goroutines->协程
+- [ ] Channels->通道
+- [ ] Channel Buffering->通道缓冲
+- [ ] Channel Synchronization->通道同步
+- [ ] Channel Directions->通道方向
+- [ ] Select->通道选择器
+- [ ] Timeouts->超时处理
+- [ ] Non-Blocking Channel Operations->非阻塞通道操作
+- [ ] Closing Channels->通道的关闭
+- [ ] Range over Channels->通道遍历
+- [ ] Timers->定时器
+- [ ] Tickers->打点器
+- [ ] Worker Pools->工作池
+- [ ] Rate Limiting->速率限制
+- [ ] Atomic Counters->原子计数器
+- [ ] Mutexes->互斥锁
+- [ ] Stateful Goroutines->Go 状态协程
+- [ ] Sorting->排序
+- [ ] Sorting by Functions->使用函数自定义排序
+- [ ] Panic
+- [ ] Defer
+- [ ] Collection Functions->组合函数
+- [ ] String Functions->字符串函数
+- [ ] String Formatting->字符串格式化
+- [ ] Regular Expressions->正则表达式
+- [ ] JSON
+- [ ] Time->时间
+- [ ] Epoch->时间戳
+- [ ] Time Formatting / Parsing->时间的格式化和解析
+- [ ] Random Numbers->随机数
+- [ ] Number Parsing->数字解析
+- [ ] URL Parsing->URL解析
+- [ ] SHA1 Hashes->SHA1散列
+- [ ] Base64 Encoding->Base64编码
+- [ ] Reading Files->读文件
+- [ ] Writing Files->写文件
+- [ ] Line Filters->行过滤器
+- [ ] Command-Line Arguments->命令行参数
+- [ ] Command-Line Flags->命令行标志
+- [ ] Environment Variables->环境变量
+- [ ] Spawning Processes->生成进程
+- [ ] Exec'ing Processes->执行进程
+- [ ] Signals->信号
+- [ ] Exit->退出
