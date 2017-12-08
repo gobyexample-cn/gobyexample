@@ -57,7 +57,7 @@ func main() {
 	fmt.Println("dcl:", t)
 
 	// Slice 可以组成多维数据结构。内部的 slice 长度可以不
-	// 同，这和多位数组不同。
+	// 同，这和多维数组不同。
 	twoD := make([][]int, 3)
 	for i := 0; i < 3; i++ {
 		innerLen := i + 1
