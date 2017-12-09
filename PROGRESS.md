@@ -5,9 +5,9 @@
 - [x] Values->值
 - [x] Variables->变量
 - [x] Constants->常量
-- [ ] For->For循环
-- [ ] If/Else->if/else 分支
-- [ ] Switch->分支结构
+- [x] For->For循环
+- [x] If/Else->if/else 分支
+- [x] Switch->分支结构
 - [ ] Arrays->数组
 - [ ] Slices->切片
 - [ ] Maps->关联数组
