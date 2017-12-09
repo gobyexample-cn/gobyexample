@@ -19,18 +19,18 @@ type ByLength []string
 // 子中，我们想按字符串长度增加的顺序来排序，所以这里
 // 使用了 `len(s[i])` 和 `len(s[j])`。
 func (s ByLength) Len() int {
-	return len(s)
+    return len(s)
 }
 func (s ByLength) Swap(i, j int) {
-	s[i], s[j] = s[j], s[i]
+    s[i], s[j] = s[j], s[i]
 }
 func (s ByLength) Less(i, j int) bool {
-	return len(s[i]) < len(s[j])
+    return len(s[i]) < len(s[j])
 }
 
 // 一切都准备好了，我们现在可以通过将原始的 `fruits` 切片转型成 `ByLength` 来实现我们的自定排序了。然后对这个转型的切片使用 `sort.Sort` 方法。
 func main() {
-	fruits := []string{"peach", "banana", "kiwi"}
-	sort.Sort(ByLength(fruits))
-	fmt.Println(fruits)
+    fruits := []string{"peach", "banana", "kiwi"}
+    sort.Sort(ByLength(fruits))
+    fmt.Println(fruits)
 }
