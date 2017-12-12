@@ -8,8 +8,8 @@
 - [x] For->For循环
 - [x] If/Else->if/else 分支
 - [x] Switch->分支结构
-- [ ] Arrays->数组
-- [ ] Slices->切片
+- [x] Arrays->数组
+- [x] Slices->切片
 - [ ] Maps->关联数组
 - [ ] Range->Range 遍历
 - [ ] Functions->函数

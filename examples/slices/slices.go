@@ -7,8 +7,8 @@ import "fmt"
 
 func main() {
 
-    // 不像数组，slice 的类型仅由它所包含的元素决定（不像
-    // 数组中还需要元素的个数）。要创建一个长度非零的空
+    // 与数组不同，slice 的类型仅由它所包含的元素决定（不需要
+    // 元素的个数）。要创建一个长度非零的空
     // slice，需要使用内建的方法 `make`。这里我们创建了一
     // 个长度为3的 `string` 类型 slice（初始化为零值）。
     s := make([]string, 3)
@@ -21,13 +21,13 @@ func main() {
     fmt.Println("set:", s)
     fmt.Println("get:", s[2])
 
-    // 如你所料，`len` 返回 slice 的长度
+    // `len` 返回 slice 的长度
     fmt.Println("len:", len(s))
 
-    // 作为基本操作的补充，slice 支持比数组更多的操作。
+    // 除了基本操作外，slice 支持比数组更丰富的操作。
     // 其中一个是内建的 `append`，它返回一个包含了一个
-    // 或者多个新值的 slice。注意我们接受返回由 append
-    // 返回的新的 slice 值。
+    // 或者多个新值的 slice。注意由于 append 可能返回
+    // 新的 slice，我们需要接受其返回值。
     s = append(s, "d")
     s = append(s, "e", "f")
     fmt.Println("apd:", s)
@@ -44,11 +44,11 @@ func main() {
     l := s[2:5]
     fmt.Println("sl1:", l)
 
-    // 这个 slice 从 `s[0]` 到（但是包含）`s[5]`。
+    // 这个 slice 从 `s[0]` 切片到 `s[5]`（不包含）。
     l = s[:5]
     fmt.Println("sl2:", l)
 
-    // 这个 slice 从（包含）`s[2]` 到 slice 的后一个值。
+    // 这个 slice 从 `s[2]` （包含）开始切片。
     l = s[2:]
     fmt.Println("sl3:", l)
 
@@ -57,7 +57,7 @@ func main() {
     fmt.Println("dcl:", t)
 
     // Slice 可以组成多维数据结构。内部的 slice 长度可以不
-    // 同，这和多维数组不同。
+    // 一致，这和多维数组不同。
     twoD := make([][]int, 3)
     for i := 0; i < 3; i++ {
         innerLen := i + 1
