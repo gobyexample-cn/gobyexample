@@ -10,9 +10,9 @@
 - [x] Switch->分支结构
 - [x] Arrays->数组
 - [x] Slices->切片
-- [ ] Maps->关联数组
-- [ ] Range->Range 遍历
-- [ ] Functions->函数
+- [x] Maps->关联数组
+- [x] Range->Range 遍历
+- [x] Functions->函数
 - [ ] Multiple Return Values->多返回值
 - [ ] Variadic Functions->变参函数
 - [ ] Closures->闭包
