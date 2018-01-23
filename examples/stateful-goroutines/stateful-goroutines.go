@@ -31,7 +31,8 @@ type writeOp struct {
 func main() {
 
     // 和前面一样，我们将计算我们执行操作的次数。
-    var ops int64
+    var readOps uint64 = 0
+    var writeOps uint64 = 0
 
     // `reads` 和 `writes` 通道分别将被其他 Go 协程用来发
     // 布读和写请求。
@@ -67,7 +68,8 @@ func main() {
                     resp: make(chan int)}
                 reads <- read
                 <-read.resp
-                atomic.AddInt64(&ops, 1)
+                atomic.AddUint64(&readOps, 1)
+                time.Sleep(time.Millisecond)
             }
         }()
     }
@@ -82,7 +84,8 @@ func main() {
                     resp: make(chan bool)}
                 writes <- write
                 <-write.resp
-                atomic.AddInt64(&ops, 1)
+                atomic.AddUint64(&writeOps, 1)
+                time.Sleep(time.Millisecond)
             }
         }()
     }
@@ -91,6 +94,8 @@ func main() {
     time.Sleep(time.Second)
 
     // 最后，获取并报告 `ops` 值。
-    opsFinal := atomic.LoadInt64(&ops)
-    fmt.Println("ops:", opsFinal)
+    readOpsFinal := atomic.LoadUint64(&readOps)
+    fmt.Println("readOps:", readOpsFinal)
+    writeOpsFinal := atomic.LoadUint64(&writeOps)
+    fmt.Println("writeOps:", writeOpsFinal)
 }
