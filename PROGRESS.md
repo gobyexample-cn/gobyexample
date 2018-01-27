@@ -13,8 +13,8 @@
 - [x] Maps->关联数组
 - [x] Range->Range 遍历
 - [x] Functions->函数
-- [ ] Multiple Return Values->多返回值
-- [ ] Variadic Functions->变参函数
+- [x] Multiple Return Values->多返回值
+- [x] Variadic Functions->变参函数
 - [ ] Closures->闭包
 - [ ] Recursion->递归
 - [ ] Pointers->指针
