@@ -1,4 +1,4 @@
-# 当我们运行程序师，它会替换为 `ls`。
+# 当我们运行程序时，它会替换为 `ls`。
 $ go run execing-processes.go
 total 16
 drwxr-xr-x  4 mark 136B Oct 3 16:29 .
