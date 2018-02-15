@@ -17,7 +17,7 @@ fork: false
 svar: bar
 tail: []
 
-# 位置参数可以出现在任何标志后面。
+# 尾随的位置参数可以出现在任何标志后面。
 $ ./command-line-flags -word=opt a1 a2 a3
 word: opt
 ...
