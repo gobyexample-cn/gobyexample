@@ -15,7 +15,7 @@ func main() {
     m["k1"] = 7
     m["k2"] = 13
 
-    // 使用例如 `Println` 来打印一个 map 将会输出所有的
+    // 使用例如 `fmt.Println` 来打印一个 map 将会输出所有的
     // 键值对。
     fmt.Println("map:", m)
 

@@ -8,7 +8,7 @@ import "fmt"
 func main() {
 
     // `var` 声明 1 个或者多个变量。
-    var a string = "initial"
+    var a = "initial"
     fmt.Println(a)
 
     // 你可以一次性声明多个变量。

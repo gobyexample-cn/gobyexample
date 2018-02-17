@@ -26,7 +26,7 @@ func main() {
 
     // 除了基本操作外，slice 支持比数组更丰富的操作。
     // 其中一个是内建的 `append`，它返回一个包含了一个
-    // 或者多个新值的 slice。注意由于 append 可能返回
+    // 或者多个新值的 slice。注意由于 `append` 可能返回
     // 新的 slice，我们需要接受其返回值。
     s = append(s, "d")
     s = append(s, "e", "f")
