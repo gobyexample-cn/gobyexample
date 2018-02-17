@@ -29,7 +29,7 @@ func main() {
     // 这里我们仅提供当前的环境变量。
     env := os.Environ()
 
-    // 这里是 `os.Exec` 调用。如果这个调用成功，那么我们的
+    // 这里是 `syscall.Exec` 调用。如果这个调用成功，那么我们的
     // 进程将在这里被替换成 `/bin/ls -a -l -h` 进程。如果存
     // 在错误，那么我们将会得到一个返回值。
     execErr := syscall.Exec(binary, args, env)
