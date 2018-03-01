@@ -1,4 +1,5 @@
 # Translation Progress
+
 由于初步翻译不够完善，重新翻译进展如下，欢迎 Pull Request 一同贡献。
 
 - [x] Hello World->你好，世界
@@ -15,9 +16,9 @@
 - [x] Functions->函数
 - [x] Multiple Return Values->多返回值
 - [x] Variadic Functions->变参函数
-- [ ] Closures->闭包
-- [ ] Recursion->递归
-- [ ] Pointers->指针
+- [x] Closures->闭包
+- [x] Recursion->递归
+- [x] Pointers->指针
 - [ ] Structs->结构体
 - [ ] Methods->方法
 - [ ] Interfaces->接口

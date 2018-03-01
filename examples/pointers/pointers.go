@@ -14,7 +14,7 @@ func zeroval(ival int) {
 }
 
 // `zeroptr` 有一和上面不同的 `*int` 参数，意味着它用了一
-// 个 `int`指针。函数体内的 `*iptr` 接着_解引用_ 这个指针，
+// 个 `int`指针。函数体内的 `*iptr` 接着_解引用_这个指针，
 // 从它内存地址得到这个地址对应的当前值。对一个解引用的指
 // 针赋值将会改变这个指针引用的真实地址的值。
 func zeroptr(iptr *int) {
@@ -28,8 +28,7 @@ func main() {
     zeroval(i)
     fmt.Println("zeroval:", i)
 
-    // 通过 `&i` 语法来取得 `i` 的内存地址，例如一个变量
-    // `i` 的指针。
+    // 通过 `&i` 语法来取得 `i` 的内存地址，即指向 `i` 的指针。
     zeroptr(&i)
     fmt.Println("zeroptr:", i)
 
