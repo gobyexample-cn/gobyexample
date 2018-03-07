@@ -1,8 +1,8 @@
-$ go run methods.go 
+$ go run methods.go
 area:  50
 perim: 30
 area:  50
 perim: 30
 
-# 接下来我们将 Go 语言中组织和命名相关的方法集合的机
-# 制：接口。
+# 接下来我们将介绍Go的另一机制，用于分组和命名相关的
+# 方法集合：接口。
