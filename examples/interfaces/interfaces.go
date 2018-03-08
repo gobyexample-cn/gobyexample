@@ -20,7 +20,7 @@ type circle struct {
     radius float64
 }
 
-// 要在 Go 中实现一个接口，我们只需要实现接口中的所有
+// 要在 Go 中实现一个接口，我们就需要实现接口中的所有
 // 方法。这里我们让 `rect` 实现了 `geometry` 接口。
 func (r rect) area() float64 {
     return r.width * r.height
@@ -37,9 +37,9 @@ func (c circle) perim() float64 {
     return 2 * math.Pi * c.radius
 }
 
-// 如果一个变量的是接口类型，那么我们可以调用这个被命名的
-// 接口中的方法。这里有一个一通用的 `measure` 函数，利用这个
-// 特性，它可以用在任何 `geometry` 上。
+// 如果一个变量具有接口类型，那么我们可以调用指定接口中的
+// 方法。这里有一个通用的 `measure` 函数，利用它来在任
+// 何的 `geometry` 上工作。
 func measure(g geometry) {
     fmt.Println(g)
     fmt.Println(g.area())

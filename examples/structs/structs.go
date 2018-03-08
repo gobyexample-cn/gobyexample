@@ -1,4 +1,4 @@
-// Go 的_结构体_ 是各个字段字段的类型的集合。
+// Go 的_结构体_ 是字段类型的集合。
 // 这在组织数据时非常有用。
 
 package main
@@ -29,7 +29,7 @@ func main() {
     s := person{name: "Sean", age: 50}
     fmt.Println(s.name)
 
-    // 也可以对结构体指针使用`.` - 指针会被自动解引用。
+    // 也可以对结构体指针使用`.` 指针会被自动解引用。
     sp := &s
     fmt.Println(sp.age)
 
