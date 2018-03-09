@@ -19,10 +19,10 @@
 - [x] Closures->闭包
 - [x] Recursion->递归
 - [x] Pointers->指针
-- [ ] Structs->结构体
-- [ ] Methods->方法
-- [ ] Interfaces->接口
-- [ ] Errors->错误处理
+- [x] Structs->结构体
+- [x] Methods->方法
+- [x] Interfaces->接口
+- [x] Errors->错误处理
 - [ ] Goroutines->协程
 - [ ] Channels->通道
 - [ ] Channel Buffering->通道缓冲

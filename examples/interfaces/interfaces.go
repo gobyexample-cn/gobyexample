@@ -1,4 +1,4 @@
-// _接口_ 是方法特征的命名集合。
+// _接口(Interfaces)_ 是命名了的方法签名(signatures)的集合。
 
 package main
 
@@ -11,7 +11,7 @@ type geometry interface {
     perim() float64
 }
 
-// 在我们的例子中，我们将让 `rect` 和 `circle` 实现
+// 在我们的例子中，我们将在类型 `rect` 和 `circle` 上实现
 // 这个接口
 type rect struct {
     width, height float64
@@ -21,7 +21,7 @@ type circle struct {
 }
 
 // 要在 Go 中实现一个接口，我们就需要实现接口中的所有
-// 方法。这里我们让 `rect` 实现了 `geometry` 接口。
+// 方法。这里我们在 `rect` 上实现了 `geometry` 接口。
 func (r rect) area() float64 {
     return r.width * r.height
 }

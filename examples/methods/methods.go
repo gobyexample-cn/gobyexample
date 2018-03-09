@@ -1,4 +1,4 @@
-// Go 支持在结构体类型中定义_方法_ 。
+// Go 支持在结构体类型中定义_方法(methods)_ 。
 
 package main
 
@@ -8,7 +8,7 @@ type rect struct {
     width, height int
 }
 
-// 这里的 `area` 方法有一个_接收器类型_ `rect`。
+// 这里的 `area` 方法有一个_接收器(receiver)类型_ `rect`。
 func (r *rect) area() int {
     return r.width * r.height
 }
@@ -28,7 +28,7 @@ func main() {
 
     // Go 自动处理方法调用时的值和指针之间的转化。你可以使
     // 用指针来调用方法来避免在方法调用时产生一个拷贝，或者
-    // 让方法能够改变接受的数据。
+    // 让方法能够改变接受的机构体。
     rp := &r
     fmt.Println("area: ", rp.area())
     fmt.Println("perim:", rp.perim())
