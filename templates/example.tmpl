@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Go by Example 中文版：{{.Name}}</title>
-    <link rel=stylesheet href="/site.css">
-	  <link rel="canonical" href="https://xg-wang.github.io/gobyexample/{{.Id}}" />
+    <link rel="stylesheet" href="/site.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-89386915-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,7 +14,7 @@
   </head>
   <body>
     <div class="example" id="{{.Id}}">
-      <h2><a href="/">Go by Example 中文版</a>：{{.Name}}</h2>
+      <h2><a href="/" type="text/html">Go by Example 中文版</a>：{{.Name}}</h2>
       {{range .Segs}}
       <table>
         {{range .}}
@@ -33,7 +32,7 @@
       {{end}}
       {{if .NextExample}}
       <p class="next">
-        下一个例子: <a href="/{{.NextExample.Id}}">{{.NextExample.Name}}</a>.
+        下一个例子: <a href="/{{.NextExample.Id}}.html" type="text/html">{{.NextExample.Name}}</a>.
       </p>
       {{end}}
       <p class="footer">
