@@ -39,7 +39,7 @@ func f2(arg int) (int, error) {
     if arg == 42 {
 
         // 在这个例子中，我们使用 `&argError` 语法来建立一个
-        // 新的结构体，并提供了 `arg` 和 `prob` 这个两个字段
+        // 新的结构体，并提供了 `arg` 和 `prob` 这两个字段
         // 的值。
         return -1, &argError{arg, "can't work with it"}
     }

@@ -3,7 +3,7 @@
 $ go run hello-world.go
 hello world
 
-# 有时候我们想将程序编译成二进制文件。
+# 有时候我们想将程序编译成二进制文件，
 # 可以通过 `go build` 来达到目的。
 $ go build hello-world.go
 $ ls
