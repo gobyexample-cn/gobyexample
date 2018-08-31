@@ -47,10 +47,10 @@ func main() {
     fmt.Println("> grep hello")
     fmt.Println(string(grepBytes))
 
-    // 注意，当我们需要提供一个明确的命令和参数数组来生成命
-    // 令，和能够只需要提供一行命令行字符串相比，你想使用通
-    // 过一个字符串生成一个完整的命令，那么你可以使用 `bash`
-    // 命令的 `-c` 选项：
+    // 注意，在生成命令时，我们需要提供显式描述的命令和参数
+    // 数组，而不能只传递一个命令行字符串。如果你想使用一个
+    // 字符串生成一个完整的命令，那么你可以使用 `bash` 命令
+    // 的 `-c` 选项：
     lsCmd := exec.Command("bash", "-c", "ls -a -l -h")
     lsOut, err := lsCmd.Output()
     if err != nil {

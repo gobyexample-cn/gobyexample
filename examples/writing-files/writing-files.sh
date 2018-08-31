@@ -1,4 +1,4 @@
-# 运行这端文件写入代码。
+# 运行这段文件写入代码。
 $ go run writing-files.go 
 wrote 5 bytes
 wrote 7 bytes

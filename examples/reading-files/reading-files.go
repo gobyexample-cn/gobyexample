@@ -63,8 +63,8 @@ func main() {
     _, err = f.Seek(0, 0)
     check(err)
 
-    // `bufio` 包实现了带缓冲的读取，这不仅对有很多小的读
-    // 取操作的能提升性能，也提供了很多附加的读取函数。
+    // `bufio` 包实现了带缓冲的读取，这不仅对于很多小的读
+    // 取操作能够提升性能，也提供了很多附加的读取函数。
     r4 := bufio.NewReader(f)
     b4, err := r4.Peek(5)
     check(err)

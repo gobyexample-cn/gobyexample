@@ -51,7 +51,7 @@ func main() {
     // 参数并将 `String` 从函数命中去掉。
     fmt.Println(r.Match([]byte("peach")))
 
-    // 创建正则表示式常量时，可以使用 `Compile` 的变体
+    // 创建正则表达式常量时，可以使用 `Compile` 的变体
     // `MustCompile` 。因为 `Compile` 返回两个值，不能用于常量。
     r = regexp.MustCompile("p([a-z]+)ch")
     fmt.Println(r)

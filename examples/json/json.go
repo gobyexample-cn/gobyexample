@@ -53,7 +53,7 @@ func main() {
     fmt.Println(string(res1B))
 
     // 你可以给结构字段声明标签来自定义编码的 JSON 数据键
-    // 名称。在上面 `Response2` 的定义可以作为这个标签这个
+    // 名称。在上面 `Response2` 的定义可以作为这个标签
     // 的一个例子。
     res2D := Response2{
         Page:   1,
@@ -98,7 +98,7 @@ func main() {
 
     // 在上面的例子中，我们经常使用 byte 和 string 作为使用
     // 标准输出时数据和 JSON 表示之间的中间值。我们也可以和
-    // `os.Stdout` 一样，直接将 JSON 编码直接输出至 `os.Writer`
+    // `os.Stdout` 一样，将 JSON 编码直接输出至 `os.Writer`
     // 流中，或者作为 HTTP 响应体。
     enc := json.NewEncoder(os.Stdout)
     d := map[string]int{"apple": 5, "lettuce": 7}

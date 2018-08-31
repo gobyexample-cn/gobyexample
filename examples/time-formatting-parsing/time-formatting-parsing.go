@@ -32,12 +32,12 @@ func main() {
     p(t2)
 
     // 对于纯数字表示的时间，你也可以使用标准的格式化字
-    // 符串来提出出时间值得组成。
+    // 符串来提出时间值的组成。
     fmt.Printf("%d-%02d-%02dT%02d:%02d:%02d-00:00\n",
         t.Year(), t.Month(), t.Day(),
         t.Hour(), t.Minute(), t.Second())
 
-    // `Parse` 函数在输入的时间格式不正确是会返回一个
+    // `Parse` 函数在输入的时间格式不正确时会返回一个
     // 错误。
     ansic := "Mon Jan _2 15:04:05 2006"
     _, e = time.Parse(ansic, "8:41PM")
