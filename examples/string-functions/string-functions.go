@@ -14,7 +14,7 @@ func main() {
 
     // 这是一些 `strings` 中的函数例子。注意他们都是包中的
     // 函数，不是字符串对象自身的方法，这意味着我们需要考
-    // 虑在调用时传递字符作为第一个参数进行传递。
+    // 虑在调用时将字符串作为第一个参数进行传递。
     p("Contains:  ", s.Contains("test", "es"))
     p("Count:     ", s.Count("test", "t"))
     p("HasPrefix: ", s.HasPrefix("test", "te"))

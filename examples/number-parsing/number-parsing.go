@@ -9,14 +9,14 @@ import "fmt"
 
 func main() {
 
-    // 使用 `ParseFloat` 解析浮点数，这里的 `64` 表示表示解
+    // 使用 `ParseFloat` 解析浮点数，这里的 `64` 表示解
     // 析的数的位数。
     f, _ := strconv.ParseFloat("1.234", 64)
     fmt.Println(f)
 
-    // 在使用 `ParseInt` 解析整形数时，例子中的参数 `0` 表
+    // 在使用 `ParseInt` 解析整型数时，例子中的参数 `0` 表
     // 示自动推断字符串所表示的数字的进制。`64` 表示返回的
-    // 整形数是以 64 位存储的。
+    // 整型数是以 64 位存储的。
     i, _ := strconv.ParseInt("123", 0, 64)
     fmt.Println(i)
 

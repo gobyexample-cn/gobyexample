@@ -28,7 +28,7 @@ func main() {
         fmt.Println("request", req, time.Now())
     }
 
-    // 有时候我们想临时进行速率限制，并且不影响整体的速率控制
+    // 有时候我们想临时进行速率限制，并且不影响整体的速率控制，
     // 我们可以通过[通道缓冲](channel-buffering.html)来实现。
     // 这个 `burstyLimiter` 通道用来进行 3 次临时的脉冲型速率限制。
     burstyLimiter := make(chan time.Time, 3)

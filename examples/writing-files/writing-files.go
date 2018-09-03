@@ -17,7 +17,7 @@ func check(e error) {
 
 func main() {
 
-    // 开始，这里是展示如写入一个字符串（或者只是一些
+    // 开始，这里是展示如何写入一个字符串（或者只是一些
     // 字节）到一个文件。
     d1 := []byte("hello\ngo\n")
     err := ioutil.WriteFile("/tmp/dat1", d1, 0644)
