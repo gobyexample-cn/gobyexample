@@ -1,5 +1,4 @@
-// Go offers built-in support for XML and XML-like
-// formats with the `encoding.xml` package.
+// Go 的 `encoding.xml` 包为 XML 和 类-XML 格式提供了内建支持。
 
 package main
 
@@ -8,13 +7,11 @@ import (
 	"fmt"
 )
 
-// This type will be mapped to XML. Similarly to the
-// JSON examples, field tags contain directives for the
-// encoder and decoder. Here we use some special features
-// of the XML package: the `XMLName` field name dictates
-// the name of the XML element representing this struct;
-// `id,attr` means that the `Id` field is an XML
-// _attribute_ rather than a nested element.
+// 该类型将被映射为 XML。
+// 与 JSON 例子类型，字段 tag 包含了编码和解码的指令。
+// 这里我们使用了 XML 包的一些特性：
+// `XMLName` 字段名规定了 struct 的 XML 元素的名称；
+// `id,attr` 意思是 `Id` 字段是一个 XML _attribute_，而不是嵌套元素。
 type Plant struct {
 	XMLName xml.Name `xml:"plant"`
 	Id      int      `xml:"id,attr"`
@@ -31,20 +28,16 @@ func main() {
 	coffee := &Plant{Id: 27, Name: "Coffee"}
 	coffee.Origin = []string{"Ethiopia", "Brazil"}
 
-	// Emit XML representing our plant; using
-	// `MarshalIndent` to produce a more
-	// human-readable output.
+	// 传入我们声明了 XML 的 plant 类型。
+	// 使用 `MarshalIndent` 生成可读性更好的输出结果。
 	out, _ := xml.MarshalIndent(coffee, " ", "  ")
 	fmt.Println(string(out))
 
-	// To add a generic XML header to the output, append
-	// it explicitly.
+	// 明确的为输出结果添加一个通用的 XML 头部信息
 	fmt.Println(xml.Header + string(out))
 
-	// Use `Unmarhshal` to parse a stream of bytes with XML
-	// into a data structure. If the XML is malformed or
-	// cannot be mapped onto Plant, a descriptive error
-	// will be returned.
+	// 使用 `Unmarshal` 将 XML 格式的字节流解析到 struct 内。
+	// 如果 XML 格式不正确，或无法映射到 struct，将会返回一个描述性错误。
 	var p Plant
 	if err := xml.Unmarshal(out, &p); err != nil {
 		panic(err)
@@ -54,8 +47,7 @@ func main() {
 	tomato := &Plant{Id: 81, Name: "Tomato"}
 	tomato.Origin = []string{"Mexico", "California"}
 
-	// The `parent>child>plant` field tag tells the encoder
-	// to nest all `plant`s under `<parent><child>...`
+	// `parent>child>plant` 字段标签告诉编码器嵌套 `<parent><child>...` 下面的所有 plant。
 	type Nesting struct {
 		XMLName xml.Name `xml:"nesting"`
 		Plants  []*Plant `xml:"parent>child>plant"`

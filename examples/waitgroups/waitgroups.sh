@@ -10,5 +10,4 @@ Worker 2 done
 Worker 5 done
 Worker 3 done
 
-# The order of workers starting up and finishing
-# is likely to be different for each invocation.
+# 每次运行，各个协程开启和完成的时间可能是不同的。
