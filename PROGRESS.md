@@ -6,12 +6,12 @@
 - [x] Values->值
 - [x] Variables->变量
 - [x] Constants->常量
-- [x] For->For循环
+- [x] For->For 循环
 - [x] If/Else->if/else 分支
 - [x] Switch->分支结构
 - [x] Arrays->数组
 - [x] Slices->切片
-- [x] Maps->关联数组
+- [x] Maps->图
 - [x] Range->Range 遍历
 - [x] Functions->函数
 - [x] Multiple Return Values->多返回值
@@ -36,6 +36,7 @@
 - [ ] Timers->定时器
 - [ ] Tickers->打点器
 - [ ] Worker Pools->工作池
+- [x] WaitGroups
 - [ ] Rate Limiting->速率限制
 - [ ] Atomic Counters->原子计数器
 - [ ] Mutexes->互斥锁
@@ -49,20 +50,28 @@
 - [ ] String Formatting->字符串格式化
 - [ ] Regular Expressions->正则表达式
 - [ ] JSON
+- [x] XML
 - [ ] Time->时间
 - [ ] Epoch->时间戳
 - [ ] Time Formatting / Parsing->时间的格式化和解析
 - [ ] Random Numbers->随机数
 - [ ] Number Parsing->数字解析
-- [ ] URL Parsing->URL解析
-- [ ] SHA1 Hashes->SHA1散列
-- [ ] Base64 Encoding->Base64编码
+- [ ] URL Parsing->URL 解析
+- [ ] SHA1 Hashes->SHA1 散列
+- [ ] Base64 Encoding->Base64 编码
 - [ ] Reading Files->读文件
 - [ ] Writing Files->写文件
 - [ ] Line Filters->行过滤器
+- [x] File Paths->文件路径
+- [x] Directories->目录
+- [x] Temporary Files and Directories->临时文件和目录
+- [x] Testing->单元测试
 - [ ] Command-Line Arguments->命令行参数
 - [ ] Command-Line Flags->命令行标志
+- [x] Command-Line Subcommands->命令行子命令
 - [ ] Environment Variables->环境变量
+- [x] HTTP Clients->HTTP 客户端
+- [x] HTTP Servers->HTTP 服务端
 - [ ] Spawning Processes->生成进程
 - [ ] Exec'ing Processes->执行进程
 - [ ] Signals->信号
