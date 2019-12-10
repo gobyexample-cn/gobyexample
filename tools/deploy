@@ -1,3 +1,12 @@
 #!/bin/bash
 
-firebase deploy
+PUBLIC=public
+
+rm -rf $PUBLIC
+git clone git@github.com:gobyexample-cn/gobyexample-cn.github.io.git $PUBLIC
+tools/build
+cd $PUBLIC
+git add --all
+git commit -m "update site"
+git push
+

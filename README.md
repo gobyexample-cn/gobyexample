@@ -24,7 +24,7 @@ The Go Gopher is copyright [Renée French](http://reneefrench.blogspot.com/) and
 
 ### 致谢
 
-本翻译项目原作者[everyx](https://github.com/everyx)，以及所有[贡献者](https://github.com/xg-wang/gobyexample/graphs/contributors)。
+本翻译项目原作者[everyx](https://github.com/everyx)，以及所有[贡献者](https://github.com/gobyexample-cn/gobyexample/graphs/contributors)。
 
 ---
 
