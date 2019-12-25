@@ -29,6 +29,13 @@ body {
 ol, ul {
 	list-style: none;
 }
+li {
+    padding: 2px;
+}
+p a, li a {
+    text-decoration : none;
+    border-bottom: #333 1px solid;
+}
 blockquote, q {
 	quotes: none;
 }
