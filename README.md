@@ -4,7 +4,7 @@
 
 如果您想学习 Go 语言基础知识，不要犹豫，请直接前往 [Go by Example](https://gobyexample-cn.github.io/) 开始学习。
 
-### 综述
+## 综述
 
 如果你想了解 Go by Example `网站` 是如何编译的，或者想为该项目贡献代码，请查看下面的内容：
 
@@ -50,13 +50,13 @@ $ export AWS_SECRET_ACCESS_KEY=...
 $ tools/upload
 ```
 
-### 许可协议
+## 许可协议
 
 该项目的著作权归 Mark McGranaghan 所有，并遵循 [CC BY-SA 3.0](http://creativecommons.org/licenses/by/3.0/) 协议。
 
 Go Gopher 的版权归 [Renée French](http://reneefrench.blogspot.com/) 所有，并遵循 [CC BY-SA 3.0](http://creativecommons.org/licenses/by/3.0/) 协议。
 
-### 其他语言
+## 其他语言
 
 本项目只是 [mmcgrana](https://github.com/mmcgrana) 的 [Go by Example](https://github.com/mmcgrana/gobyexample) 项目的中文翻译。
 
@@ -71,29 +71,29 @@ Go Gopher 的版权归 [Renée French](http://reneefrench.blogspot.com/) 所有�
 * [Spanish](http://goconejemplos.com) by the [Go Mexico community](https://github.com/dabit/gobyexample)
 * [Ukrainian](http://gobyexample.com.ua/) by [butuzov](https://github.com/butuzov/gobyexample)
 
-### 致谢
+## 致谢
 
 感谢 [Jeremy Ashkenas](https://github.com/jashkenas) 的 [Docco](http://jashkenas.github.com/docco/)，启发了这个项目。
 
-> 好了，从这里开始，后面的内容都是中文版的贡献者们给自己加的戏（好吧，其实前面的内容也没有完全根据英文版翻译）。
+## 贡献说明
 
-### 贡献说明
+> 从这部分开始，后面的内容都是中文版的贡献者们给自己加的戏（好吧，其实前面的内容也没有完全根据英文版翻译）。
 
-如果你发现中文版的例子没有及时与英文版同步，或者你觉得某个例子翻译得不够好，甚至只是一个错误的文字、单词，我们都非常欢迎你能够提交 pull request 帮助我们使得项目更完善。贡献流程大致如下：
+如果你发现中文版的例子没有及时与英文版同步，或者你觉得某个例子翻译得不够好，甚至只是一个错误的文字、单词或符号，我们都 `非常欢迎` 你能够提交 pull request 以帮助我们使项目更完善，贡献流程大致如下：
 
 1. Fork 该仓库。
-1. 在 `examples` 目录下找到想要修改的内容，完成修改，这通常是以 `例子`（也就是一个目录）为单位进行修改，当然，你可以一次性修改多个例子。注意：只需修改 `.go` 和 `.sh` 文件。`.hash` 文件是 `tools/build` 自动生成、更新的，主要用于判断文件内容是否被修改；
-1. 然后使用 `tools/build` 命令重新生成静态文件。这一步会格式化代码，并判断是否有修改，内容有修改的例子，会自动将该例子的代码提交至 `http://play.golang.org/` 测试（可能需要克服网络障碍），并更新静态文件；
+1. 在 `examples` 目录下找到想要修改的内容，完成修改，这通常是以 `例子`（也就是一个目录）为单位进行修改，当然，你可以一次性修改多个例子。注意：只需修改 `.go` 和 `.sh` 文件。`.hash` 文件是 `tools/build` 自动更新的，主要用于判断文件内容是否有改动；
+1. 然后使用 `tools/build` 命令重新生成静态文件。这一步会格式化代码，并判断内容是否有改动。对于内容有改动的例子，会自动将该例子的代码提交至 `http://play.golang.org/` 进行测试（可能需要克服网络障碍）。通过测试后，会自动更新静态文件；
 1. `tools/serve` 本地预览效果；
 1. 通过自测后即可提交 pull request :)
 
-### 构建说明
+## 构建说明
 
 英文项目使用 vendor 解决依赖，中文版可以使用 `GO MOD` 解决依赖。
 
 注意：依赖库 [blackfriday](https://github.com/russross/blackfriday) 的 2.x.x 版本目前与项目不兼容，只能使用 1.x.x 版本，项目的 `go.mod` 文件已正确配置，大家不要自行修改。直接执行 `tools/build` 等命令即可。 
 
-### 致谢
+## 致谢
 
 感谢本翻译项目的原作者 [everyx](https://github.com/everyx)，完成了所有文件最初的翻译，同时也感谢项目每一位 [贡献者](https://github.com/gobyexample-cn/gobyexample/graphs/contributors) 的辛勤付出。
 
