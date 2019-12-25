@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta charset="utf-8">
     <title>Go by Example 中文版</title>
-    <link rel="stylesheet" href="./site.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-89386915-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-89386915-2');
-    </script>
+    <link rel=stylesheet href="site.css">
   </head>
   <body>
     <div id="intro">
-      <h2><a href="/" type="text/html">Go by Example 中文版</a></h2>
+      <h2><a href="./">Go by Example 中文版</a></h2>
       <p>
         <a href="http://golang.org">Go</a> 是一门被设计用来构建简单、高效、可信赖软件的开源程序设计语言。
       </p>
 
       <p>
-        <em>Go by Example</em> 是对 Go 基于实践的介绍，包含一系列带有标注说明的示例程序。查看<a href="hello-world">第一个例子</a>或者浏览下面的完整列表吧。
+        <em>Go by Example</em> 是对 Go 基于实践的介绍，包含一系列带有注释说明的示例程序。查看<a href="hello-world">第一个例子</a>或者浏览下面的完整列表吧。
       </p>
 
       <ul>
       {{range .}}
-        <li><a href="{{.Id}}.html" type="text/html">{{.Name}}</a></li>
+        <li><a href="{{.ID}}">{{.Name}}</a></li>
       {{end}}
       </ul>
       <p class="footer">
-        <a href="https://twitter.com/mmcgrana">@mmcgrana</a> 编写 | <a href="https://github.com/gobyexample-cn/gobyexample/issues">反馈</a> | <a href="https://github.com/gobyexample-cn/gobyexample">源码</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
-      </p>
+       <a href="https://twitter.com/mmcgrana">@mmcgrana</a> 编写 | <a href="https://github.com/gobyexample-cn">gobyexample-cn</a> 翻译 | <a href="https://github.com/gobyexample-cn/gobyexample/issues">反馈</a> | <a href="https://github.com/gobyexample-cn/gobyexample">源码</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>      </p>
+       <a href="https://twitter.com/mmcgrana">@mmcgrana</a> 编写 | <a href="https://github.com/gobyexample-cn">gobyexample-cn</a> 翻译 | <a href="https://github.com/gobyexample-cn/gobyexample/issues">反馈</a> | <a href="https://github.com/gobyexample-cn/gobyexample">源码</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>      </p>
     </div>
   </body>
 </html>
