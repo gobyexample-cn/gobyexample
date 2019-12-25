@@ -1,56 +1,24 @@
 ## Go by Example 中文版
 
-本项目是 [mmcgrana](https://github.com/mmcgrana) 的 [Go by Example](https://github.com/mmcgrana/gobyexample) 中文翻译。现已由[everyx](https://github.com/everyx) 完成了所有文件的初步翻译，目前正在准备重新翻译，进度条见[文件](./PROGRESS.md)，欢迎 fork 并提交 pull request。
+[Go by Example](https://gobyexample-cn.github.io/) 是一个通过带注释的示例程序学习 Go 语言的网站。网站包含了一系列简单的示例程序，并附带了注释说明，非常适合 Go 语言初学者。
 
-### 贡献说明
+如果您想学习 Go 语言基础知识，不要犹豫，请直接前往 [Go by Example](https://gobyexample-cn.github.io/) 开始学习。
 
-1. 首先在· `examples` 目录下找到对应的内容，完成修改。注：只需注意 `.go` 文件和 `.sh` 文件。`.hash` 文件是在使用 `tools/build` 后自动更新的，主要用于判断文件内容是否被修改；
-1. 然后使用 `tools/build` 命令重新生成网页。这一步会格式化代码，并判断是否修改，修改的内容会重新提交示例代码至 `http://play.golang.org/`，并更新静态页；
-1. `tools/serve` 本地测试结果；
-1. 提交 pull request :)
+### 综述
 
-### License
+如果你想了解 Go by Example `网站` 是如何编译的，或者想为该项目贡献代码，请查看下面的内容：
 
-This work is copyright Mark McGranaghan and licensed under a
-[Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
+本项目包含了网站的内容和构建工具链。网站使用的是 `public` 目录下静态文件（html 等文件）的内容。它是这样被构建出来的：通过 `程序` 提取 `examples` 目录下的源码及注释，并使用 `templates` 目录下的静态文件模板将其渲染为静态文件，最终将生成的静态文件输出到 `public` 目录下。
 
-The Go Gopher is copyright [Renée French](http://reneefrench.blogspot.com/) and licensed under a
-[Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
+实现此构建过程的 `程序` 位于 `tools` 目录下，其相关的依赖库被放在了 `vendor` 目录下。
 
-### 原版传送门
+构建得到的 `public` 目录下的静态文件（html 等文件），可以部署到任何支持静态内容的系统。例如 S3、CloudFront 以及任何 Web 服务器。
 
-- [英文版](https://gobyexample.com)
-- [mmcgrana/gobyexample](https://github.com/mmcgrana/gobyexample)
-
-### 致谢
-
-本翻译项目原作者[everyx](https://github.com/everyx)，以及所有[贡献者](https://github.com/gobyexample-cn/gobyexample/graphs/contributors)。
-
----
-
-## Go by Example 原版 README
-
-Content and build toolchain for [Go by Example](https://gobyexample.com),
-a site that teaches Go via annotated example programs.
-
-### Overview
-
-The Go by Example site is built by extracting code and
-comments from source files in `examples` and rendering
-them via the `templates` into a static `public`
-directory. The programs implementing this build process
-are in `tools`, along with some vendor'd dependencies
-in `vendor`.
-
-The built `public` directory can be served by any
-static content system. The production site uses S3 and
-CloudFront, for example.
-
-### Building
+### 构建
 
 [![Build Status](https://travis-ci.com/mmcgrana/gobyexample.svg "Travis CI status")](https://travis-ci.com/mmcgrana/gobyexample)
 
-To build the site you'll need Go and Python installed. Run:
+若想自行构建该网站，你需要安装 Go 和 Python。然后运行下面的命令：
 
 ```console
 $ go get github.com/russross/blackfriday
@@ -58,15 +26,22 @@ $ tools/build
 $ open public/index.html
 ```
 
-To build continuously in a loop:
+如果你使用了 `GO MOD`，直接执行下面的命令即可：
+
+```console
+$ tools/build
+$ open public/index.html
+```
+
+若想实时渲染，请使用持续构建：
 
 ```console
 $ tools/build-loop
 ```
 
-### Publishing
+### 发布
 
-To upload the site:
+上传该网站：
 
 ```console
 $ gem install aws-sdk
@@ -75,20 +50,19 @@ $ export AWS_SECRET_ACCESS_KEY=...
 $ tools/upload
 ```
 
-### License
+### 许可协议
 
-This work is copyright Mark McGranaghan and licensed under a
-[Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
+该项目的著作权归 Mark McGranaghan 所有，并遵循 [CC BY-SA 3.0](http://creativecommons.org/licenses/by/3.0/) 协议。
 
-The Go Gopher is copyright [Renée French](http://reneefrench.blogspot.com/) and licensed under a
-[Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
+Go Gopher 的版权归 [Renée French](http://reneefrench.blogspot.com/) 所有，并遵循 [CC BY-SA 3.0](http://creativecommons.org/licenses/by/3.0/) 协议。
 
+### 其他语言
 
-### Translations
+本项目只是 [mmcgrana](https://github.com/mmcgrana) 的 [Go by Example](https://github.com/mmcgrana/gobyexample) 项目的中文翻译。
 
-Contributor translations of the Go by Example site are available in:
+除中文版外，该项目还有以下语言：
 
-* [Chinese](https://gobyexample-cn.github.io/) by [gobyexample-cn](https://github.com/gobyexample-cn)
+* [English](https://gobyexample.com) by [mmcgrana/gobyexample](https://github.com/mmcgrana/gobyexample)（原版）
 * [Czech](http://gobyexamples.sweb.cz/) by [martinkunc](https://github.com/martinkunc/gobyexample-cz)
 * [French](http://le-go-par-l-exemple.keiruaprod.fr) by [keirua](https://github.com/keirua/gobyexample)
 * [Italian](http://gobyexample.it) by the [Go Italian community](https://github.com/golangit/gobyexample-it)
@@ -97,8 +71,30 @@ Contributor translations of the Go by Example site are available in:
 * [Spanish](http://goconejemplos.com) by the [Go Mexico community](https://github.com/dabit/gobyexample)
 * [Ukrainian](http://gobyexample.com.ua/) by [butuzov](https://github.com/butuzov/gobyexample)
 
-### Thanks
+### 致谢
 
-Thanks to [Jeremy Ashkenas](https://github.com/jashkenas)
-for [Docco](http://jashkenas.github.com/docco/), which
-inspired this project.
+感谢 [Jeremy Ashkenas](https://github.com/jashkenas) 的 [Docco](http://jashkenas.github.com/docco/)，启发了这个项目。
+
+> 好了，从这里开始，后面的内容都是中文版的贡献者们给自己加的戏（好吧，其实前面的内容也没有完全根据英文版翻译）。
+
+### 贡献说明
+
+如果你发现中文版的例子没有及时与英文版同步，或者你觉得某个例子翻译得不够好，甚至只是一个错误的文字、单词，我们都非常欢迎你能够提交 pull request 帮助我们使得项目更完善。贡献流程大致如下：
+
+1. Fork 该仓库。
+1. 在 `examples` 目录下找到想要修改的内容，完成修改，这通常是以 `例子`（也就是一个目录）为单位进行修改，当然，你可以一次性修改多个例子。注意：只需修改 `.go` 和 `.sh` 文件。`.hash` 文件是 `tools/build` 自动生成、更新的，主要用于判断文件内容是否被修改；
+1. 然后使用 `tools/build` 命令重新生成静态文件。这一步会格式化代码，并判断是否有修改，内容有修改的例子，会自动将该例子的代码提交至 `http://play.golang.org/` 测试（可能需要克服网络障碍），并更新静态文件；
+1. `tools/serve` 本地预览效果；
+1. 通过自测后即可提交 pull request :)
+
+### 构建说明
+
+英文项目使用 vendor 解决依赖，中文版可以使用 `GO MOD` 解决依赖。
+
+注意：依赖库 [blackfriday](https://github.com/russross/blackfriday) 的 2.x.x 版本目前与项目不兼容，只能使用 1.x.x 版本，项目的 `go.mod` 文件已正确配置，大家不要自行修改。直接执行 `tools/build` 等命令即可。 
+
+### 致谢
+
+感谢本翻译项目的原作者 [everyx](https://github.com/everyx)，完成了所有文件最初的翻译，同时也感谢项目每一位 [贡献者](https://github.com/gobyexample-cn/gobyexample/graphs/contributors) 的辛勤付出。
+
+项目现由 [gobyexample-cn](https://github.com/gobyexample-cn) 维护，欢迎各位同学 fork 并提交 pull request。
