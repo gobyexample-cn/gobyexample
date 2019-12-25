@@ -248,7 +248,17 @@ func parseExamples() []*Example {
 		if verbose() {
 			fmt.Printf("Processing %s [%d/%d]\n", exampleName, i+1, len(exampleNames))
 		}
-		example := Example{Name: exampleName}
+		exampleNameZh := exampleName
+		if strings.Index(exampleName, "->") != -1 {
+			names := strings.Split(exampleName, "->")
+			exampleName = names[0]
+			if strings.Trim(names[1], " ") != "" {
+				exampleNameZh = names[1]
+			} else {
+				exampleNameZh = names[0]
+			}
+		}
+		example := Example{Name: exampleNameZh}
 		exampleID := strings.ToLower(exampleName)
 		exampleID = strings.Replace(exampleID, " ", "-", -1)
 		exampleID = strings.Replace(exampleID, "/", "-", -1)
