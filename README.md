@@ -75,7 +75,9 @@ Go Gopher 的版权归 [Renée French](http://reneefrench.blogspot.com/) 所有�
 
 ## 贡献说明
 
-> 从这部分开始，后面的内容都是中文版的贡献者们给自己加的戏（好吧，其实前面的内容也没有完全根据英文版翻译）。
+> 从这部分开始，后面的内容都是中文版的贡献者们给自己加的戏。
+>
+> 好吧，其实前面的内容也加了很多戏，没有完全根据英文版翻译。
 
 如果你发现中文版的例子没有及时与英文版同步，或者你觉得某个例子翻译得不够好，甚至只是一个错误的文字、单词或符号，我们都 `非常欢迎` 你能够提交 pull request 以帮助我们使项目更完善，贡献流程大致如下：
 
@@ -91,7 +93,7 @@ Go Gopher 的版权归 [Renée French](http://reneefrench.blogspot.com/) 所有�
 
 注意：依赖库 [blackfriday](https://github.com/russross/blackfriday) 的 2.x.x 版本目前与项目不兼容，只能使用 1.x.x 版本，项目的 `go.mod` 文件已正确配置，同学们不要随意修改。直接执行 `tools/build` 等命令即可。 
 
-## 致谢
+## 中文版的致谢
 
 感谢本翻译项目的原作者 [everyx](https://github.com/everyx)，完成了所有文件最初的翻译，同时也感谢项目每一位 [贡献者](https://github.com/gobyexample-cn/gobyexample/graphs/contributors) 的辛勤付出。
 
