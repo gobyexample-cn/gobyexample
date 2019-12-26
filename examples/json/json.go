@@ -55,7 +55,7 @@ func main() {
 	// 你可以给结构字段声明标签来自定义编码的 JSON 数据键
 	// 名称。在上面 `Response2` 的定义可以作为这个标签
 	// 的一个例子。
-	res2D := Response2{
+	res2D := &Response2{
 		Page:   1,
 		Fruits: []string{"apple", "peach", "pear"}}
 	res2B, _ := json.Marshal(res2D)
