@@ -34,7 +34,11 @@ li {
 }
 p a, li a {
     text-decoration : none;
-    border-bottom: #333 1px solid;
+    border-bottom: #777 1px solid;
+    transition: all 1s;
+}
+p a:hover, li a:hover{
+    border-bottom: #333 2px solid;
 }
 blockquote, q {
 	quotes: none;
@@ -92,9 +96,9 @@ p.footer a, p.footer a:visited {
     color: grey;
 }
 div#intro {
-    width: 420px;
-    min-width: 420px;
-    max-width: 420px;
+    width: 450px;
+    min-width: 450px;
+    max-width: 450px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 120px;
