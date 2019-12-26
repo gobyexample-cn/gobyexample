@@ -35,10 +35,9 @@ li {
 p a, li a {
     text-decoration : none;
     border-bottom: #777 1px solid;
-    transition: all 1s;
 }
 p a:hover, li a:hover{
-    border-bottom: #333 2px solid;
+    border-bottom: #000 2px solid;
 }
 blockquote, q {
 	quotes: none;
