@@ -8,16 +8,16 @@
 
 # 同步进度
 
-- [ ] Hello World
-- [ ] Values->值
-- [ ] Variables->变量
-- [ ] Constants->常量
-- [ ] For->For 循环
-- [ ] If/Else->If/Else 分支
-- [ ] Switch->Switch 分支结构
-- [ ] Arrays->数组
-- [ ] Slices->切片
-- [ ] Maps->Map
+- [x] Hello World
+- [x] Values->值
+- [x] Variables->变量
+- [x] Constants->常量
+- [x] For->For 循环
+- [x] If/Else->If/Else 分支
+- [x] Switch->Switch 分支结构
+- [x] Arrays->数组
+- [x] Slices->切片
+- [x] Maps->Map
 - [ ] Range->Range 遍历
 - [ ] Functions->函数
 - [ ] Multiple Return Values->多返回值
