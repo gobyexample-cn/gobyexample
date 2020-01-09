@@ -18,17 +18,17 @@
 - [x] Arrays->数组
 - [x] Slices->切片
 - [x] Maps->Map
-- [ ] Range->Range 遍历
-- [ ] Functions->函数
-- [ ] Multiple Return Values->多返回值
-- [ ] Variadic Functions->变参函数
-- [ ] Closures->闭包
-- [ ] Recursion->递归
-- [ ] Pointers->指针
-- [ ] Structs->结构体
-- [ ] Methods->方法
-- [ ] Interfaces->接口
-- [ ] Errors->错误处理
+- [x] Range->Range 遍历
+- [x] Functions->函数
+- [x] Multiple Return Values->多返回值
+- [x] Variadic Functions->变参函数
+- [x] Closures->闭包
+- [x] Recursion->递归
+- [x] Pointers->指针
+- [x] Structs->结构体
+- [x] Methods->方法
+- [x] Interfaces->接口
+- [x] Errors->错误处理
 - [ ] Goroutines->协程
 - [ ] Channels->通道
 - [ ] Channel Buffering->通道缓冲
