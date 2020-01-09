@@ -1,6 +1,4 @@
-// `for` 是 Go 中唯一的循环结构。这里有 `for` 循环
-// 的三个基本使用方式。
-
+// `for` 是 Go 中唯一的循环结构。这里会展示 `for` 循环的三种基本使用方式。
 package main
 
 import "fmt"
@@ -19,14 +17,14 @@ func main() {
 		fmt.Println(j)
 	}
 
-	// 不带条件的 `for` 循环将一直重复执行，直到在循环体内使用
-	// 了 `break` 或者 `return` 来跳出循环。
+	// 不带条件的 `for` 循环将一直重复执行，
+	// 直到在循环体内使用了 `break` 或者 `return` 跳出循环。
 	for {
 		fmt.Println("loop")
 		break
 	}
 
-	// 你也可以使用 `continue` 来跳到下一个循环迭代
+	// 你也可以使用 `continue` 直接进入下一次循环。
 	for n := 0; n <= 5; n++ {
 		if n%2 == 0 {
 			continue
