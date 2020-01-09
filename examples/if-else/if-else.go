@@ -1,4 +1,5 @@
 // `if` 和 `else` 分支结构在 Go 中非常直接。
+
 package main
 
 import "fmt"

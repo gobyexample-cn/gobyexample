@@ -1,4 +1,4 @@
-// Go 支持在结构体类型中定义_方法(methods)_ 。
+// Go 支持为结构体类型定义_方法(methods)_ 。
 
 package main
 
@@ -8,13 +8,13 @@ type rect struct {
 	width, height int
 }
 
-// 这里的 `area` 方法有一个_接收器(receiver)类型_ `rect`。
+// 这里的 `area` 方法有一个 _接收者类型_：`rect`。
 func (r *rect) area() int {
 	return r.width * r.height
 }
 
-// 可以为值类型或者指针类型的接收器定义方法。这里是一个
-// 值类型接收器的例子。
+// 可以为值类型或者指针类型的接收者定义方法。
+// 这是一个值类型接收者的例子。
 func (r rect) perim() int {
 	return 2*r.width + 2*r.height
 }
@@ -26,9 +26,9 @@ func main() {
 	fmt.Println("area: ", r.area())
 	fmt.Println("perim:", r.perim())
 
-	// Go 自动处理方法调用时的值和指针之间的转化。你可以使
-	// 用指针来调用方法来避免在方法调用时产生一个拷贝，或者
-	// 让方法能够改变接受的结构体。
+	// 调用方法时，Go 会自动处理值和指针之间的转换。
+	// 想要避免在调用方法时产生一个拷贝，或者想让方法可以修改接受结构体的值，
+	// 你都可以使用指针来调用方法。
 	rp := &r
 	fmt.Println("area: ", rp.area())
 	fmt.Println("perim:", rp.perim())

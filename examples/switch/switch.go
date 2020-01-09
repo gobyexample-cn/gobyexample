@@ -1,4 +1,5 @@
 // _switch_ 是多分支情况时快捷的条件语句。
+
 package main
 
 import "fmt"

@@ -1,5 +1,6 @@
 // _map_ 是 Go 内建的[关联数据类型](http://zh.wikipedia.org/wiki/关联数组)
 // （在一些其他的语言中也被称为 _哈希(hash)_ 或者 _字典(dict)_ ）。
+
 package main
 
 import "fmt"
