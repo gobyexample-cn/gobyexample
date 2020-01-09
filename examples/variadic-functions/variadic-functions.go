@@ -1,6 +1,7 @@
 // [_可变参数函数_](https://zh.wikipedia.org/wiki/%E5%8F%AF%E8%AE%8A%E5%8F%83%E6%95%B8%E5%87%BD%E6%95%B8)。
 // 在调用时可以传递任意数量的参数。
 // 例如，`fmt.Println` 就是一个常见的变参函数。
+
 package main
 
 import "fmt"

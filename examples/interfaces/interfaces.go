@@ -1,4 +1,5 @@
 // 方法签名的集合叫做：_接口(Interfaces)_。
+
 package main
 
 import "fmt"

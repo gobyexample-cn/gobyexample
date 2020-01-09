@@ -1,5 +1,6 @@
 // Go 支持 <em><a href="http://zh.wikipedia.org/wiki/%E6%8C%87%E6%A8%99_(%E9%9B%BB%E8%85%A6%E7%A7%91%E5%AD%B8)">指针</a></em>，
 // 允许在程序中通过 `引用传递` 来传递值和数据结构。
+
 package main
 
 import "fmt"

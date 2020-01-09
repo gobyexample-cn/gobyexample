@@ -1,6 +1,7 @@
 // Go 支持[_匿名函数_](http://zh.wikipedia.org/wiki/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0)，
 // 并能用其构造 <a href="http://zh.wikipedia.org/wiki/%E9%97%AD%E5%8C%85_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)"><em>闭包</em></a>。
 // 匿名函数在你想定义一个不需要命名的内联函数时是很实用的。
+
 package main
 
 import "fmt"
