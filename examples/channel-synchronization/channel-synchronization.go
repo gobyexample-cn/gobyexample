@@ -1,13 +1,16 @@
-// 我们可以使用通道来同步 Go 协程间的执行状态。这里是一个
-// 使用阻塞的接受方式来等待一个 Go 协程的运行结束。
+// 我们可以使用通道来同步协程之间的执行状态。
+// 这儿有一个例子，使用阻塞接收的方式，实现了等待另一个协程完成。
+// 如果需要等待多个协程，[WaitGroup](waitgroups) 是一个更好的选择。
 
 package main
 
-import "fmt"
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
-// 这是一个我们将要在 Go 协程中运行的函数。`done` 通道
-// 将被用于通知其他 Go 协程这个函数已经工作完毕。
+// 我们将要在协程中运行这个函数。
+// `done` 通道将被用于通知其他协程这个函数已经完成工作。
 func worker(done chan bool) {
 	fmt.Print("working...")
 	time.Sleep(time.Second)
@@ -19,10 +22,10 @@ func worker(done chan bool) {
 
 func main() {
 
-	// 运行一个 worker Go协程，并给予用于通知的通道。
+	// 运行一个 worker 协程，并给予用于通知的通道。
 	done := make(chan bool, 1)
 	go worker(done)
 
-	// 程序将在接收到通道中 worker 发出的通知前一直阻塞。
+	// 程序将一直阻塞，直至收到 worker 使用通道发送的通知。
 	<-done
 }
