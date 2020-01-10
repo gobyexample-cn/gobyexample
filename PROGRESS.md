@@ -29,13 +29,13 @@
 - [x] Methods->方法
 - [x] Interfaces->接口
 - [x] Errors->错误处理
-- [ ] Goroutines->协程
-- [ ] Channels->通道
-- [ ] Channel Buffering->通道缓冲
-- [ ] Channel Synchronization->通道同步
-- [ ] Channel Directions->通道方向
-- [ ] Select->通道选择器
-- [ ] Timeouts->超时处理
+- [x] Goroutines->协程
+- [x] Channels->通道
+- [x] Channel Buffering->通道缓冲
+- [x] Channel Synchronization->通道同步
+- [x] Channel Directions->通道方向
+- [x] Select->通道选择器
+- [x] Timeouts->超时处理
 - [ ] Non-Blocking Channel Operations->非阻塞通道操作
 - [ ] Closing Channels->通道的关闭
 - [ ] Range over Channels->通道遍历
