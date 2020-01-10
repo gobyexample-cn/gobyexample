@@ -1,4 +1,5 @@
 // Go 支持字符、字符串、布尔和数值 _常量_ 。
+
 package main
 
 import "fmt"
