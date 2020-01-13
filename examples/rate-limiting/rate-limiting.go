@@ -30,17 +30,17 @@ func main() {
 		fmt.Println("request", req, time.Now())
 	}
 
-	// 有时候我们想临时进行速率限制，并且不影响整体的速率控制，
-	// 我们可以通过[通道缓冲](channel-buffering.html)来实现。
-	// 这个 `burstyLimiter` 通道用来进行 3 次临时的脉冲型速率限制。
+	// 有时候我们可能希望在速率限制方案中允许短暂的并发请求，并同时保留总体速率限制。
+	// 我们可以通过缓冲通道来完成此任务。
+	// `burstyLimiter` 通道允许最多 3 个爆发（bursts）事件。
 	burstyLimiter := make(chan time.Time, 3)
 
-	// 想将通道填充需要临时改变3次的值，做好准备。
+	// 填充通道，表示允许的爆发（bursts）。
 	for i := 0; i < 3; i++ {
 		burstyLimiter <- time.Now()
 	}
 
-	// 每 200 ms 我们将添加一个新的值到 `burstyLimiter`中，
+	// 每 200ms 我们将尝试添加一个新的值到 `burstyLimiter`中，
 	// 直到达到 3 个的限制。
 	go func() {
 		for t := range time.Tick(200 * time.Millisecond) {
@@ -48,8 +48,8 @@ func main() {
 		}
 	}()
 
-	// 现在模拟超过 5 个的接入请求。它们中刚开始的 3 个将
-	// 由于受 `burstyLimiter` 的“脉冲”影响。
+	// 现在，模拟另外 5 个传入请求。
+	// 受益于 `burstyLimiter` 的爆发（bursts）能力，前 3 个请求可以快速完成。
 	burstyRequests := make(chan int, 5)
 	for i := 1; i <= 5; i++ {
 		burstyRequests <- i
