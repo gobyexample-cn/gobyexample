@@ -1,28 +1,30 @@
-// [_速率限制(英)_](http://en.wikipedia.org/wiki/Rate_limiting) 是
-// 一个重要的控制服务资源利用和质量的途径。Go 通过 Go 协程、通
-// 道和[打点器](../tickers/)优美的支持了速率限制。
+// <em>[速率限制](http://en.wikipedia.org/wiki/Rate_limiting)</em>
+// 是控制服务资源利用和质量的重要机制。
+// 基于协程、通道和[打点器](tickers)，Go 优雅的支持速率限制。
 
 package main
 
-import "time"
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 
-	// 首先我们将看一下基本的速率限制。假设我们想限制我们
-	// 接收请求的处理，我们将这些请求发送给一个相同的通道。
+	// 首先，我们将看一个基本的速率限制。
+	// 假设我们想限制对收到请求的处理，我们可以通过一个渠道处理这些请求。
 	requests := make(chan int, 5)
 	for i := 1; i <= 5; i++ {
 		requests <- i
 	}
 	close(requests)
 
-	// 这个 `limiter` 通道将每 200ms 接收一个值。这个是
-	// 速率限制任务中的管理器。
-	limiter := time.Tick(time.Millisecond * 200)
+	// `limiter` 通道每 200ms 接收一个值。
+	// 这是我们任务速率限制的调度器。
+	limiter := time.Tick(200 * time.Millisecond)
 
-	// 通过在每次请求前阻塞 `limiter` 通道的一个接收，我们限制
-	// 自己每 200ms 执行一次请求。
+	// 通过在每次请求前阻塞 `limiter` 通道的一个接收，
+	// 可以将频率限制为，每 200ms 执行一次请求。
 	for req := range requests {
 		<-limiter
 		fmt.Println("request", req, time.Now())
@@ -41,7 +43,7 @@ func main() {
 	// 每 200 ms 我们将添加一个新的值到 `burstyLimiter`中，
 	// 直到达到 3 个的限制。
 	go func() {
-		for t := range time.Tick(time.Millisecond * 200) {
+		for t := range time.Tick(200 * time.Millisecond) {
 			burstyLimiter <- t
 		}
 	}()

@@ -8,4 +8,4 @@ received job 3
 sent all jobs
 received all jobs
 
-# 通过关闭通道的学习，也让下面学习通道遍历水到渠成。
+# 根据 `关闭通道` 的思想，可以引出我们的下一个示例：遍历通道。

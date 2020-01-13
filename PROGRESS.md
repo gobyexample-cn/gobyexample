@@ -37,12 +37,12 @@
 - [x] Select->通道选择器
 - [x] Timeouts->超时处理
 - [x] Non-Blocking Channel Operations->非阻塞通道操作
-- [ ] Closing Channels->通道的关闭
-- [ ] Range over Channels->通道遍历
-- [ ] Timers->Timer
-- [ ] Tickers->Ticker
-- [ ] Worker Pools->工作池
-- [ ] WaitGroups->WaitGroup
+- [x] Closing Channels->通道的关闭
+- [x] Range over Channels->通道遍历
+- [x] Timers->Timer
+- [x] Tickers->Ticker
+- [x] Worker Pools->工作池
+- [x] WaitGroups->WaitGroup
 - [ ] Rate Limiting->速率限制
 - [ ] Atomic Counters->原子计数器
 - [ ] Mutexes->互斥锁
