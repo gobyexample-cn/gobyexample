@@ -40,7 +40,7 @@
 - [x] Closing Channels->通道的关闭
 - [x] Range over Channels->通道遍历
 - [x] Timers->Timer
-- [ ] Tickers->Ticker
+- [x] Tickers->Ticker
 - [ ] Worker Pools->工作池
 - [ ] WaitGroups->WaitGroup
 - [ ] Rate Limiting->速率限制
