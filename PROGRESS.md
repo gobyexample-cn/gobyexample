@@ -41,7 +41,7 @@
 - [x] Range over Channels->通道遍历
 - [x] Timers->Timer
 - [x] Tickers->Ticker
-- [ ] Worker Pools->工作池
+- [x] Worker Pools->工作池
 - [ ] WaitGroups->WaitGroup
 - [ ] Rate Limiting->速率限制
 - [ ] Atomic Counters->原子计数器
