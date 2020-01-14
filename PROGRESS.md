@@ -48,7 +48,7 @@
 - [x] Mutexes->互斥锁
 - [x] Stateful Goroutines->状态协程
 - [x] Sorting->排序
-- [ ] Sorting by Functions->使用函数自定义排序
+- [x] Sorting by Functions->使用函数自定义排序
 - [ ] Panic
 - [ ] Defer
 - [ ] Collection Functions->组合函数
