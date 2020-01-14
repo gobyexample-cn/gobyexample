@@ -32,11 +32,11 @@ ol, ul {
 li {
     padding: 2px;
 }
-p a, li a {
+a {
     text-decoration : none;
     border-bottom: #777 1px solid;
 }
-p a:hover, li a:hover{
+a:hover{
     border-bottom: #000 2px solid;
 }
 blockquote, q {
