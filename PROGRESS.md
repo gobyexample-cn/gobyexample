@@ -46,7 +46,7 @@
 - [x] Rate Limiting->速率限制
 - [x] Atomic Counters->原子计数器
 - [x] Mutexes->互斥锁
-- [ ] Stateful Goroutines->Go 状态协程
+- [x] Stateful Goroutines->状态协程
 - [ ] Sorting->排序
 - [ ] Sorting by Functions->使用函数自定义排序
 - [ ] Panic
