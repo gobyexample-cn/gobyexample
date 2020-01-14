@@ -33,7 +33,7 @@
 - [x] Channels->通道
 - [x] Channel Buffering->缓冲通道
 - [x] Channel Synchronization->通道同步
-- [ ] Channel Directions->通道方向
+- [x] Channel Directions->通道方向
 - [ ] Select->通道选择器
 - [ ] Timeouts->超时处理
 - [ ] Non-Blocking Channel Operations->非阻塞通道操作
