@@ -30,7 +30,7 @@
 - [x] Interfaces->接口
 - [x] Errors->错误处理
 - [x] Goroutines->协程
-- [ ] Channels->通道
+- [x] Channels->通道
 - [ ] Channel Buffering->通道缓冲
 - [ ] Channel Synchronization->通道同步
 - [ ] Channel Directions->通道方向
