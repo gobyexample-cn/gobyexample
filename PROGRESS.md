@@ -31,7 +31,7 @@
 - [x] Errors->错误处理
 - [x] Goroutines->协程
 - [x] Channels->通道
-- [ ] Channel Buffering->通道缓冲
+- [x] Channel Buffering->缓冲通道
 - [ ] Channel Synchronization->通道同步
 - [ ] Channel Directions->通道方向
 - [ ] Select->通道选择器
