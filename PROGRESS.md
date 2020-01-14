@@ -38,7 +38,7 @@
 - [x] Timeouts->超时处理
 - [x] Non-Blocking Channel Operations->非阻塞通道操作
 - [x] Closing Channels->通道的关闭
-- [ ] Range over Channels->通道遍历
+- [x] Range over Channels->通道遍历
 - [ ] Timers->Timer
 - [ ] Tickers->Ticker
 - [ ] Worker Pools->工作池
