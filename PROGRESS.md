@@ -42,7 +42,7 @@
 - [x] Timers->Timer
 - [x] Tickers->Ticker
 - [x] Worker Pools->工作池
-- [ ] WaitGroups->WaitGroup
+- [x] WaitGroups->WaitGroup
 - [ ] Rate Limiting->速率限制
 - [ ] Atomic Counters->原子计数器
 - [ ] Mutexes->互斥锁
