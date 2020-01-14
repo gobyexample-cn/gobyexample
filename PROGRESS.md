@@ -29,7 +29,7 @@
 - [x] Methods->方法
 - [x] Interfaces->接口
 - [x] Errors->错误处理
-- [ ] Goroutines->协程
+- [x] Goroutines->协程
 - [ ] Channels->通道
 - [ ] Channel Buffering->通道缓冲
 - [ ] Channel Synchronization->通道同步
