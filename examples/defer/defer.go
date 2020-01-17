@@ -4,8 +4,10 @@
 
 package main
 
-import "fmt"
-import "os"
+import (
+	"fmt"
+	"os"
+)
 
 // 假设我们想要创建一个文件，向它进行写操作，然后在结束
 // 时关闭它。这里展示了如何通过 `defer` 来做到这一切。
@@ -36,5 +38,11 @@ func writeFile(f *os.File) {
 
 func closeFile(f *os.File) {
 	fmt.Println("closing")
-	f.Close()
+	err := f.Close()
+	// It's important to check for errors when closing a
+	// file, even in a deferred function.
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		os.Exit(1)
+	}
 }
