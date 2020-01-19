@@ -9,7 +9,6 @@ import (
 	"fmt"
 )
 
-
 func main() {
 
 	// 这是要编解码的字符串。

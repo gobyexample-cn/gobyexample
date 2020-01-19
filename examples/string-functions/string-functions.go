@@ -32,7 +32,6 @@ func main() {
 	p("ToUpper:   ", s.ToUpper("test"))
 	p()
 
-
 	// 虽然不是 `strings` 的函数，但仍然值得一提的是，
 	// 获取字符串长度（以字节为单位）以及通过索引获取一个字节的机制。
 	p("Len: ", len("hello"))
