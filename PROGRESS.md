@@ -61,7 +61,7 @@
 - [x] Epoch->时间戳
 - [x] Time Formatting / Parsing->时间的格式化和解析
 - [x] Random Numbers->随机数
-- [ ] Number Parsing->数字解析
+- [x] Number Parsing->数字解析
 - [ ] URL Parsing->URL 解析
 - [ ] SHA1 Hashes->SHA1 哈希
 - [ ] Base64 Encoding->Base64 编码
