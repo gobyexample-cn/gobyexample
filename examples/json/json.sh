@@ -10,10 +10,10 @@ true
 map[num:6.13 strs:[a b]]
 6.13
 a
-&{1 [apple peach]}
+{1 [apple peach]}
 apple
 {"apple":5,"lettuce":7}
 
-
-# 这里我们已经覆盖了基本的 Go JSON 知识，但是查阅 [JSON 和 Go](http://blog.golang.org/2011/01/json-and-go.html)
-# 博文和 [JSON 包文档](http://golang.org/pkg/encoding/json/) 来获取更多的信息。
+# 至此，我们已经学习了基本的 Go JSON 知识，如果想要获取更多的信息，
+# 请查阅 [JSON and Go](http://blog.golang.org/2011/01/json-and-go.html) 博文
+# 和 [JSON package docs](http://golang.org/pkg/encoding/json/)。

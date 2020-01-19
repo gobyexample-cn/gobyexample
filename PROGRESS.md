@@ -55,7 +55,7 @@
 - [x] String Functions->字符串函数
 - [x] String Formatting->字符串格式化
 - [x] Regular Expressions->正则表达式
-- [ ] JSON
+- [x] JSON
 - [ ] XML
 - [ ] Time->时间
 - [ ] Epoch->时间戳
