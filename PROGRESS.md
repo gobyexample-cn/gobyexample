@@ -50,7 +50,7 @@
 - [x] Sorting->排序
 - [x] Sorting by Functions->使用函数自定义排序
 - [x] Panic
-- [ ] Defer
+- [x] Defer
 - [ ] Collection Functions->组合函数
 - [ ] String Functions->字符串函数
 - [ ] String Formatting->字符串格式化

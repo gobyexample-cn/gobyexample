@@ -1,6 +1,5 @@
-// _Defer_ 被用来确保一个函数调用在程序执行结束前执行。同
-// 样用来执行一些清理工作。 `defer` 用在像其他语言中的
-// `ensure` 和 `finally`用到的地方。
+// _Defer_ 用于确保程序在执行完成后，会调用某个函数，一般是执行清理工作。
+// Defer 的用途跟其他语言的 `ensure` 或 `finally` 类似。
 
 package main
 
@@ -9,13 +8,13 @@ import (
 	"os"
 )
 
-// 假设我们想要创建一个文件，向它进行写操作，然后在结束
-// 时关闭它。这里展示了如何通过 `defer` 来做到这一切。
+// 假设我们想要创建一个文件、然后写入数据、最后在程序结束时关闭该文件。
+// 这里展示了如何通过 `defer` 来做到这一切。
 func main() {
 
-	// 在 `createFile` 后得到一个文件对象，
+	// 在 `createFile` 后立即得到一个文件对象，
 	// 我们使用 defer 通过 `closeFile` 来关闭这个文件。
-	// 这会在封闭函数 （`main`）结束时执行，就是 `writeFile` 结束后。
+	// 这会在封闭函数（`main`）结束时执行，即 `writeFile` 完成以后。
 	f := createFile("/tmp/defer.txt")
 	defer closeFile(f)
 	writeFile(f)
@@ -39,8 +38,8 @@ func writeFile(f *os.File) {
 func closeFile(f *os.File) {
 	fmt.Println("closing")
 	err := f.Close()
-	// It's important to check for errors when closing a
-	// file, even in a deferred function.
+	// 关闭文件时，进行错误检查是非常重要的，
+	// 即使在 defer 函数中也是如此。
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error: %v\n", err)
 		os.Exit(1)
