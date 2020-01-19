@@ -57,7 +57,7 @@
 - [x] Regular Expressions->正则表达式
 - [x] JSON
 - [x] XML
-- [ ] Time->时间
+- [x] Time->时间
 - [ ] Epoch->时间戳
 - [ ] Time Formatting / Parsing->时间的格式化和解析
 - [ ] Random Numbers->随机数
