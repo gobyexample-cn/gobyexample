@@ -1,4 +1,4 @@
-// Go 的 `encoding.xml` 包为 XML 和 类-XML 格式提供了内建支持。
+// Go 通过 `encoding.xml` 包为 XML 和 类-XML 格式提供了内建支持。
 
 package main
 
@@ -8,7 +8,7 @@ import (
 )
 
 // 该类型将被映射为 XML。
-// 与 JSON 例子类型，字段 tag 包含了编码和解码的指令。
+// 与 JSON 例子类似，字段 tag 包含了编码和解码的指令。
 // 这里我们使用了 XML 包的一些特性：
 // `XMLName` 字段名规定了 struct 的 XML 元素的名称；
 // `id,attr` 意思是 `Id` 字段是一个 XML _attribute_，而不是嵌套元素。
@@ -33,7 +33,7 @@ func main() {
 	out, _ := xml.MarshalIndent(coffee, " ", "  ")
 	fmt.Println(string(out))
 
-	// 明确的为输出结果添加一个通用的 XML 头部信息
+	// 明确的为输出结果添加一个通用的 XML 头部信息。
 	fmt.Println(xml.Header + string(out))
 
 	// 使用 `Unmarshal` 将 XML 格式的字节流解析到 struct 内。

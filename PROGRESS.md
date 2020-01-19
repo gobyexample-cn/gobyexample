@@ -56,7 +56,7 @@
 - [x] String Formatting->字符串格式化
 - [x] Regular Expressions->正则表达式
 - [x] JSON
-- [ ] XML
+- [x] XML
 - [ ] Time->时间
 - [ ] Epoch->时间戳
 - [ ] Time Formatting / Parsing->时间的格式化和解析
