@@ -13,4 +13,4 @@ p([a-z]+)ch
 a <fruit>
 a PEACH
 
-# 完整的 Go 正则表达式参考，请查阅 [`regexp`](http://golang.org/pkg/regexp/) 包文档。
+# 有关 Go 正则表达式的说明，请参考 [`regexp`](http://golang.org/pkg/regexp/) 包文档。
