@@ -53,7 +53,7 @@
 - [x] Defer
 - [x] Collection Functions->组合函数
 - [x] String Functions->字符串函数
-- [ ] String Formatting->字符串格式化
+- [x] String Formatting->字符串格式化
 - [ ] Regular Expressions->正则表达式
 - [ ] JSON
 - [ ] XML
