@@ -51,7 +51,7 @@
 - [x] Sorting by Functions->使用函数自定义排序
 - [x] Panic
 - [x] Defer
-- [ ] Collection Functions->组合函数
+- [x] Collection Functions->组合函数
 - [ ] String Functions->字符串函数
 - [ ] String Formatting->字符串格式化
 - [ ] Regular Expressions->正则表达式
