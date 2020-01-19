@@ -64,7 +64,7 @@
 - [x] Number Parsing->数字解析
 - [x] URL Parsing->URL 解析
 - [x] SHA1 Hashes->SHA1 哈希
-- [ ] Base64 Encoding->Base64 编码
+- [x] Base64 Encoding->Base64 编码
 - [ ] Reading Files->读文件
 - [ ] Writing Files->写文件
 - [ ] Line Filters->行过滤器
@@ -77,8 +77,8 @@
 - [ ] Command-Line Subcommands->命令行子命令
 - [ ] Environment Variables->环境变量
 - [ ] HTTP Clients->HTTP 客户端
-- [ ]  HTTP Servers->HTTP 服务端
-- [ ]  Spawning Processes->生成进程
+- [ ] HTTP Servers->HTTP 服务端
+- [ ] Spawning Processes->生成进程
 - [ ] Exec'ing Processes->执行进程
 - [ ] Signals->信号
 - [ ] Exit->退出
