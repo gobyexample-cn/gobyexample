@@ -7,5 +7,6 @@ $ go run random-numbers.go
 5,87
 
 
-# 参阅 [`math/rand`](http://golang.org/pkg/math/rand/) 包
-# 文档，提供了 Go 可以提供的其他随量的参考信息。
+
+# 有关 Go 提供的其他随机数的信息，
+# 请参阅 [`math/rand`](http://golang.org/pkg/math/rand/) 包文档。
