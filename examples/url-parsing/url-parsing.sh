@@ -1,5 +1,5 @@
-# 运行我们的 URL 解析程序，显示全部我们提取的 URL 的
-# 不同数据块。
+# 运行我们的 URL 解析程序，
+# 显示全部我们提取的 URL 的不同数据块。
 $ go run url-parsing.go 
 postgres
 user:pass
