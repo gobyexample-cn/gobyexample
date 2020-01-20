@@ -82,4 +82,4 @@
 - [x] Spawning Processes->生成进程
 - [x] Exec'ing Processes->执行进程
 - [x] Signals->信号
-- [ ] Exit->退出  
+- [x] Exit->退出  
