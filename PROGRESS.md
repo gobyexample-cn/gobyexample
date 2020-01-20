@@ -70,7 +70,7 @@
 - [x] Line Filters->行过滤器
 - [x] File Paths->文件路径
 - [x] Directories->目录
-- [ ] Temporary Files and Directories->临时文件和目录
+- [x] Temporary Files and Directories->临时文件和目录
 - [ ] Testing->单元测试
 - [ ] Command-Line Arguments->命令行参数
 - [ ] Command-Line Flags->命令行标志
