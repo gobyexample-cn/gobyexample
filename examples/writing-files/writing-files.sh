@@ -13,5 +13,5 @@ some
 writes
 buffered
 
-# 下面我们将看一些文件 I/O 的想法，就像我们已经看过的 
-# `stdin` 和 `stdout` 流。
+# 我们刚刚看到了文件 I/O 思想，
+# 接下来，我们看看它在 `stdin` 和 `stdout` 流中的应用。

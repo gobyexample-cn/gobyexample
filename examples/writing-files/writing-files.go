@@ -1,4 +1,4 @@
-// Go 写文件和我们前面看过的读操作有着相似的方式。
+// 在 Go 中，写文件与我们前面看过的读文件方法类似。
 
 package main
 
@@ -17,8 +17,7 @@ func check(e error) {
 
 func main() {
 
-	// 开始，这里是展示如何写入一个字符串（或者只是一些
-	// 字节）到一个文件。
+	// 开始！这里展示了如何写入一个字符串（或者只是一些字节）到一个文件。
 	d1 := []byte("hello\ngo\n")
 	err := ioutil.WriteFile("/tmp/dat1", d1, 0644)
 	check(err)
@@ -27,11 +26,10 @@ func main() {
 	f, err := os.Create("/tmp/dat2")
 	check(err)
 
-	// 打开文件后，习惯立即使用 defer 调用文件的 `Close`
-	// 操作。
+	// 打开文件后，一个习惯性的操作是：立即使用 defer 调用文件的 `Close`。
 	defer f.Close()
 
-	// 你可以写入你想写入的字节切片
+	// 您可以按期望的那样 `Write` 字节切片。
 	d2 := []byte{115, 111, 109, 101, 10}
 	n2, err := f.Write(d2)
 	check(err)
@@ -41,16 +39,15 @@ func main() {
 	n3, err := f.WriteString("writes\n")
 	fmt.Printf("wrote %d bytes\n", n3)
 
-	// 调用 `Sync` 来将缓冲区的信息写入磁盘。
+	// 调用 `Sync` 将缓冲区的数据写入硬盘。
 	f.Sync()
 
-	// `bufio` 提供了和我们前面看到的带缓冲的读取器一
-	// 样的带缓冲的写入器。
+	// 与我们前面看到的带缓冲的 Reader 一样，`bufio` 还提供了的带缓冲的 Writer。
 	w := bufio.NewWriter(f)
 	n4, err := w.WriteString("buffered\n")
 	fmt.Printf("wrote %d bytes\n", n4)
 
-	// 使用 `Flush` 来确保所有缓存的操作已写入底层写入器。
+	// 使用 `Flush` 来确保，已将所有的缓冲操作应用于底层 writer。
 	w.Flush()
 
 }
