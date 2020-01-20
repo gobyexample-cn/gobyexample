@@ -1,10 +1,10 @@
-// 一个_行过滤器_ 在读取标准输入流的输入，处理该输入，然后
-// 将得到的一些结果输出到标准输出的程序中是常见的一个功能。
-// `grep` 和 `sed` 是常见的行过滤器。
+// _行过滤器（line filter）_是一种常见的程序类型，
+// 它读取 stdin 上的输入，对其进行处理，然后将处理结果打印到 stdout。
+// `grep` 和 `sed` 就是常见的行过滤器。
 
-// 这里是一个使用 Go 编写的行过滤器示例，它将所有的输入文字
-// 转化为大写的版本。你可以使用这个模式来写一个你自己的 Go
-// 行过滤器。
+// 这里是一个使用 Go 编写的行过滤器示例，它将所有的输入文字转化为大写的版本。
+// 你可以使用这个模式来写一个你自己的 Go 行过滤器。
+
 package main
 
 import (
@@ -16,21 +16,21 @@ import (
 
 func main() {
 
-	// 对 `os.Stdin` 使用一个带缓冲的 scanner，让我们可以
-	// 直接使用方便的 `Scan` 方法来直接读取一行，每次调用
-	// 该方法可以让 scanner 读取下一行。
+	// 用带缓冲的 scanner 包装无缓冲的 `os.Stdin`，
+	// 这为我们提供了一种方便的 `Scan` 方法，
+	// 将 scanner 前进到下一个 `令牌`（默认为：下一行）。
 	scanner := bufio.NewScanner(os.Stdin)
 
 	for scanner.Scan() {
-		// `Text` 返回当前的 token，现在是输入的下一行。
+		// `Text` 返回当前的 token，这里指的是输入的下一行。
 		ucl := strings.ToUpper(scanner.Text())
 
-		// 写出大写的行。
+		// 输出转换为大写后的行。
 		fmt.Println(ucl)
 	}
 
-	// 检查 `Scan` 的错误。文件结束符是可以接受的，并且
-	// 不会被 `Scan` 当作一个错误。
+	// 检查 `Scan` 的错误。
+	// 文件结束符（EOF）是可以接受的，它不会被 `Scan` 当作一个错误。
 	if err := scanner.Err(); err != nil {
 		fmt.Fprintln(os.Stderr, "error:", err)
 		os.Exit(1)
