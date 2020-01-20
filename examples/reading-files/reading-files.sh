@@ -1,6 +1,6 @@
 $ echo "hello" > /tmp/dat
 $ echo "go" >>   /tmp/dat
-$ go run reading-files.go 
+$ go run reading-files.go
 hello
 go
 5 bytes: hello
@@ -8,4 +8,4 @@ go
 2 bytes @ 6: go
 5 bytes: hello
 
-# 下面我们将看一下写入文件。
+# 下面我们来看一下写入文件。

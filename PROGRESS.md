@@ -65,7 +65,7 @@
 - [x] URL Parsing->URL 解析
 - [x] SHA1 Hashes->SHA1 哈希
 - [x] Base64 Encoding->Base64 编码
-- [ ] Reading Files->读文件
+- [x] Reading Files->读文件
 - [ ] Writing Files->写文件
 - [ ] Line Filters->行过滤器
 - [ ] File Paths->文件路径
