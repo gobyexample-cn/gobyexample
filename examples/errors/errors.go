@@ -5,8 +5,10 @@
 
 package main
 
-import "errors"
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 // 按照惯例，错误通常是最后一个返回值并且是 `error` 类型，它是一个内建的接口。
 func f1(arg int) (int, error) {

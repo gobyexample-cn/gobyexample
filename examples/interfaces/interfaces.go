@@ -2,8 +2,10 @@
 
 package main
 
-import "fmt"
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 // 这是一个几何体的基本接口。
 type geometry interface {
