@@ -25,7 +25,7 @@ func main() {
 	// `os.RemoveAll` 会删除整个目录（类似于 `rm -rf`）。
 	defer os.RemoveAll("subdir")
 
-	// 创建一个用于创建临时文件的函数。
+	// 一个用于创建临时文件的帮助函数。
 	createEmptyFile := func(name string) {
 		d := []byte("")
 		check(ioutil.WriteFile(name, d, 0644))

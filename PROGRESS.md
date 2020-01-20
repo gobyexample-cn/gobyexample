@@ -69,7 +69,7 @@
 - [x] Writing Files->写文件
 - [x] Line Filters->行过滤器
 - [x] File Paths->文件路径
-- [ ] Directories->目录
+- [x] Directories->目录
 - [ ] Temporary Files and Directories->临时文件和目录
 - [ ] Testing->单元测试
 - [ ] Command-Line Arguments->命令行参数
