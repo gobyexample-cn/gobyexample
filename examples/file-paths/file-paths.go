@@ -17,7 +17,6 @@ func main() {
 
 	// 您应该总是使用 `Join` 代替手动拼接 `/` 和 `\`。
 	// 除了可移植性，`Join` 还会删除多余的分隔符和目录，使得路径更加规范。
-
 	fmt.Println(filepath.Join("dir1//", "filename"))
 	fmt.Println(filepath.Join("dir1/../dir1", "filename"))
 

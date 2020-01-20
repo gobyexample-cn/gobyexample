@@ -68,7 +68,7 @@
 - [x] Reading Files->读文件
 - [x] Writing Files->写文件
 - [x] Line Filters->行过滤器
-- [ ] File Paths->文件路径
+- [x] File Paths->文件路径
 - [ ] Directories->目录
 - [ ] Temporary Files and Directories->临时文件和目录
 - [ ] Testing->单元测试
