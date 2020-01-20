@@ -74,7 +74,7 @@
 - [x] Testing->单元测试
 - [x] Command-Line Arguments->命令行参数
 - [x] Command-Line Flags->命令行标志
-- [ ] Command-Line Subcommands->命令行子命令
+- [x] Command-Line Subcommands->命令行子命令
 - [ ] Environment Variables->环境变量
 - [ ] HTTP Clients->HTTP 客户端
 - [ ] HTTP Servers->HTTP 服务端

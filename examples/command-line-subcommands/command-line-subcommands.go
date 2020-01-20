@@ -23,7 +23,7 @@ func main() {
 	barCmd := flag.NewFlagSet("bar", flag.ExitOnError)
 	barLevel := barCmd.Int("level", 0, "level")
 
-	// 徐成期望前面定义的子命令作为第一个参数传入。
+	// 子命令应作为程序的第一个参数传入。
 	if len(os.Args) < 2 {
 		fmt.Println("expected 'foo' or 'bar' subcommands")
 		os.Exit(1)
@@ -32,7 +32,7 @@ func main() {
 	// 检查哪一个子命令被调用了。
 	switch os.Args[1] {
 
-	// 每个子命令，都会解析自己的 flag 并允许它访问后续的参数。
+	// 每个子命令，都会解析自己的 flag 并允许它访问后续的位置参数。
 	case "foo":
 		fooCmd.Parse(os.Args[2:])
 		fmt.Println("subcommand 'foo'")
