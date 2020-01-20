@@ -80,6 +80,6 @@
 - [x] HTTP Servers->HTTP 服务端
 - [x] Context
 - [x] Spawning Processes->生成进程
-- [ ] Exec'ing Processes->执行进程
+- [x] Exec'ing Processes->执行进程
 - [ ] Signals->信号
 - [ ] Exit->退出  
