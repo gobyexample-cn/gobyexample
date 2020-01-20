@@ -1,4 +1,5 @@
 // 使用 `net/http` 包，我们可以轻松实现一个简单的 HTTP 服务器。
+
 package main
 
 import (
@@ -8,7 +9,7 @@ import (
 
 // *handlers* 是 `net/http` 服务器里面的一个基本概念。
 // handler 对象实现了 `http.Handler` 接口。
-// 编写 handler 的常见方法是，在具有适当签名的函数上使用 `http.HandlerFunc` 适配。
+// 编写 handler 的常见方法是，在具有适当签名的函数上使用 `http.HandlerFunc` 适配器。
 func hello(w http.ResponseWriter, req *http.Request) {
 
 	// handler 函数有两个参数，`http.ResponseWriter` 和 `http.Request`。
@@ -34,8 +35,7 @@ func main() {
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/headers", headers)
 
-	// Finally, we call the `ListenAndServe` with the port
-	// and a handler. `nil` tells it to use the default
-	// router we've just set up.
+	// 最后，我们调用 `ListenAndServe` 并带上端口和 handler。
+	// nil 表示使用我们刚刚设置的默认路由器。
 	http.ListenAndServe(":8090", nil)
 }
