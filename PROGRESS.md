@@ -75,7 +75,7 @@
 - [x] Command-Line Arguments->命令行参数
 - [x] Command-Line Flags->命令行标志
 - [x] Command-Line Subcommands->命令行子命令
-- [ ] Environment Variables->环境变量
+- [x] Environment Variables->环境变量
 - [ ] HTTP Clients->HTTP 客户端
 - [ ] HTTP Servers->HTTP 服务端
 - [ ] Spawning Processes->生成进程
