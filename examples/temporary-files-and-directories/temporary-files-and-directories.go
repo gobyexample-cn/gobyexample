@@ -38,9 +38,9 @@ func main() {
 	_, err = f.Write([]byte{1, 2, 3, 4})
 	check(err)
 
-	// 如果需要写入多个临时文件，最好是为其创建一个临时 *目录*。
+	// 如果需要写入多个临时文件，最好是为其创建一个临时 *目录* 。
 	// `ioutil.TempDir` 的参数与 `TempFile` 相同，
-	// 但是它返回的是一个 *目录名*，而不是一个打开的文件。
+	// 但是它返回的是一个 *目录名* ，而不是一个打开的文件。
 	dname, err := ioutil.TempDir("", "sampledir")
 	fmt.Println("Temp dir name:", dname)
 

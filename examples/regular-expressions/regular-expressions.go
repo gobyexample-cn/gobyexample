@@ -30,7 +30,7 @@ func main() {
 	fmt.Println(r.FindStringIndex("peach punch"))
 
 	// `Submatch` 返回完全匹配和局部匹配的字符串。
-	// 例如，这里会返回 `p([a-z]+)ch` 和 `([a-z]+) 的信息。
+	// 例如，这里会返回 `p([a-z]+)ch` 和 `([a-z]+)` 的信息。
 	fmt.Println(r.FindStringSubmatch("peach punch"))
 
 	// 类似的，这个会返回完全匹配和局部匹配位置的索引。

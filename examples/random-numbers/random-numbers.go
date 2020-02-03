@@ -10,16 +10,16 @@ import (
 
 func main() {
 
-	// 例如，`rand.Intn` 返回一个随机的整数 n，且 `0 <= n <= 100`。
+	// 例如，`rand.Intn` 返回一个随机的整数 n，且 `0 <= n < 100`。
 	fmt.Print(rand.Intn(100), ",")
 	fmt.Print(rand.Intn(100))
 	fmt.Println()
 
-	// `rand.Float64` 返回一个64位浮点数 `f`，且 `0.0 <= f <= 1.0`。
+	// `rand.Float64` 返回一个64位浮点数 `f`，且 `0.0 <= f < 1.0`。
 	fmt.Println(rand.Float64())
 
 	// 这个技巧可以用来生成其他范围的随机浮点数，
-	// 例如，`5.0 <= f <= 10.0`
+	// 例如，`5.0 <= f < 10.0`
 	fmt.Print((rand.Float64()*5)+5, ",")
 	fmt.Print((rand.Float64() * 5) + 5)
 	fmt.Println()

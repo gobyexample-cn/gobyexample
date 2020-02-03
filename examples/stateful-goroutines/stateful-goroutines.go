@@ -93,7 +93,6 @@ func main() {
 	time.Sleep(time.Second)
 
 	// 最后，获取并报告 `ops` 值。
-	// Finally, capture and report the op counts.
 	readOpsFinal := atomic.LoadUint64(&readOps)
 	fmt.Println("readOps:", readOpsFinal)
 	writeOpsFinal := atomic.LoadUint64(&writeOps)
