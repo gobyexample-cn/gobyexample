@@ -1,0 +1,27 @@
+name: Gobyexample action
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Set up Go 1.13
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.13
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: tools/build
+
+      - name: Deploy to gobyexample-cn
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: gobyexample-cn/gobyexample-cn.github.io
+          publish_branch: master
+          publish_dir: ./public
