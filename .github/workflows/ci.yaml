@@ -19,7 +19,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build
-        run: tools/build
+        run:
+          tools/build
+          cp .github/workflows/README.md ./public
 
       - name: Deploy to gobyexample-cn
         uses: peaceiris/actions-gh-pages@v3
