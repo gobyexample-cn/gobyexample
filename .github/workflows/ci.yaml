@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build
-        run:
+        run: |
           tools/build
           cp .github/workflows/README.md ./public
 
