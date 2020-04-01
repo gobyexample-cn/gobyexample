@@ -103,3 +103,9 @@ Go Gopher 的版权归 [Renée French](http://reneefrench.blogspot.com/) 所有�
 ## 中文版的致谢
 
 感谢本翻译项目的原作者 [everyx](https://github.com/everyx)，完成了所有文件最初的翻译，同时也感谢项目每一位 [贡献者](https://github.com/gobyexample-cn/gobyexample/graphs/contributors) 的辛勤付出。
+
+`JetBrains` 公司为本项目提供了 free JetBrains Open Source license(s)，在此表示感谢。
+
+[![jetbrains](jetbrains-logo/jetbrains.svg)](https://www.jetbrains.com/?from=gobyexample-cn)
+[![jetbrains](jetbrains-logo/goland.svg)](https://www.jetbrains.com/?from=gobyexample-cn)
+[![jetbrains](jetbrains-logo/webstorm.svg)](https://www.jetbrains.com/?from=gobyexample-cn)
