@@ -1,5 +1,5 @@
 # 运行这个程序显示这个基于协程的状态管理的例子
-# 达到了每秒大约 800,000 次操作。
+# 达到了每秒大约 80,000 次操作。
 $ go run stateful-goroutines.go
 readOps: 71708
 writeOps: 7177
