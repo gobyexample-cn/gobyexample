@@ -6,7 +6,7 @@ package main
 import "fmt"
 
 // `ping` 函数定义了一个只能发送数据的（只写）通道。
-// 尝试从这个通道读取数据时，会得到一个 compile-time 错误。
+// 尝试从这个通道接收数据会是一个编译时错误。
 func ping(pings chan<- string, msg string) {
 	pings <- msg
 }
