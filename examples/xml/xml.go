@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-//  `Plant` 将被映射到 `XML` 。
+//  `Plant` 结构将被映射到 `XML` 。
 // 与 `JSON` 示例类似，字段标签包含用于编码器和解码器的指令。
 // 这里我们使用了 `XML` 包的一些特性：
 //  `XMLName` 字段名称规定了该结构的 `XML` 元素名称；
@@ -47,7 +47,7 @@ func main() {
 	tomato := &Plant{Id: 81, Name: "Tomato"}
 	tomato.Origin = []string{"Mexico", "California"}
 
-	// `parent>child>plant` 字段标签告诉编码器，将 `Plants` 嵌套在 `<parent><child>` 下。
+	// `parent>child>plant` 字段标签告诉编码器，将 `Plants` 中的元素嵌套在 `<parent><child>` 里面。
 	type Nesting struct {
 		XMLName xml.Name `xml:"nesting"`
 		Plants  []*Plant `xml:"parent>child>plant"`
