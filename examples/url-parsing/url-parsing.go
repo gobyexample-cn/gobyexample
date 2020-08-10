@@ -31,14 +31,13 @@ func main() {
 	p, _ := u.User.Password()
 	fmt.Println(p)
 
-	// `Host` 同时包括主机名和端口信息，如果端口存在的话，
-	// 可以使用 `strings.Split()` 从 `Host` 中手动提取端口。
+	//  `Host` 包含主机名和端口号（如果存在）。使用 `SplitHostPort` 提取它们。
 	fmt.Println(u.Host)
 	host, port, _ := net.SplitHostPort(u.Host)
 	fmt.Println(host)
 	fmt.Println(port)
 
-	// 这里我们提出路径和 `#` 后面的查询片段信息。
+	// 这里我们提取路径和 `#` 后面的查询片段信息。
 	fmt.Println(u.Path)
 	fmt.Println(u.Fragment)
 
