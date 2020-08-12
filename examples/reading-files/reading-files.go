@@ -38,7 +38,7 @@ func main() {
 	check(err)
 	fmt.Printf("%d bytes: %s\n", n1, string(b1[:n1]))
 
-	// 你也可以 `Seek` 到一个文件中已知的位置，并从这个位置开始 `Read`。
+	// 你也可以 `Seek` 到一个文件中已知的位置，并从这个位置开始读取。
 	o2, err := f.Seek(6, 0)
 	check(err)
 	b2 := make([]byte, 2)
@@ -59,12 +59,7 @@ func main() {
 	_, err = f.Seek(0, 0)
 	check(err)
 
-	// `bufio` 包实现了带缓冲的读取，
-	// 这不仅对于很多小的读取操作能够提升性能，
-	// 也提供了很多附加的读取函数。
-	// `bufio` 包实现了带缓冲的 `Reader`，
-	// 这对于提高读取大量小文件的效率，
-	// 以及它提供的其他读取方法可能都有用。
+	//  `bufio` 包实现了一个缓冲读取器，这可能有助于提高许多小读操作的效率，以及它提供了很多附加的读取函数。
 	r4 := bufio.NewReader(f)
 	b4, err := r4.Peek(5)
 	check(err)
