@@ -36,7 +36,7 @@ func main() {
 	// 明确的为输出结果添加一个通用的 XML 头部信息。
 	fmt.Println(xml.Header + string(out))
 
-	// 使用 `Unmarhshal` 将 `XML` 格式字节流解析到 `Plant` 结构。
+	// 使用 `Unmarshal` 将 `XML` 格式字节流解析到 `Plant` 结构。
 	// 如果 `XML` 格式错误或无法映射到 `Plant` 结构，将返回一个描述性错误。
 	var p Plant
 	if err := xml.Unmarshal(out, &p); err != nil {
