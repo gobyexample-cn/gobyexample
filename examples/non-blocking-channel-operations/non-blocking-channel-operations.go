@@ -20,7 +20,10 @@ func main() {
 		fmt.Println("no message received")
 	}
 
-	// 一个非阻塞发送的实现方法和上面一样。
+	// 一个非阻塞发送的例子，代码结构和上面接收的类似。
+	// `msg` 不能被发送到 `message` 通道，因为这是
+	// 个无缓冲区通道，并且也没有接收者，因此， `default`
+	// 会执行。
 	msg := "hi"
 	select {
 	case messages <- msg:
