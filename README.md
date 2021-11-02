@@ -18,19 +18,10 @@
 
 [![Build Status](https://travis-ci.com/mmcgrana/gobyexample.svg "Travis CI status")](https://travis-ci.com/mmcgrana/gobyexample)
 
-若想自行构建该网站，你需要安装 Go 和 Python。然后运行下面的命令：
-
-```console
-$ go get github.com/russross/blackfriday
-$ tools/build
-$ open public/index.html
-```
-
-如果你使用了 `GO MOD`，直接执行下面的命令即可：
+若想自行构建该网站，你需要安装 Go。然后运行下面的命令：（前提是使用了 `GO MOD`）
 
 ```console
 $ tools/build
-$ open public/index.html
 ```
 
 若想实时渲染，请使用持续构建：
@@ -38,6 +29,14 @@ $ open public/index.html
 ```console
 $ tools/build-loop
 ```
+
+在本地查看网站：
+
+```console
+$ tools/serve
+```
+
+然后在浏览器打开 `http://127.0.0.1:8000/`。
 
 ### 发布
 
@@ -86,19 +85,13 @@ Go Gopher 的版权归 [Renée French](http://reneefrench.blogspot.com/) 所有�
 
 1. Fork 该仓库。
 1. 在 `examples` 目录下找到想要修改的例子，完成修改，这通常是以 `例子`（也就是一个目录）为单位进行修改，当然，你可以一次性修改多个例子。需要注意的是：只修改 `.go` 和 `.sh` 文件。`.hash` 文件是 `tools/build` 自动更新的，主要用于判断文件内容是否有改动；
-1. 使用 `tools/build` 命令重新生成静态文件。这一步会格式化代码，并判断内容是否有改动。对于内容有改动的例子，会自动将该例子的代码提交至 `http://play.golang.org/` 进行测试，这一步可能需要克服网络障碍（实在无法解决也没关系，只更新内容即可，剩下的交给我们）。通过测试后，会自动更新静态文件；
+1. 使用 `tools/build` 命令重新生成静态文件。这一步会格式化代码，并判断内容是否有改动。对于内容有改动的例子，会自动将该例子的代码提交至 `https://play.studygolang.com/` 进行测试。通过测试后，会自动更新静态文件；
 1. `tools/serve` 本地预览效果；
 1. 通过自测后即可提交 pull request :)
 
 项目现由 [gobyexample-cn](https://github.com/gobyexample-cn) 维护，例子已完全与英文版同步（截止 2020-01-20），均为 75 个，可以在这里查看 [同步进度](PROGRESS.md)。
 
 后续可能会出现与英文版同步不及时的情况，`非常欢迎` 各位同学 fork 并提交 pull request。
-
-## 构建说明
-
-原版的英文项目使用 vendor 解决依赖，中文版可以使用 `GO MOD` 解决依赖。
-
-注意：依赖库 [blackfriday](https://github.com/russross/blackfriday) 的 2.x.x 版本目前与项目不兼容，只能使用 1.x.x 版本，项目的 `go.mod` 文件已正确配置，同学们不要随意修改。直接执行 `tools/build` 等命令即可。 
 
 ## 中文版的致谢
 
