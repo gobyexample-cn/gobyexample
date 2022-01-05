@@ -18,6 +18,7 @@ Pointers->指针
 Structs->结构体
 Methods->方法
 Interfaces->接口
+Embedding
 Errors->错误处理
 Goroutines->协程
 Channels->通道
@@ -41,6 +42,7 @@ Sorting->排序
 Sorting by Functions->使用函数自定义排序
 Panic
 Defer
+Recover
 Collection Functions->组合函数
 String Functions->字符串函数
 String Formatting->字符串格式化
@@ -61,7 +63,7 @@ Line Filters->行过滤器
 File Paths->文件路径
 Directories->目录
 Temporary Files and Directories->临时文件和目录
-Testing->单元测试
+Testing and Benchmarking->单元测试和基准测试
 Command-Line Arguments->命令行参数
 Command-Line Flags->命令行标志
 Command-Line Subcommands->命令行子命令

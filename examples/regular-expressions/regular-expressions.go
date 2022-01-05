@@ -27,10 +27,10 @@ func main() {
 
 	// 这个也是查找首次匹配的字符串，
 	// 但是它的返回值是，匹配开始和结束位置的索引，而不是匹配的内容。
-	fmt.Println(r.FindStringIndex("peach punch"))
+	fmt.Println("idx:", r.FindStringIndex("peach punch"))
 
 	// `Submatch` 返回完全匹配和局部匹配的字符串。
-	// 例如，这里会返回 `p([a-z]+)ch` 和 `([a-z]+)` 的信息。
+	// 例如，这里会返回匹配 `p([a-z]+)ch` 和 `([a-z]+)` 的信息。
 	fmt.Println(r.FindStringSubmatch("peach punch"))
 
 	// 类似的，这个会返回完全匹配和局部匹配位置的索引。
@@ -41,21 +41,21 @@ func main() {
 	fmt.Println(r.FindAllString("peach punch pinch", -1))
 
 	// `All` 同样可以对应到上面的所有函数。
-	fmt.Println(r.FindAllStringSubmatchIndex(
+	fmt.Println("all:", r.FindAllStringSubmatchIndex(
 		"peach punch pinch", -1))
 
-	// 这些函数接收一个正整数作为第二个参数，来限制匹配次数。
+	// 这些函数接收一个非负整数作为第二个参数，来限制匹配次数。
 	fmt.Println(r.FindAllString("peach punch pinch", 2))
 
 	// 上面的例子中，我们使用了字符串作为参数，
 	// 并使用了 `MatchString` 之类的方法。
-	// 我们也可以将 `String` 从函数命中去掉，并提供 `[]byte` 的参数。
+	// 我们也可以将 `String` 从函数名中去掉，并提供 `[]byte` 的参数。
 	fmt.Println(r.Match([]byte("peach")))
 
 	// 创建正则表达式的全局变量时，可以使用 `Compile` 的变体 `MustCompile` 。
 	//  `MustCompile` 用 `panic` 代替返回一个错误 ，这样使用全局变量更加安全。
 	r = regexp.MustCompile("p([a-z]+)ch")
-	fmt.Println(r)
+	fmt.Println("regexp:", r)
 
 	// `regexp` 包也可以用来将子字符串替换为为其它值。
 	fmt.Println(r.ReplaceAllString("a peach", "<fruit>"))

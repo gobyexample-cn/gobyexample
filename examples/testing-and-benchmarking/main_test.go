@@ -17,9 +17,8 @@ import (
 func IntMin(a, b int) int {
 	if a < b {
 		return a
-	} else {
-		return b
 	}
+	return b
 }
 
 // 通常编写一个名称以 `Test` 开头的函数来创建测试。
@@ -27,7 +26,7 @@ func TestIntMinBasic(t *testing.T) {
 	ans := IntMin(2, -2)
 	if ans != -2 {
 		// `t.Error*` 会报告测试失败的信息，然后继续运行测试。
-		// `t.Fail*` 会报告测试失败的信息，然后立即终止测试。
+		// `t.Fatal*` 会报告测试失败的信息，然后立即终止测试。
 		t.Errorf("IntMin(2, -2) = %d; want -2", ans)
 	}
 }
@@ -56,5 +55,16 @@ func TestIntMinTableDriven(t *testing.T) {
 				t.Errorf("got %d, want %d", ans, tt.want)
 			}
 		})
+	}
+}
+
+// 基准测试通常在"_test.go"文件中，并以 `Benchmark` 开头命名。
+// `testing` 运行器多次执行每个基准测试函数，并在每次运行时增加 `b.N`，
+// 直到它收集到精确的测量值。
+func BenchmarkIntMin(b *testing.B) {
+	// Typically the benchmark runs a function we're
+	// benchmarking in a loop `b.N` times.
+	for i := 0; i < b.N; i++ {
+		IntMin(1, 2)
 	}
 }

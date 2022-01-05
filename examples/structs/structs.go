@@ -11,6 +11,15 @@ type person struct {
 	age  int
 }
 
+// `newPerson` 使用给定的名字构造一个新的 person 结构体.
+func newPerson(name string) *person {
+	// 您可以安全地返回指向局部变量的指针，
+	// 因为局部变量将在函数的作用域中继续存在。
+	p := person{name: name}
+	p.age = 42
+	return &p
+}
+
 func main() {
 
 	// 使用这个语法创建新的结构体元素。
@@ -24,6 +33,9 @@ func main() {
 
 	// `&` 前缀生成一个结构体指针。
 	fmt.Println(&person{name: "Ann", age: 40})
+
+	// It's idiomatic to encapsulate new struct creation in constructor functions
+	fmt.Println(newPerson("Jon"))
 
 	// 使用`.`来访问结构体字段。
 	s := person{name: "Sean", age: 50}

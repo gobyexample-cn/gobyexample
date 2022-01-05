@@ -1,5 +1,8 @@
 # 运行程序将会导致 panic：
 # 输出一个错误消息和协程追踪信息，并以非零的状态退出程序。
+
+# 当 `main` 中触发第一个 panic 时，程序就会退出而不会执行代码的其余部分。
+# 如果你想看到程序尝试创建 /tmp/file 文件，请注释掉第一个panic。
 $ go run panic.go
 panic: a problem
 

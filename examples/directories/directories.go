@@ -4,7 +4,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 )
@@ -28,7 +27,7 @@ func main() {
 	// 一个用于创建临时文件的帮助函数。
 	createEmptyFile := func(name string) {
 		d := []byte("")
-		check(ioutil.WriteFile(name, d, 0644))
+		check(os.WriteFile(name, d, 0644))
 	}
 
 	createEmptyFile("subdir/file1")
@@ -42,8 +41,8 @@ func main() {
 	createEmptyFile("subdir/parent/file3")
 	createEmptyFile("subdir/parent/child/file4")
 
-	// `ReadDir` 列出目录的内容，返回一个 `os.FileInfo` 类型的切片对象。
-	c, err := ioutil.ReadDir("subdir/parent")
+	// `ReadDir` 列出目录的内容，返回一个 `os.DirEntry` 类型的切片对象。
+	c, err := os.ReadDir("subdir/parent")
 	check(err)
 
 	fmt.Println("Listing subdir/parent")
@@ -56,7 +55,7 @@ func main() {
 	check(err)
 
 	// 当我们列出 *当前* 目录，就可以看到 `subdir/parent/child` 的内容了。
-	c, err = ioutil.ReadDir(".")
+	c, err = os.ReadDir(".")
 	check(err)
 
 	fmt.Println("Listing subdir/parent/child")
