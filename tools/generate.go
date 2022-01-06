@@ -1,9 +1,10 @@
 package main
 
 import (
+	"bytes"
 	"crypto/sha1"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"os"
 	"os/exec"
@@ -12,16 +13,18 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/russross/blackfriday"
+	"github.com/alecthomas/chroma"
+	"github.com/alecthomas/chroma/formatters/html"
+	"github.com/alecthomas/chroma/lexers"
+	"github.com/alecthomas/chroma/styles"
+
+	"github.com/russross/blackfriday/v2"
 )
 
 // siteDir is the target directory into which the HTML gets generated. Its
 // default is set here but can be changed by an argument passed into the
 // program.
 var siteDir = "./public"
-
-var cacheDir = "/tmp/gobyexample-cache"
-var pygmentizeBin = "./vendor/pygments/pygmentize"
 
 func verbose() bool {
 	return len(os.Getenv("VERBOSE")) > 0
@@ -39,9 +42,9 @@ func ensureDir(dir string) {
 }
 
 func copyFile(src, dst string) {
-	dat, err := ioutil.ReadFile(src)
+	dat, err := os.ReadFile(src)
 	check(err)
-	err = ioutil.WriteFile(dst, dat, 0644)
+	err = os.WriteFile(dst, dat, 0644)
 	check(err)
 }
 
@@ -57,7 +60,7 @@ func pipe(bin string, arg []string, src string) []byte {
 	check(err)
 	err = in.Close()
 	check(err)
-	bytes, err := ioutil.ReadAll(out)
+	bytes, err := io.ReadAll(out)
 	check(err)
 	err = cmd.Wait()
 	check(err)
@@ -72,29 +75,13 @@ func sha1Sum(s string) string {
 }
 
 func mustReadFile(path string) string {
-	bytes, err := ioutil.ReadFile(path)
+	bytes, err := os.ReadFile(path)
 	check(err)
 	return string(bytes)
 }
 
-func cachedPygmentize(lex string, src string) string {
-	ensureDir(cacheDir)
-	arg := []string{"-l", lex, "-f", "html"}
-	cachePath := cacheDir + "/pygmentize-" + strings.Join(arg, "-") + "-" + sha1Sum(src)
-	cacheBytes, cacheErr := ioutil.ReadFile(cachePath)
-	if cacheErr == nil {
-		return string(cacheBytes)
-	}
-	renderBytes := pipe(pygmentizeBin, arg, src)
-	// Newer versions of Pygments add silly empty spans.
-	renderCleanString := strings.Replace(string(renderBytes), "<span></span>", "", -1)
-	writeErr := ioutil.WriteFile(cachePath, []byte(renderCleanString), 0600)
-	check(writeErr)
-	return renderCleanString
-}
-
 func markdown(src string) string {
-	return string(blackfriday.MarkdownCommon([]byte(src)))
+	return string(blackfriday.Run([]byte(src)))
 }
 
 func readLines(path string) []string {
@@ -153,24 +140,27 @@ func resetURLHashFile(codehash, code, sourcePath string) string {
 	}
 	payload := strings.NewReader(code)
 	resp, err := http.Post("https://play.golang.org/share", "text/plain", payload)
-	if err != nil {
-		panic(err)
-	}
+	check(err)
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
+	check(err)
 	urlkey := string(body)
 	data := fmt.Sprintf("%s\n%s\n", codehash, urlkey)
-	ioutil.WriteFile(sourcePath, []byte(data), 0644)
+	os.WriteFile(sourcePath, []byte(data), 0644)
 	return urlkey
 }
 
 func parseSegs(sourcePath string) ([]*Seg, string) {
-	var lines []string
+	var (
+		lines  []string
+		source []string
+	)
 	// Convert tabs to spaces for uniform rendering.
 	for _, line := range readLines(sourcePath) {
 		lines = append(lines, strings.Replace(line, "\t", "    ", -1))
+		source = append(source, line)
 	}
-	filecontent := strings.Join(lines, "\n")
+	filecontent := strings.Join(source, "\n")
 	segs := []*Seg{}
 	lastSeen := ""
 	for _, line := range lines {
@@ -214,6 +204,32 @@ func parseSegs(sourcePath string) ([]*Seg, string) {
 	return segs, filecontent
 }
 
+func chromaFormat(code, filePath string) string {
+
+	lexer := lexers.Get(filePath)
+	if lexer == nil {
+		lexer = lexers.Fallback
+	}
+
+	if strings.HasSuffix(filePath, ".sh") {
+		lexer = SimpleShellOutputLexer
+	}
+
+	lexer = chroma.Coalesce(lexer)
+
+	style := styles.Get("swapoff")
+	if style == nil {
+		style = styles.Fallback
+	}
+	formatter := html.New(html.WithClasses(true))
+	iterator, err := lexer.Tokenise(nil, string(code))
+	check(err)
+	buf := new(bytes.Buffer)
+	err = formatter.Format(buf, style, iterator)
+	check(err)
+	return buf.String()
+}
+
 func parseAndRenderSegs(sourcePath string) ([]*Seg, string) {
 	segs, filecontent := parseSegs(sourcePath)
 	lexer := whichLexer(sourcePath)
@@ -222,7 +238,8 @@ func parseAndRenderSegs(sourcePath string) ([]*Seg, string) {
 			seg.DocsRendered = markdown(seg.Docs)
 		}
 		if seg.Code != "" {
-			seg.CodeRendered = cachedPygmentize(lexer, seg.Code)
+			seg.CodeRendered = chromaFormat(seg.Code, sourcePath)
+
 			// adding the content to the js code for copying to the clipboard
 			if strings.HasSuffix(sourcePath, ".go") {
 				seg.CodeForJs = strings.Trim(seg.Code, "\n") + "\n"
@@ -248,14 +265,7 @@ func parseExamples() []*Example {
 		if verbose() {
 			fmt.Printf("Processing %s [%d/%d]\n", exampleName, i+1, len(exampleNames))
 		}
-		exampleNameDisplay := exampleName
-		names := strings.Split(exampleName, "->")
-		exampleName = names[0]
-		exampleNameDisplay = names[0]
-		if len(names)>1 && strings.Trim(names[1], " ") != "" {
-			exampleNameDisplay = names[1]
-	}
-		example := Example{Name: exampleNameDisplay}
+		example := Example{Name: exampleName}
 		exampleID := strings.ToLower(exampleName)
 		exampleID = strings.Replace(exampleID, " ", "-", -1)
 		exampleID = strings.Replace(exampleID, "/", "-", -1)
@@ -297,7 +307,9 @@ func renderIndex(examples []*Example) {
 		fmt.Println("Rendering index")
 	}
 	indexTmpl := template.New("index")
-	_, err := indexTmpl.Parse(mustReadFile("templates/index.tmpl"))
+	_, err := indexTmpl.Parse(mustReadFile("templates/footer.tmpl"))
+	check(err)
+	_, err = indexTmpl.Parse(mustReadFile("templates/index.tmpl"))
 	check(err)
 	indexF, err := os.Create(siteDir + "/index.html")
 	check(err)
@@ -310,10 +322,12 @@ func renderExamples(examples []*Example) {
 		fmt.Println("Rendering examples")
 	}
 	exampleTmpl := template.New("example")
-	_, err := exampleTmpl.Parse(mustReadFile("templates/example.tmpl"))
+	_, err := exampleTmpl.Parse(mustReadFile("templates/footer.tmpl"))
+	check(err)
+	_, err = exampleTmpl.Parse(mustReadFile("templates/example.tmpl"))
 	check(err)
 	for _, example := range examples {
-		exampleF, err := os.Create(siteDir + "/" + example.ID+".html")
+		exampleF, err := os.Create(siteDir + "/" + example.ID)
 		check(err)
 		exampleTmpl.Execute(exampleF, example)
 	}
@@ -335,3 +349,38 @@ func main() {
 	renderIndex(examples)
 	renderExamples(examples)
 }
+
+var SimpleShellOutputLexer = chroma.MustNewLexer(
+	&chroma.Config{
+		Name:      "Shell Output",
+		Aliases:   []string{"console"},
+		Filenames: []string{"*.sh"},
+		MimeTypes: []string{},
+	},
+	chroma.Rules{
+		"root": {
+			// $ or > triggers the start of prompt formatting
+			{`^\$`, chroma.GenericPrompt, chroma.Push("prompt")},
+			{`^>`, chroma.GenericPrompt, chroma.Push("prompt")},
+
+			// empty lines are just text
+			{`^$\n`, chroma.Text, nil},
+
+			// otherwise its all output
+			{`[^\n]+$\n?`, chroma.GenericOutput, nil},
+		},
+		"prompt": {
+			// when we find newline, do output formatting rules
+			{`\n`, chroma.Text, chroma.Push("output")},
+			// otherwise its all text
+			{`[^\n]+$`, chroma.Text, nil},
+		},
+		"output": {
+			// sometimes there isn't output so we go right back to prompt
+			{`^\$`, chroma.GenericPrompt, chroma.Pop(1)},
+			{`^>`, chroma.GenericPrompt, chroma.Pop(1)},
+			// otherwise its all output
+			{`[^\n]+$\n?`, chroma.GenericOutput, nil},
+		},
+	},
+)
