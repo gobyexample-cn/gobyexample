@@ -265,7 +265,14 @@ func parseExamples() []*Example {
 		if verbose() {
 			fmt.Printf("Processing %s [%d/%d]\n", exampleName, i+1, len(exampleNames))
 		}
-		example := Example{Name: exampleName}
+		exampleNameDisplay := exampleName
+		names := strings.Split(exampleName, "->")
+		exampleName = names[0]
+		exampleNameDisplay = names[0]
+		if len(names)>1 && strings.Trim(names[1], " ") != "" {
+			exampleNameDisplay = names[1]
+		}
+		example := Example{Name: exampleNameDisplay}
 		exampleID := strings.ToLower(exampleName)
 		exampleID = strings.Replace(exampleID, " ", "-", -1)
 		exampleID = strings.Replace(exampleID, "/", "-", -1)
@@ -327,7 +334,7 @@ func renderExamples(examples []*Example) {
 	_, err = exampleTmpl.Parse(mustReadFile("templates/example.tmpl"))
 	check(err)
 	for _, example := range examples {
-		exampleF, err := os.Create(siteDir + "/" + example.ID)
+		exampleF, err := os.Create(siteDir + "/" + example.ID + ".html")
 		check(err)
 		exampleTmpl.Execute(exampleF, example)
 	}
