@@ -12,39 +12,37 @@
 
 本项目包含了网站的内容和构建工具链，网站使用的是 `public` 目录下静态文件（html 等文件）的内容。它是这样被构建出来的：通过 `程序` 提取 `examples` 目录下的源码及注释，并使用 `templates` 目录下的静态文件模板将其渲染为静态文件，最终将生成的静态文件输出到 `public` 目录下。
 
-实现此构建过程的 `程序` 位于 `tools` 目录下，其相关的依赖库被放在了 `vendor` 目录下。构建得到的 `public` 目录下的静态文件（html 等文件），可以部署到任何支持静态内容的系统。例如 S3、CloudFront 以及任何 Web 服务器。
+实现此构建过程的 `程序` 位于 `tools` 目录下，构建得到的 `public` 目录下的静态文件（html 等文件），可以部署到任何支持静态内容的系统。例如 S3、CloudFront 以及任何 Web 服务器。
 
 ### 构建
 
-[![Build Status](https://travis-ci.com/mmcgrana/gobyexample.svg "Travis CI status")](https://travis-ci.com/mmcgrana/gobyexample)
+[![Build Status](https://github.com/mmcgrana/gobyexample/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/mmcgrana/gobyexample/actions)
 
-若想自行构建该网站，你需要安装 Go 和 Python。然后运行下面的命令：
-
-```console
-$ go get github.com/russross/blackfriday
-$ tools/build
-$ open public/index.html
-```
-
-如果你使用了 `GO MOD`，直接执行下面的命令即可：
+若想自行构建该网站，你需要安装 Go。然后运行下面的命令：
 
 ```console
 $ tools/build
-$ open public/index.html
 ```
 
-若想实时渲染，请使用持续构建：
+若想循环持续构建：
 
 ```console
 $ tools/build-loop
 ```
+
+在本地启动服务浏览网站
+
+```
+$ tools/serve
+```
+
+然后再浏览器中打开 `http://127.0.0.1:8000/`
 
 ### 发布
 
 下面的例子展示了如何将网站上传至 AWS：
 
 ```console
-$ gem install aws-sdk
 $ export AWS_ACCESS_KEY_ID=...
 $ export AWS_SECRET_ACCESS_KEY=...
 $ tools/upload
@@ -90,15 +88,9 @@ Go Gopher 的版权归 [Renée French](http://reneefrench.blogspot.com/) 所有�
 1. `tools/serve` 本地预览效果；
 1. 通过自测后即可提交 pull request :)
 
-项目现由 [gobyexample-cn](https://github.com/gobyexample-cn) 维护，例子已完全与英文版同步（截止 2020-01-20），均为 75 个，可以在这里查看 [同步进度](PROGRESS.md)。
+项目现由 [gobyexample-cn](https://github.com/gobyexample-cn) 维护，例子已完全与英文版同步（截止 2021-12-17），均为 77 个，可以在这里查看 [同步进度](PROGRESS.md)。
 
 后续可能会出现与英文版同步不及时的情况，`非常欢迎` 各位同学 fork 并提交 pull request。
-
-## 构建说明
-
-原版的英文项目使用 vendor 解决依赖，中文版可以使用 `GO MOD` 解决依赖。
-
-注意：依赖库 [blackfriday](https://github.com/russross/blackfriday) 的 2.x.x 版本目前与项目不兼容，只能使用 1.x.x 版本，项目的 `go.mod` 文件已正确配置，同学们不要随意修改。直接执行 `tools/build` 等命令即可。 
 
 ## 中文版的致谢
 
