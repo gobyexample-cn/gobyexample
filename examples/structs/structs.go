@@ -34,7 +34,7 @@ func main() {
 	// `&` 前缀生成一个结构体指针。
 	fmt.Println(&person{name: "Ann", age: 40})
 
-	// It's idiomatic to encapsulate new struct creation in constructor functions
+	// 在构造函数中封装创建新的结构实例是一种习惯用法
 	fmt.Println(newPerson("Jon"))
 
 	// 使用`.`来访问结构体字段。
