@@ -14,10 +14,6 @@ import (
 
 func main() {
 
-	// Go signal notification works by sending `os.Signal`
-	// values on a channel. We'll create a channel to
-	// receive these notifications. Note that this channel
-	// should be buffered.
 	// Go 通过向一个通道发送 `os.Signal` 值来发送信号通知。
 	// 我们将创建一个通道来接收这些通知。请注意，这个通道应该被缓存。
 	sigs := make(chan os.Signal, 1)

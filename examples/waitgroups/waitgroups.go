@@ -42,8 +42,6 @@ func main() {
 	// 即所有协程的工作都已经完成。
 	wg.Wait()
 
-	// Note that this approach has no straightforward way
-	// to propagate errors from workers. For more
-	// advanced use cases, consider using the
-	// [errgroup package](https://pkg.go.dev/golang.org/x/sync/errgroup).
+	// 请注意，WaitGroup 这种使用方式没有直观的办法传递来自 worker 的错误。
+	// 更高级的用例，请参见 [errgroup package](https://pkg.go.dev/golang.org/x/sync/errgroup)
 }
