@@ -32,7 +32,7 @@ $ tools/build-loop
 
 在本地启动服务浏览网站
 
-```
+```console
 $ tools/serve
 ```
 
