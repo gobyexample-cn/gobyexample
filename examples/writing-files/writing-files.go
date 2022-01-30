@@ -5,7 +5,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"io/ioutil"
 	"os"
 )
 
@@ -19,7 +18,7 @@ func main() {
 
 	// 开始！这里展示了如何写入一个字符串（或者只是一些字节）到一个文件。
 	d1 := []byte("hello\ngo\n")
-	err := ioutil.WriteFile("/tmp/dat1", d1, 0644)
+	err := os.WriteFile("/tmp/dat1", d1, 0644)
 	check(err)
 
 	// 对于更细粒度的写入，先打开一个文件。
@@ -37,6 +36,7 @@ func main() {
 
 	// `WriteString` 也是可用的。
 	n3, err := f.WriteString("writes\n")
+	check(err)
 	fmt.Printf("wrote %d bytes\n", n3)
 
 	// 调用 `Sync` 将缓冲区的数据写入硬盘。
@@ -45,6 +45,7 @@ func main() {
 	// 与我们前面看到的带缓冲的 Reader 一样，`bufio` 还提供了的带缓冲的 Writer。
 	w := bufio.NewWriter(f)
 	n4, err := w.WriteString("buffered\n")
+	check(err)
 	fmt.Printf("wrote %d bytes\n", n4)
 
 	// 使用 `Flush` 来确保，已将所有的缓冲操作应用于底层 writer。

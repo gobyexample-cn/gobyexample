@@ -21,7 +21,7 @@ func main() {
 
 	// 使用和声明 `word` 标志相同的方法来声明 `numb` 和 `fork` 标志。
 	numbPtr := flag.Int("numb", 42, "an int")
-	boolPtr := flag.Bool("fork", false, "a bool")
+	forkPtr := flag.Bool("fork", false, "a bool")
 
 	// 用程序中已有的参数来声明一个标志也是可以的。
 	// 注意在标志声明函数中需要使用该参数的指针。
@@ -36,7 +36,7 @@ func main() {
 	// 从而得到选项真正的值。
 	fmt.Println("word:", *wordPtr)
 	fmt.Println("numb:", *numbPtr)
-	fmt.Println("fork:", *boolPtr)
+	fmt.Println("fork:", *forkPtr)
 	fmt.Println("svar:", svar)
 	fmt.Println("tail:", flag.Args())
 }

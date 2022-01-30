@@ -7,7 +7,6 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 )
 
@@ -22,7 +21,7 @@ func check(e error) {
 func main() {
 
 	// 最基本的文件读取任务或许就是将文件内容读取到内存中。
-	dat, err := ioutil.ReadFile("/tmp/dat")
+	dat, err := os.ReadFile("/tmp/dat")
 	check(err)
 	fmt.Print(string(dat))
 

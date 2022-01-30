@@ -1,4 +1,4 @@
-// <em>[速率限制](http://en.wikipedia.org/wiki/Rate_limiting)</em>
+// [速率限制](http://en.wikipedia.org/wiki/Rate_limiting)
 // 是控制服务资源利用和质量的重要机制。
 // 基于协程、通道和[打点器](tickers)，Go 优雅的支持速率限制。
 

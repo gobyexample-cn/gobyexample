@@ -1,13 +1,10 @@
 // 有时，我们的 Go 程序需要生成其他的、非 Go 的进程。
-// 例如，这个网站的语法高亮是通过在 Go 程序中生成一个 [`pygmentize`](http://pygments.org/)
-// 来[实现的](https://github.com/everyx/gobyexample/blob/master/tools/generate.go)。
-// 让我们看一些关于 Go 生成进程的例子。
 
 package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os/exec"
 )
 
@@ -37,7 +34,7 @@ func main() {
 	grepCmd.Start()
 	grepIn.Write([]byte("hello grep\ngoodbye grep"))
 	grepIn.Close()
-	grepBytes, _ := ioutil.ReadAll(grepOut)
+	grepBytes, _ := io.ReadAll(grepOut)
 	grepCmd.Wait()
 
 	// 上面的例子中，我们忽略了错误检测，
