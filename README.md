@@ -88,7 +88,7 @@ Go Gopher 的版权归 [Renée French](http://reneefrench.blogspot.com/) 所有�
 1. `tools/serve` 本地预览效果；
 1. 通过自测后即可提交 pull request :)
 
-项目现由 [gobyexample-cn](https://github.com/gobyexample-cn) 维护，例子已完全与英文版同步（截止 2021-12-17），均为 77 个，可以在这里查看 [同步进度](PROGRESS.md)。
+项目现由 [gobyexample-cn](https://github.com/gobyexample-cn) 维护，例子已完全与英文版同步（截止 2022-3-19），均为 78 个，可以在这里查看 [同步进度](PROGRESS.md)。
 
 后续可能会出现与英文版同步不及时的情况，`非常欢迎` 各位同学 fork 并提交 pull request。
 
