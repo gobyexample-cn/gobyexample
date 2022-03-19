@@ -136,10 +136,10 @@ func parseHashFile(sourcePath string) (string, string) {
 
 func resetURLHashFile(codehash, code, sourcePath string) string {
 	if verbose() {
-		fmt.Println("  Sending request to play.studygolang.com")
+		fmt.Println("  Sending request to play.golang.org")
 	}
 	payload := strings.NewReader(code)
-	resp, err := http.Post("https://play.studygolang.com/share", "text/plain", payload)
+	resp, err := http.Post("https://play.golang.org/share", "text/plain", payload)
 	check(err)
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
@@ -334,7 +334,7 @@ func renderExamples(examples []*Example) {
 	_, err = exampleTmpl.Parse(mustReadFile("templates/example.tmpl"))
 	check(err)
 	for _, example := range examples {
-		exampleF, err := os.Create(siteDir + "/" + example.ID+".html")
+		exampleF, err := os.Create(siteDir + "/" + example.ID + ".html")
 		check(err)
 		exampleTmpl.Execute(exampleF, example)
 	}
