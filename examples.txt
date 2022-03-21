@@ -15,6 +15,7 @@ Variadic Functions->变参函数
 Closures->闭包
 Recursion->递归
 Pointers->指针
+Strings and Runes->字符串和rune类型
 Structs->结构体
 Methods->方法
 Interfaces->接口
