@@ -65,7 +65,7 @@
 - [x] Random Numbers->随机数
 - [x] Number Parsing->数字解析
 - [x] URL Parsing->URL 解析
-- [x] SHA1 Hashes->SHA1 哈希
+- [x] SHA256 Hashes->SHA256 散列
 - [x] Base64 Encoding->Base64 编码
 - [x] Reading Files->读文件
 - [x] Writing Files->写文件
