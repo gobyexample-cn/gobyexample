@@ -28,7 +28,7 @@
 - [x] Methods->方法
 - [x] Interfaces->接口
 - [x] Embedding
-- [x] Generics->范型
+- [x] Generics->泛型
 - [x] Errors->错误处理
 - [x] Goroutines->协程
 - [x] Channels->通道
