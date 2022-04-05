@@ -20,7 +20,7 @@ Structs->结构体
 Methods->方法
 Interfaces->接口
 Embedding
-Generics->范型
+Generics->泛型
 Errors->错误处理
 Goroutines->协程
 Channels->通道
