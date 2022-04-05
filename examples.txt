@@ -47,6 +47,7 @@ Defer
 Recover
 String Functions->字符串函数
 String Formatting->字符串格式化
+Text Templates->文本模板
 Regular Expressions->正则表达式
 JSON
 XML
