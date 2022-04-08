@@ -62,8 +62,7 @@ func TestIntMinTableDriven(t *testing.T) {
 // `testing` 运行器多次执行每个基准测试函数，并在每次运行时增加 `b.N`，
 // 直到它收集到精确的测量值。
 func BenchmarkIntMin(b *testing.B) {
-	// Typically the benchmark runs a function we're
-	// benchmarking in a loop `b.N` times.
+	// 通常，基准测试运行一个函数，我们在一个 `b.N` 次的循环内进行基准测试。
 	for i := 0; i < b.N; i++ {
 		IntMin(1, 2)
 	}
