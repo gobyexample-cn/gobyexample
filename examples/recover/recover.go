@@ -1,4 +1,4 @@
-// Go 通过使用 `recover` 内置函数，可以从 panic 中 _恢复recover_。
+// Go 通过使用 `recover` 内置函数，可以从 panic 中 _恢复recover_ 。
 // `recover` 可以阻止 `panic` 中止程序，并让它继续执行。
 
 // 在这样的例子中很有用：当其中一个客户端连接出现严重错误，服务器不希望崩溃。
