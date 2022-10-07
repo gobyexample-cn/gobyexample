@@ -1,4 +1,4 @@
-// 想要等待多个协程完成，我们可以使用 *wait group*。
+// 想要等待多个协程完成，我们可以使用 *wait group* 。
 
 package main
 
@@ -20,7 +20,7 @@ func worker(id int) {
 func main() {
 
 	// 这个 WaitGroup 用于等待这里启动的所有协程完成。
-	// 注意：如果 WaitGroup 显式传递到函数中，则应使用 *指针*。
+	// 注意：如果 WaitGroup 显式传递到函数中，则应使用 *指针* 。
 	var wg sync.WaitGroup
 
 	// 启动几个协程，并为其递增 WaitGroup 的计数器。
