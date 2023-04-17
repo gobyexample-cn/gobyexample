@@ -32,6 +32,12 @@ func main() {
 	// defer 删除该文件。
 	// 尽管操作系统会自动在某个时间清理临时文件，但手动清理是一个好习惯。
 	defer os.Remove(f.Name())
+	
+	// 当然如果这样去移除所创建的临时文件，那么其实会出现error（`The process cannot access the file because it is being used by another process.`），
+	// 首先解释一下这个error为什么会出现或者说为什么只有一个`defer os.Remove()`是无法删掉临时文件的。
+	// 其实很简单，就是所创建的file可以还在“写”的过程，那么当我们去删掉该文件的时候，就会出现error，这是很显而易见的error；
+	// 那么解决方法也很简单，结束“写”的过程；那么就可以正常的删除了。
+	defer f.Close()
 
 	// 我们可以向文件写入一些数据。
 	_, err = f.Write([]byte{1, 2, 3, 4})
@@ -41,8 +47,10 @@ func main() {
 	// `os.MkdirTemp` 的参数与 `CreateTemp` 相同，
 	// 但是它返回的是一个 *目录名* ，而不是一个打开的文件。
 	dname, err := os.MkdirTemp("", "sampledir")
+	check(err)
 	fmt.Println("Temp dir name:", dname)
 
+	// 对于目录不存在上述问题。
 	defer os.RemoveAll(dname)
 
 	// 现在，我们可以通过拼接临时目录和临时文件合成完整的临时文件路径，并写入数据。
