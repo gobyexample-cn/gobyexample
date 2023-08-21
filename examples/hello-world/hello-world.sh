@@ -1,4 +1,4 @@
-# 要运行这个程序，先将将代码放到名为 `hello-world.go`
+# 要运行这个程序，先将代码放到名为 `hello-world.go`
 # 的文件中，然后执行 `go run`。
 $ go run hello-world.go
 hello world
