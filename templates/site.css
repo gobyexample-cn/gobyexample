@@ -1,4 +1,4 @@
-/* CSS reset: http://meyerweb.com/eric/tools/css/reset/ */
+/* CSS reset: https://meyerweb.com/eric/tools/css/reset/ */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -19,7 +19,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-article, aside, details, figcaption, feigure,
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -28,16 +28,6 @@ body {
 }
 ol, ul {
 	list-style: none;
-}
-li {
-    padding: 2px;
-}
-a {
-    text-decoration : none;
-    border-bottom: #777 1px solid;
-}
-a:hover{
-    border-bottom: #000 2px solid;
 }
 blockquote, q {
 	quotes: none;
@@ -60,7 +50,7 @@ body {
     color: #252519;
 }
 em {
-    font-weight: bold;
+    font-style: italic;
 }
 a, a:visited {
     color: #261a3b;
@@ -90,14 +80,15 @@ p.next {
 }
 p.footer {
     color: grey;
+    font-size: 75%;
 }
 p.footer a, p.footer a:visited {
     color: grey;
 }
 div#intro {
-    width: 450px;
-    min-width: 450px;
-    max-width: 450px;
+    width: 420px;
+    min-width: 420px;
+    max-width: 420px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 120px;
