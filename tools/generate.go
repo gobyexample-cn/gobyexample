@@ -7,16 +7,15 @@ import (
 	"io"
 	"net/http"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strings"
 	"text/template"
 
-	"github.com/alecthomas/chroma"
-	"github.com/alecthomas/chroma/formatters/html"
-	"github.com/alecthomas/chroma/lexers"
-	"github.com/alecthomas/chroma/styles"
+	"github.com/alecthomas/chroma/v2"
+	"github.com/alecthomas/chroma/v2/formatters/html"
+	"github.com/alecthomas/chroma/v2/lexers"
+	"github.com/alecthomas/chroma/v2/styles"
 
 	"github.com/russross/blackfriday/v2"
 )
@@ -36,6 +35,11 @@ func check(err error) {
 	}
 }
 
+func isDir(path string) bool {
+	fileStat, _ := os.Stat(path)
+	return fileStat.IsDir()
+}
+
 func ensureDir(dir string) {
 	err := os.MkdirAll(dir, 0755)
 	check(err)
@@ -46,25 +50,6 @@ func copyFile(src, dst string) {
 	check(err)
 	err = os.WriteFile(dst, dat, 0644)
 	check(err)
-}
-
-func pipe(bin string, arg []string, src string) []byte {
-	cmd := exec.Command(bin, arg...)
-	in, err := cmd.StdinPipe()
-	check(err)
-	out, err := cmd.StdoutPipe()
-	check(err)
-	err = cmd.Start()
-	check(err)
-	_, err = in.Write([]byte(src))
-	check(err)
-	err = in.Close()
-	check(err)
-	bytes, err := io.ReadAll(out)
-	check(err)
-	err = cmd.Wait()
-	check(err)
-	return bytes
 }
 
 func sha1Sum(s string) string {
@@ -110,8 +95,8 @@ func debug(msg string) {
 	}
 }
 
-var docsPat = regexp.MustCompile("^\\s*(\\/\\/|#)\\s")
-var dashPat = regexp.MustCompile("\\-+")
+var docsPat = regexp.MustCompile(`^(\s*(\/\/|#)\s|\s*\/\/$)`)
+var dashPat = regexp.MustCompile(`\-+`)
 
 // Seg is a segment of an example
 type Seg struct {
@@ -160,7 +145,6 @@ func parseSegs(sourcePath string) ([]*Seg, string) {
 		lines = append(lines, strings.Replace(line, "\t", "    ", -1))
 		source = append(source, line)
 	}
-	filecontent := strings.Join(source, "\n")
 	segs := []*Seg{}
 	lastSeen := ""
 	for _, line := range lines {
@@ -190,7 +174,12 @@ func parseSegs(sourcePath string) ([]*Seg, string) {
 				newSeg := Seg{Docs: "", Code: line}
 				segs = append(segs, &newSeg)
 			} else {
-				segs[len(segs)-1].Code = segs[len(segs)-1].Code + "\n" + line
+				lastSeg := segs[len(segs)-1]
+				if len(lastSeg.Code) == 0 {
+					lastSeg.Code = line
+				} else {
+					lastSeg.Code = lastSeg.Code + "\n" + line
+				}
 			}
 			debug("CODE: " + line)
 			lastSeen = "code"
@@ -201,11 +190,10 @@ func parseSegs(sourcePath string) ([]*Seg, string) {
 		seg.CodeLeading = (i < (len(segs) - 1))
 		seg.CodeRun = strings.Contains(seg.Code, "package main")
 	}
-	return segs, filecontent
+	return segs, strings.Join(source, "\n")
 }
 
 func chromaFormat(code, filePath string) string {
-
 	lexer := lexers.Get(filePath)
 	if lexer == nil {
 		lexer = lexers.Fallback
@@ -265,14 +253,7 @@ func parseExamples() []*Example {
 		if verbose() {
 			fmt.Printf("Processing %s [%d/%d]\n", exampleName, i+1, len(exampleNames))
 		}
-		exampleNameDisplay := exampleName
-		names := strings.Split(exampleName, "->")
-		exampleName = names[0]
-		exampleNameDisplay = names[0]
-		if len(names) > 1 && strings.Trim(names[1], " ") != "" {
-			exampleNameDisplay = names[1]
-		}
-		example := Example{Name: exampleNameDisplay}
+		example := Example{Name: exampleName}
 		exampleID := strings.ToLower(exampleName)
 		exampleID = strings.Replace(exampleID, " ", "-", -1)
 		exampleID = strings.Replace(exampleID, "/", "-", -1)
@@ -282,14 +263,16 @@ func parseExamples() []*Example {
 		example.Segs = make([][]*Seg, 0)
 		sourcePaths := mustGlob("examples/" + exampleID + "/*")
 		for _, sourcePath := range sourcePaths {
-			if strings.HasSuffix(sourcePath, ".hash") {
-				example.GoCodeHash, example.URLHash = parseHashFile(sourcePath)
-			} else {
-				sourceSegs, filecontents := parseAndRenderSegs(sourcePath)
-				if filecontents != "" {
-					example.GoCode = filecontents
+			if !isDir(sourcePath) {
+				if strings.HasSuffix(sourcePath, ".hash") {
+					example.GoCodeHash, example.URLHash = parseHashFile(sourcePath)
+				} else {
+					sourceSegs, filecontents := parseAndRenderSegs(sourcePath)
+					if filecontents != "" {
+						example.GoCode = filecontents
+					}
+					example.Segs = append(example.Segs, sourceSegs)
 				}
-				example.Segs = append(example.Segs, sourceSegs)
 			}
 		}
 		newCodeHash := sha1Sum(example.GoCode)
@@ -314,14 +297,12 @@ func renderIndex(examples []*Example) {
 		fmt.Println("Rendering index")
 	}
 	indexTmpl := template.New("index")
-	_, err := indexTmpl.Parse(mustReadFile("templates/footer.tmpl"))
-	check(err)
-	_, err = indexTmpl.Parse(mustReadFile("templates/index.tmpl"))
-	check(err)
+	template.Must(indexTmpl.Parse(mustReadFile("templates/footer.tmpl")))
+	template.Must(indexTmpl.Parse(mustReadFile("templates/index.tmpl")))
 	indexF, err := os.Create(siteDir + "/index.html")
 	check(err)
-	err = indexTmpl.Execute(indexF, examples)
-	check(err)
+	defer indexF.Close()
+	check(indexTmpl.Execute(indexF, examples))
 }
 
 func renderExamples(examples []*Example) {
@@ -329,15 +310,27 @@ func renderExamples(examples []*Example) {
 		fmt.Println("Rendering examples")
 	}
 	exampleTmpl := template.New("example")
-	_, err := exampleTmpl.Parse(mustReadFile("templates/footer.tmpl"))
-	check(err)
-	_, err = exampleTmpl.Parse(mustReadFile("templates/example.tmpl"))
-	check(err)
+	template.Must(exampleTmpl.Parse(mustReadFile("templates/footer.tmpl")))
+	template.Must(exampleTmpl.Parse(mustReadFile("templates/example.tmpl")))
 	for _, example := range examples {
-		exampleF, err := os.Create(siteDir + "/" + example.ID + ".html")
+		exampleF, err := os.Create(siteDir + "/" + example.ID)
 		check(err)
-		exampleTmpl.Execute(exampleF, example)
+		defer exampleF.Close()
+		check(exampleTmpl.Execute(exampleF, example))
 	}
+}
+
+func render404() {
+	if verbose() {
+		fmt.Println("Rendering 404")
+	}
+	tmpl := template.New("404")
+	template.Must(tmpl.Parse(mustReadFile("templates/footer.tmpl")))
+	template.Must(tmpl.Parse(mustReadFile("templates/404.tmpl")))
+	file, err := os.Create(siteDir + "/404.html")
+	check(err)
+	defer file.Close()
+	check(tmpl.Execute(file, ""))
 }
 
 func main() {
@@ -349,12 +342,12 @@ func main() {
 	copyFile("templates/site.css", siteDir+"/site.css")
 	copyFile("templates/site.js", siteDir+"/site.js")
 	copyFile("templates/favicon.ico", siteDir+"/favicon.ico")
-	copyFile("templates/404.html", siteDir+"/404.html")
 	copyFile("templates/play.png", siteDir+"/play.png")
 	copyFile("templates/clipboard.png", siteDir+"/clipboard.png")
 	examples := parseExamples()
 	renderIndex(examples)
 	renderExamples(examples)
+	render404()
 }
 
 var SimpleShellOutputLexer = chroma.MustNewLexer(
@@ -364,30 +357,32 @@ var SimpleShellOutputLexer = chroma.MustNewLexer(
 		Filenames: []string{"*.sh"},
 		MimeTypes: []string{},
 	},
-	chroma.Rules{
-		"root": {
-			// $ or > triggers the start of prompt formatting
-			{`^\$`, chroma.GenericPrompt, chroma.Push("prompt")},
-			{`^>`, chroma.GenericPrompt, chroma.Push("prompt")},
+	func() chroma.Rules {
+		return chroma.Rules{
+			"root": {
+				// $ or > triggers the start of prompt formatting
+				{`^\$`, chroma.GenericPrompt, chroma.Push("prompt")},
+				{`^>`, chroma.GenericPrompt, chroma.Push("prompt")},
 
-			// empty lines are just text
-			{`^$\n`, chroma.Text, nil},
+				// empty lines are just text
+				{`^$\n`, chroma.Text, nil},
 
-			// otherwise its all output
-			{`[^\n]+$\n?`, chroma.GenericOutput, nil},
-		},
-		"prompt": {
-			// when we find newline, do output formatting rules
-			{`\n`, chroma.Text, chroma.Push("output")},
-			// otherwise its all text
-			{`[^\n]+$`, chroma.Text, nil},
-		},
-		"output": {
-			// sometimes there isn't output so we go right back to prompt
-			{`^\$`, chroma.GenericPrompt, chroma.Pop(1)},
-			{`^>`, chroma.GenericPrompt, chroma.Pop(1)},
-			// otherwise its all output
-			{`[^\n]+$\n?`, chroma.GenericOutput, nil},
-		},
+				// otherwise its all output
+				{`[^\n]+$\n?`, chroma.GenericOutput, nil},
+			},
+			"prompt": {
+				// when we find newline, do output formatting rules
+				{`\n`, chroma.Text, chroma.Push("output")},
+				// otherwise its all text
+				{`[^\n]+$`, chroma.Text, nil},
+			},
+			"output": {
+				// sometimes there isn't output so we go right back to prompt
+				{`^\$`, chroma.GenericPrompt, chroma.Pop(1)},
+				{`^>`, chroma.GenericPrompt, chroma.Pop(1)},
+				// otherwise its all output
+				{`[^\n]+$\n?`, chroma.GenericOutput, nil},
+			},
+		}
 	},
 )

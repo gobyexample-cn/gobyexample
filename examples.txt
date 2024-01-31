@@ -65,11 +65,13 @@ Line Filters->行过滤器
 File Paths->文件路径
 Directories->目录
 Temporary Files and Directories->临时文件和目录
+Embed Directive->嵌入的指令
 Testing and Benchmarking->单元测试和基准测试
 Command-Line Arguments->命令行参数
 Command-Line Flags->命令行标志
 Command-Line Subcommands->命令行子命令
 Environment Variables->环境变量
+Logging->日志
 HTTP Clients->HTTP 客户端
 HTTP Servers->HTTP 服务端
 Context

@@ -73,11 +73,13 @@
 - [x] File Paths->文件路径
 - [x] Directories->目录
 - [x] Temporary Files and Directories->临时文件和目录
+- [x] Embed Directive->嵌入的指令
 - [x] Testing and Benchmarking->单元测试和基准测试
 - [x] Command-Line Arguments->命令行参数
 - [x] Command-Line Flags->命令行标志
 - [x] Command-Line Subcommands->命令行子命令
 - [x] Environment Variables->环境变量
+- [x] Logging->日志
 - [x] HTTP Clients->HTTP 客户端
 - [x] HTTP Servers->HTTP 服务端
 - [x] Context
